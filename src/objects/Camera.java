@@ -10,5 +10,8 @@ package objects;
  * @author Meera
  */
 public class Camera {
+    public Camera() {
+        super();
+    }
     
 }
