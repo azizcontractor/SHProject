@@ -5,13 +5,18 @@
  */
 package shproject;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.*;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 /**
  *
@@ -38,7 +43,13 @@ public class FXMLDocumentController implements Initializable {
     }    
 
     @FXML
-    private void handleBye(ActionEvent event) {
+    private void handleBye(ActionEvent event) throws IOException {
+        Parent welcomeScreenParent = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
+        Scene welcomScreenScene = new Scene(welcomeScreenParent);
+        Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        appStage.hide();
+        appStage.setScene(welcomScreenScene);
+        appStage.show();
     }
     
 }
