@@ -13,5 +13,4 @@ public class Sensor {
     public Sensor() {
         super();
     }
-    
 }
