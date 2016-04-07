@@ -13,4 +13,7 @@ public class Sensor {
     public Sensor() {
         super();
     }
+    public void doSomething(){
+        return;
+    }
 }
