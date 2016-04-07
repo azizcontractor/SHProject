@@ -29,6 +29,10 @@ public class Account {
         this.email = email;
     }
     
+    public Account(){
+        
+    }
+    
     public boolean validate(){
         boolean valid = false;
         conn = OracleConnection.getConnection();
