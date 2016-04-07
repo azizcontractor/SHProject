@@ -13,5 +13,8 @@ public class Camera {
     public Camera() {
         super();
     }
+    public void doSomething(){
+        return;
+    }
     
 }
