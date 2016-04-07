@@ -16,6 +16,8 @@ import javafx.scene.*;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -24,14 +26,16 @@ import javafx.stage.Stage;
  */
 public class FXMLDocumentController implements Initializable {
     
-    @FXML
     private Label label;
     @FXML
-    private Button button;
+    private Label hiddenlabel;
     @FXML
-    private Button bye;
+    private Button submit;
+    @FXML
+    private TextField username;
+    @FXML
+    private PasswordField password;
     
-    @FXML
     private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");
         label.setText("Hello World!");
@@ -42,8 +46,9 @@ public class FXMLDocumentController implements Initializable {
         // TODO
     }    
 
+
     @FXML
-    private void handleBye(ActionEvent event) throws IOException {
+    private void handleSubmit(ActionEvent event) throws IOException {
         Parent welcomeScreenParent = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
         Scene welcomScreenScene = new Scene(welcomeScreenParent);
         Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
