@@ -1,19 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import java.net.URL?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.65" fx:controller="shproject.WelcomeController">
+<AnchorPane id="AnchorPane" maxHeight="400.0" maxWidth="300.0" prefHeight="400.0" prefWidth="300.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shproject.WelcomeController">
     <stylesheets>
         <URL value="@welcome.css" />
     </stylesheets>
    <children>
-      <Label layoutX="168.0" layoutY="30.0" text="WELCOME">
+      <Label layoutX="38.0" layoutY="87.0" prefHeight="69.0" prefWidth="237.0" text="SafeHome">
          <font>
             <Font size="52.0" />
          </font>
       </Label>
+      <Button layoutX="88.0" layoutY="176.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="137.0" text="System State">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="88.0" layoutY="239.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="137.0" text="Home Settings">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="88.0" layoutY="307.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="137.0" text="View Camera">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
