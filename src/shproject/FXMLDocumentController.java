@@ -5,6 +5,7 @@
  */
 package shproject;
 
+import control.Account;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -49,12 +50,20 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void handleSubmit(ActionEvent event) throws IOException {
-        Parent welcomeScreenParent = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
-        Scene welcomScreenScene = new Scene(welcomeScreenParent);
-        Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        appStage.hide();
-        appStage.setScene(welcomScreenScene);
-        appStage.show();
+        Account ac = new Account();
+        ac.setUsername(username.getText());
+        ac.setPassword(password.getText());
+        if(ac.validate()){
+            Parent welcomeScreenParent = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
+            Scene welcomScreenScene = new Scene(welcomeScreenParent);
+            Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            appStage.hide();
+            appStage.setScene(welcomScreenScene);
+            appStage.show();
+        }
+        else{
+            hiddenlabel.setText("Invalid Username or Password");
+        }
     }
     
 }
