@@ -10,5 +10,8 @@ package objects;
  * @author Aziz
  */
 public class Sensor {
+    public Sensor() {
+        super();
+    }
     
 }
