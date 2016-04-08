@@ -17,22 +17,22 @@
    <children>
       <Label layoutX="38.0" layoutY="87.0" prefHeight="69.0" prefWidth="237.0" text="SafeHome">
          <font>
-            <Font size="52.0" />
+            <Font name="Lucida Bright Regular" size="46.0" />
          </font>
       </Label>
       <Button layoutX="88.0" layoutY="176.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="137.0" text="System State">
          <font>
-            <Font size="18.0" />
+            <Font name="Lucida Bright Regular" size="15.0" />
          </font>
       </Button>
       <Button layoutX="88.0" layoutY="239.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="137.0" text="Home Settings">
          <font>
-            <Font size="18.0" />
+            <Font name="Lucida Bright Regular" size="15.0" />
          </font>
       </Button>
       <Button layoutX="88.0" layoutY="307.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="137.0" text="View Camera">
          <font>
-            <Font size="18.0" />
+            <Font name="Lucida Bright Regular" size="15.0" />
          </font>
       </Button>
    </children>
