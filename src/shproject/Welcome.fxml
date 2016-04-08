@@ -15,22 +15,22 @@
         <URL value="@welcome.css" />
     </stylesheets>
    <children>
-      <Label layoutX="38.0" layoutY="87.0" prefHeight="69.0" prefWidth="237.0" text="SafeHome">
+      <Label fx:id="SHlbl" layoutX="38.0" layoutY="87.0" prefHeight="69.0" prefWidth="237.0" text="SafeHome">
          <font>
             <Font name="Lucida Bright Regular" size="46.0" />
          </font>
       </Label>
-      <Button layoutX="88.0" layoutY="176.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="137.0" text="System State">
+      <Button fx:id="sysStatebtn" layoutX="88.0" layoutY="176.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="137.0" text="System State">
          <font>
             <Font name="Lucida Bright Regular" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="88.0" layoutY="239.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="137.0" text="Home Settings">
+      <Button fx:id="homeSetbtn" layoutX="88.0" layoutY="239.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="137.0" text="Home Settings">
          <font>
             <Font name="Lucida Bright Regular" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="88.0" layoutY="307.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="137.0" text="View Camera">
+      <Button fx:id="viewCambtn" layoutX="88.0" layoutY="307.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="137.0" text="View Camera">
          <font>
             <Font name="Lucida Bright Regular" size="15.0" />
          </font>
