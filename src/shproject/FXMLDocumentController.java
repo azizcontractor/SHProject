@@ -5,7 +5,7 @@
  */
 package shproject;
 
-import control.Account;
+import control.SafeHome;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -50,10 +50,8 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void handleSubmit(ActionEvent event) throws IOException {
-        Account ac = new Account();
-        ac.setUsername(username.getText());
-        ac.setPassword(password.getText());
-        if(ac.validate()){
+        SafeHome sh = new SafeHome();
+        if(sh.login(username.getText(),password.getText())){
             Parent welcomeScreenParent = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
             Scene welcomScreenScene = new Scene(welcomeScreenParent);
             Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
