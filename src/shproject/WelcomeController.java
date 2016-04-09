@@ -51,5 +51,13 @@ public class WelcomeController implements Initializable {
         appStage.setScene(sysStateScene);
         appStage.show();
     }
+
+    @FXML
+    private void handleHomeSet(ActionEvent event) {
+    }
+
+    @FXML
+    private void handleViewCam(ActionEvent event) {
+    }
     
 }

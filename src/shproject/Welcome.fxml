@@ -22,12 +22,12 @@
             <Font name="Lucida Bright Regular" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="homeSetbtn" layoutX="88.0" layoutY="214.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="137.0" text="Home Settings">
+      <Button fx:id="homeSetbtn" layoutX="88.0" layoutY="214.0" mnemonicParsing="false" onAction="#handleHomeSet" prefHeight="48.0" prefWidth="137.0" text="Home Settings">
          <font>
             <Font name="Lucida Bright Regular" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="viewCambtn" layoutX="88.0" layoutY="278.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="137.0" text="View Camera">
+      <Button fx:id="viewCambtn" layoutX="88.0" layoutY="278.0" mnemonicParsing="false" onAction="#handleViewCam" prefHeight="48.0" prefWidth="137.0" text="View Camera">
          <font>
             <Font name="Lucida Bright Regular" size="15.0" />
          </font>
