@@ -17,7 +17,7 @@
             <Font name="Lucida Bright Regular" size="46.0" />
          </font>
       </Label>
-      <Button fx:id="sysStatebtn" layoutX="88.0" layoutY="148.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="137.0" text="System State">
+      <Button fx:id="sysStatebtn" layoutX="88.0" layoutY="148.0" mnemonicParsing="false" onAction="#handleSysState" prefHeight="48.0" prefWidth="137.0" text="System State">
          <font>
             <Font name="Lucida Bright Regular" size="15.0" />
          </font>

@@ -7,7 +7,10 @@ package shproject;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
 /**
  * FXML Controller class
@@ -15,6 +18,14 @@ import javafx.fxml.Initializable;
  * @author farhinmomin
  */
 public class SystemStateController implements Initializable {
+    @FXML
+    private Label systemStatelbl;
+    @FXML
+    private Button homebtn;
+    @FXML
+    private Button awaybtn;
+    @FXML
+    private Button travelbtn;
 
     /**
      * Initializes the controller class.
