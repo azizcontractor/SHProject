@@ -53,7 +53,13 @@ public class WelcomeController implements Initializable {
     }
 
     @FXML
-    private void handleHomeSet(ActionEvent event) {
+    private void handleHomeSet(ActionEvent event) throws IOException {
+       Parent sysHomeSetParent = FXMLLoader.load(getClass().getResource("homeSettings.fxml"));
+       Scene sysHomeSetScene = new Scene(sysHomeSetParent);
+       Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+       appStage.hide();
+       appStage.setScene(sysHomeSetScene);
+       appStage.show();
     }
 
     @FXML

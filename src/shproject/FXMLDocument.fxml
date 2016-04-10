@@ -24,5 +24,10 @@
             <Font size="18.0" />
          </font>
       </PasswordField>
+      <Label layoutX="36.0" layoutY="36.0" text="SafeHome">
+         <font>
+            <Font name="Lucida Bright Regular" size="46.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>
