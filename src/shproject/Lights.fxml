@@ -40,5 +40,6 @@
       <ToggleButton layoutX="168.0" layoutY="198.0" mnemonicParsing="false" text="ToggleButton" />
       <ToggleButton layoutX="168.0" layoutY="244.0" mnemonicParsing="false" text="ToggleButton" />
       <ToggleButton layoutX="151.0" layoutY="288.0" mnemonicParsing="false" text="ToggleButton" />
+      <Button fx:id="back1btn" layoutX="21.0" layoutY="361.0" mnemonicParsing="false" onAction="#goBack" prefHeight="25.0" prefWidth="59.0" text="Back" />
    </children>
 </AnchorPane>
