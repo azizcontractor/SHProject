@@ -7,26 +7,33 @@ package shproject;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
  *
  * @author farhinmomin
  */
-public class SystemStateController implements Initializable {
+public class HomeStatePageController implements Initializable {
     @FXML
-    private Label systemStatelbl;
+    private TextField dateMonth;
     @FXML
-    private Button homebtn;
+    private TextField dateDay;
     @FXML
-    private Button awaybtn;
+    private TextField dateYear;
     @FXML
-    private Button travelbtn;
+    private TextField timeHour;
+    @FXML
+    private TextField timeMin;
+    @FXML
+    private TextField timeAM_PM;
+    @FXML
+    private Button btnOk;
+    @FXML
+    private Button btnCancel;
 
     /**
      * Initializes the controller class.
@@ -35,18 +42,5 @@ public class SystemStateController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
-    @FXML
-    private void btnHomeClicked(ActionEvent event) {
-        
-    }
-
-    @FXML
-    private void btnAwayClicked(ActionEvent event) {
-    }
-
-    @FXML
-    private void btnTravelClicked(ActionEvent event) {
-    }
     
 }

@@ -8,25 +8,24 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" maxHeight="400.0" maxWidth="300.0" prefHeight="400.0" prefWidth="300.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="shproject.SystemStateController">
+<AnchorPane id="AnchorPane" maxHeight="400.0" maxWidth="300.0" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shproject.SystemStateController">
    <children>
       <Label fx:id="systemStatelbl" alignment="CENTER" layoutX="50.0" layoutY="80.0" text="System State">
          <font>
             <Font name="Lucida Bright Regular" size="32.0" />
          </font>
       </Label>
-      <Button fx:id="homebtn" layoutX="77.0" layoutY="157.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="HOME">
+      <Button fx:id="homebtn" layoutX="77.0" layoutY="157.0" mnemonicParsing="false" onAction="#btnHomeClicked" prefHeight="50.0" prefWidth="150.0" text="HOME">
          <font>
             <Font name="Lucida Bright Regular" size="25.0" />
          </font>
       </Button>
-      <Button fx:id="awaybtn" layoutX="77.0" layoutY="227.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="AWAY">
+      <Button fx:id="awaybtn" layoutX="77.0" layoutY="227.0" mnemonicParsing="false" onAction="#btnAwayClicked" prefHeight="50.0" prefWidth="150.0" text="AWAY">
          <font>
             <Font name="Lucida Bright Regular" size="25.0" />
          </font>
       </Button>
-      <Button fx:id="travelbtn" layoutX="77.0" layoutY="297.0" maxHeight="50.0" maxWidth="200.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="TRAVEL">
+      <Button fx:id="travelbtn" layoutX="77.0" layoutY="297.0" maxHeight="50.0" maxWidth="200.0" mnemonicParsing="false" onAction="#btnTravelClicked" prefHeight="50.0" prefWidth="150.0" text="TRAVEL">
          <font>
             <Font name="Lucida Bright Regular" size="25.0" />
          </font>
