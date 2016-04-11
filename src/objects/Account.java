@@ -16,10 +16,10 @@ import utils.OracleConnection;
  * @author Aziz
  */
 public class Account {
-    String username;
-    String password;
-    String acctType;
-    String email;
+    private String username;
+    private String password;
+    private String acctType;
+    private String email;
     private Connection conn;
 
     public Account(String username, String password, String acctType, String email) {
