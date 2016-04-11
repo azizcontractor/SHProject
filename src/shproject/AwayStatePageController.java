@@ -92,12 +92,19 @@ public class AwayStatePageController implements Initializable {
         dateYearA.setDisable(true);
         timeHrA.setDisable(true);
         timeMinA.setDisable(true);
-        //time
+        timeAm_Pm.setDisable(true);
+       
         
     }
 
     @FXML
     private void handleAway_Schedule(ActionEvent event) {
+        dateMonthA.setDisable(false);
+        dateDayA.setDisable(false);
+        dateYearA.setDisable(false);
+        timeHrA.setDisable(false);
+        timeMinA.setDisable(false);
+        timeAm_Pm.setDisable(false);
     }
     
 }
