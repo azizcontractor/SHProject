@@ -19,6 +19,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
 /**
@@ -52,7 +53,9 @@ public class AwayStatePageController implements Initializable {
     @FXML
     private TextField timeMinA;
     @FXML
-    private TextField timeYearA;
+    private ToggleGroup group2;
+    @FXML
+    private TextField timeAm_Pm;
 
     /**
      * Initializes the controller class.
@@ -84,10 +87,24 @@ public class AwayStatePageController implements Initializable {
 
     @FXML
     private void handleAway_ActivateNow(ActionEvent event) {
+        dateMonthA.setDisable(true);
+        dateDayA.setDisable(true);
+        dateYearA.setDisable(true);
+        timeHrA.setDisable(true);
+        timeMinA.setDisable(true);
+        timeAm_Pm.setDisable(true);
+       
+        
     }
 
     @FXML
     private void handleAway_Schedule(ActionEvent event) {
+        dateMonthA.setDisable(false);
+        dateDayA.setDisable(false);
+        dateYearA.setDisable(false);
+        timeHrA.setDisable(false);
+        timeMinA.setDisable(false);
+        timeAm_Pm.setDisable(false);
     }
     
 }

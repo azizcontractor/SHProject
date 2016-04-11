@@ -17,9 +17,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
 /**
@@ -27,35 +25,49 @@ import javafx.stage.Stage;
  *
  * @author farhinmomin
  */
-public class HomeStatePageController implements Initializable {
+public class TravelStatePageController implements Initializable {
     @FXML
-    private Button btnOk;
+    private Label lblTravel;
+    @FXML
+    private Label lblStart;
+    @FXML
+    private Label lblArrival;
+    @FXML
+    private Label lblStDate;
+    @FXML
+    private Label lblStTime;
+    @FXML
+    private Label lblArDate;
+    @FXML
+    private Label lblArTime;
+    @FXML
+    private Button btnOK;
     @FXML
     private Button btnCancel;
     @FXML
-    private Label lblDate;
+    private TextField STmonth;
     @FXML
-    private Label lblTime;
+    private TextField STday;
     @FXML
-    private ToggleGroup group1;
+    private TextField STyear;
     @FXML
-    private Label lblHome;
+    private TextField AImonth;
     @FXML
-    private TextField dateMonthH;
+    private TextField AIday;
     @FXML
-    private TextField dateDayH;
+    private TextField AIyear;
     @FXML
-    private TextField dateYearH;
+    private TextField SThr;
     @FXML
-    private TextField timeHourH;
+    private TextField AIHr;
     @FXML
-    private TextField timeMinH;
+    private TextField STmin;
     @FXML
-    private TextField timeAM_PMH;
+    private TextField AImin;
     @FXML
-    private RadioButton rbHome_ActivateNow;
+    private TextField STam_pm;
     @FXML
-    private RadioButton rbHome_Schedule;
+    private TextField AIam_pm;
 
     /**
      * Initializes the controller class.
@@ -66,8 +78,7 @@ public class HomeStatePageController implements Initializable {
     }    
 
     @FXML
-    private void handleOK(ActionEvent event) throws IOException{
-        
+    private void handleOK(ActionEvent event) throws IOException  {
         Parent backSysStageparent = FXMLLoader.load(getClass().getResource("systemState.fxml"));
         Scene date_page_scene = new Scene(backSysStageparent);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -77,7 +88,7 @@ public class HomeStatePageController implements Initializable {
     }
 
     @FXML
-    private void handleCancel(ActionEvent event) throws IOException{
+    private void handleCancel(ActionEvent event) throws IOException {
         Parent backSysStageparent = FXMLLoader.load(getClass().getResource("systemState.fxml"));
         Scene date_page_scene = new Scene(backSysStageparent);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -85,29 +96,5 @@ public class HomeStatePageController implements Initializable {
         app_stage.setScene(date_page_scene);
         app_stage.show();
     }
-
-
-    @FXML
-    private void handleSchedule(ActionEvent event) {
-        dateMonthH.setDisable(false);
-        dateDayH.setDisable(false);
-        dateYearH.setDisable(false);
-        timeHourH.setDisable(false);
-        timeMinH.setDisable(false);
-        timeAM_PMH.setDisable(false);
-        
-        
-    }
-
-    @FXML
-    private void handleActivate(ActionEvent event) {
-        dateMonthH.setDisable(true);
-        dateDayH.setDisable(true);
-        dateYearH.setDisable(true);
-        timeHourH.setDisable(true);
-        timeMinH.setDisable(true);
-        timeAM_PMH.setDisable(true);
-    }
-
     
 }

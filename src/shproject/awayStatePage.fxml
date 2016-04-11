@@ -19,8 +19,11 @@
          <font>
             <Font name="Lucida Bright Regular" size="14.0" />
          </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="group2" />
+         </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="rbA_schedule" layoutX="25.0" layoutY="77.0" mnemonicParsing="false" onAction="#handleAway_Schedule" text="Schedule">
+      <RadioButton fx:id="rbA_schedule" layoutX="25.0" layoutY="77.0" mnemonicParsing="false" onAction="#handleAway_Schedule" text="Schedule" toggleGroup="$group2">
          <font>
             <Font name="Lucida Bright Regular" size="14.0" />
          </font>
@@ -46,11 +49,11 @@
          </font>
       </Button>
       <Line endX="100.0" layoutX="125.0" layoutY="177.0" scaleX="1.2" startX="-100.0" />
-      <TextField fx:id="dateMonthA" alignment="CENTER" layoutX="66.0" layoutY="100.0" prefHeight="27.0" prefWidth="40.0" promptText="MM" />
-      <TextField fx:id="dateDayA" alignment="CENTER" layoutX="110.0" layoutY="100.0" maxHeight="27.0" maxWidth="40.0" prefHeight="27.0" prefWidth="40.0" promptText="DD" />
-      <TextField fx:id="dateYearA" alignment="CENTER" layoutX="156.0" layoutY="100.0" maxHeight="27.0" maxWidth="60.0" prefHeight="27.0" prefWidth="60.0" promptText="YYYY" />
-      <TextField fx:id="timeHrA" alignment="CENTER" layoutX="66.0" layoutY="136.0" prefHeight="27.0" prefWidth="40.0" promptText="Hr" />
-      <TextField fx:id="timeMinA" alignment="CENTER" layoutX="110.0" layoutY="136.0" prefHeight="27.0" prefWidth="40.0" promptText="Min" />
-      <TextField fx:id="timeYearA" alignment="CENTER" layoutX="156.0" layoutY="136.0" maxHeight="27.0" maxWidth="60.0" prefHeight="27.0" prefWidth="60.0" promptText="YYYY" />
+      <TextField fx:id="dateMonthA" alignment="CENTER" disable="true" layoutX="66.0" layoutY="100.0" prefHeight="27.0" prefWidth="40.0" promptText="MM" />
+      <TextField fx:id="dateDayA" alignment="CENTER" disable="true" layoutX="110.0" layoutY="100.0" maxHeight="27.0" maxWidth="40.0" prefHeight="27.0" prefWidth="40.0" promptText="DD" />
+      <TextField fx:id="dateYearA" alignment="CENTER" disable="true" layoutX="156.0" layoutY="100.0" maxHeight="27.0" maxWidth="60.0" prefHeight="27.0" prefWidth="60.0" promptText="YYYY" />
+      <TextField fx:id="timeHrA" alignment="CENTER" disable="true" layoutX="66.0" layoutY="136.0" prefHeight="27.0" prefWidth="40.0" promptText="Hr" />
+      <TextField fx:id="timeMinA" alignment="CENTER" disable="true" layoutX="110.0" layoutY="136.0" prefHeight="27.0" prefWidth="40.0" promptText="Min" />
+      <TextField fx:id="timeAm_Pm" alignment="CENTER" disable="true" layoutX="156.0" layoutY="136.0" maxHeight="27.0" maxWidth="60.0" prefHeight="27.0" prefWidth="60.0" promptText="am/pm" />
    </children>
 </AnchorPane>
