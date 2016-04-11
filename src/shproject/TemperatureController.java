@@ -5,6 +5,7 @@
  */
 package shproject;
 
+import control.SafeHome;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -39,6 +40,9 @@ public class TemperatureController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        SafeHome sh = new SafeHome();
+        System.out.println(sh.showCurrentTemp());
+        temptext.setText(sh.showCurrentTemp());
     }    
     
      @FXML
@@ -53,13 +57,9 @@ public class TemperatureController implements Initializable {
 
     @FXML
     private void setTemp(ActionEvent event) {
+        SafeHome sh = new SafeHome();
+        sh.setTemp(Double.parseDouble(temptext.getText()));
     }
-
-    @FXML
-    private void setTemptext(ActionEvent event) {
-    }
-    
-    
     
     
     
