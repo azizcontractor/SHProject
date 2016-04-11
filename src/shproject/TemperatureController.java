@@ -16,6 +16,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -27,6 +28,10 @@ public class TemperatureController implements Initializable {
 
     @FXML
     private Button backbtn;
+    @FXML
+    private Button setbtn;
+    @FXML
+    private TextField temptext;
 
     /**
      * Initializes the controller class.
@@ -44,6 +49,14 @@ public class TemperatureController implements Initializable {
         appStage2.hide();
         appStage2.setScene(goBackScene);
         appStage2.show();
+    }
+
+    @FXML
+    private void setTemp(ActionEvent event) {
+    }
+
+    @FXML
+    private void setTemptext(ActionEvent event) {
     }
     
     

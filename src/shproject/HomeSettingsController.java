@@ -62,11 +62,15 @@ public class HomeSettingsController implements Initializable {
         appStage1.show();
     }
     
-    
-    
-    
-    
-    
+    /*private void manageDoors(ActionEvent event )throws IOException {
+        Parent manageDoorsParent = FXMLLoader.load(getClass().getResource("Doors.fxml"));
+        Scene DoorScene = new Scene(manageDoorsParent);
+        Stage appStage1 = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        appStage1.hide();
+        appStage1.setScene(DoorScene);
+        appStage1.show();
+               
+    }    */
     
     
 }
