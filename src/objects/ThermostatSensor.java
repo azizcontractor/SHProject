@@ -17,27 +17,27 @@ import utils.OracleConnection;
  */
 public class ThermostatSensor extends Sensor {
     
-    private double currentTemp;
-    private double newTemp;
+    private int currentTemp;
+    private int newTemp;
     private Connection conn;
     
     public ThermostatSensor(){
         
     }
 
-    public double getCurrentTemp() {
+    public int getCurrentTemp() {
         return currentTemp;
     }
 
-    public void setCurrentTemp(double currentTemp) {
+    public void setCurrentTemp(int currentTemp) {
         this.currentTemp = currentTemp;
     }
 
-    public double getNewTemp() {
+    public int getNewTemp() {
         return newTemp;
     }
 
-    public void setNewTemp(double newTemp) {
+    public void setNewTemp(int newTemp) {
         this.newTemp = newTemp;
     }
     
@@ -58,7 +58,7 @@ public class ThermostatSensor extends Sensor {
         return valid;
     }
     
-    public double getTemp(){
+    public int getTemp(){
         conn = OracleConnection.getConnection();
         try{
             String sql = "select * from thermostatSensor where sID = ?";
@@ -66,7 +66,7 @@ public class ThermostatSensor extends Sensor {
             ps.setString(1, super.getId());
             ResultSet r = ps.executeQuery();
             if(r.next()){
-                currentTemp = r.getDouble(2);
+                currentTemp = r.getInt(2);
             }
         }
         catch (SQLException e){

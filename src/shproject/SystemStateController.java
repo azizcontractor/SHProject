@@ -5,6 +5,7 @@
  */
 package shproject;
 
+import control.SafeHome;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -44,6 +45,8 @@ public class SystemStateController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        SafeHome sh = new SafeHome();
+        
     }    
 
     @FXML
@@ -58,23 +61,11 @@ public class SystemStateController implements Initializable {
     }
 
     @FXML
-    private void btnAwayClicked(ActionEvent event) throws IOException {
-        Parent awayState = FXMLLoader.load(getClass().getResource("awayStatePage.fxml"));
-        Scene awayScene = new Scene(awayState);
-        Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        appStage.hide();
-        appStage.setScene(awayScene);
-        appStage.show();
+    private void btnAwayClicked(ActionEvent event) {
     }
 
     @FXML
-    private void btnTravelClicked(ActionEvent event) throws IOException {
-        Parent travelState = FXMLLoader.load(getClass().getResource("travelStatePage.fxml"));
-        Scene awayScene = new Scene(travelState);
-        Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        appStage.hide();
-        appStage.setScene(awayScene);
-        appStage.show();
+    private void btnTravelClicked(ActionEvent event) {
     }
     
 }

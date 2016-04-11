@@ -41,7 +41,6 @@ public class TemperatureController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         SafeHome sh = new SafeHome();
-        System.out.println(sh.showCurrentTemp());
         temptext.setText(sh.showCurrentTemp());
     }    
     
@@ -58,7 +57,7 @@ public class TemperatureController implements Initializable {
     @FXML
     private void setTemp(ActionEvent event) {
         SafeHome sh = new SafeHome();
-        sh.setTemp(Double.parseDouble(temptext.getText()));
+        sh.setTemp(Integer.parseInt(temptext.getText()));
     }
     
     

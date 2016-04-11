@@ -33,6 +33,8 @@ public class WelcomeController implements Initializable {
     private Button homeSetbtn;
     @FXML
     private Button viewCambtn;
+    @FXML
+    private Button outbtn;
 
     /**
      * Initializes the controller class.
@@ -65,5 +67,16 @@ public class WelcomeController implements Initializable {
     @FXML
     private void handleViewCam(ActionEvent event) {
     }
+
+    @FXML
+    private void signOut(ActionEvent event) throws IOException {
+        
+       Parent signOutParent = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+       Scene signOutScene = new Scene(signOutParent);
+       Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+       appStage.hide();
+       appStage.setScene(signOutScene);
+       appStage.show();
+      }
     
 }

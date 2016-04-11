@@ -33,6 +33,8 @@ public class HomeSettingsController implements Initializable {
     private Button doorsbtn;
     @FXML
     private Button devicesbtn;
+    @FXML
+    private Button mainbtn;
 
     /**
      * Initializes the controller class.
@@ -71,6 +73,28 @@ public class HomeSettingsController implements Initializable {
         appStage1.show();
                
     }    */
-    
-    
+
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    @FXML
+    private void goMainPage(ActionEvent event) throws IOException {
+        
+        Parent goMainPage = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
+        Scene goMainScene = new Scene(goMainPage);
+        Stage appStage3 = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        appStage3.hide();
+        appStage3.setScene(goMainScene);
+        appStage3.show();
+        }
 }
