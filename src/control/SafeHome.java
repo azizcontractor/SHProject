@@ -5,10 +5,16 @@
  */
 package control;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import objects.Account;
 import objects.Sensor;
 import objects.ThermostatSensor;
+import utils.OracleConnection;
 
 /**
  *
@@ -23,16 +29,30 @@ public class SafeHome {
     private int numTries;
     private boolean autoDisengage;
     private String emergencyNum;
+    private Connection conn;
     
     public SafeHome(){
-        
+        conn = OracleConnection.getConnection();
+        try{
+            String sql = "select * from safehome";
+            Statement s = conn.createStatement();
+            ResultSet r = s.executeQuery(sql);
+            if(r.next()){
+                currentState = r.getString(1);
+                passcode = r.getString(2);
+                
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }finally{
+            OracleConnection.closeConnection();
+        }
     }
     
     public String showCurrentTemp(){
         ThermostatSensor s = new ThermostatSensor();
         ArrayList<Sensor> sensors = s.getSensors();
         for(Sensor t: sensors){
-            System.out.println("type ** " + t.getType());
             if (t.getType().equals("Thermostat")){
                 s.setId(t.getId());
             }
@@ -40,11 +60,10 @@ public class SafeHome {
         return "" + s.getTemp();
     }
     
-    public void setTemp(double temp){
+    public void setTemp(int temp){
         ThermostatSensor s = new ThermostatSensor();
         ArrayList<Sensor> sensors = s.getSensors();
         for(Sensor t: sensors){
-            System.out.println("type ** " + t.getType());
             if (t.getType().equals("Thermostat")){
                 s.setId(t.getId());
             }

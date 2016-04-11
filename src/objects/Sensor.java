@@ -71,7 +71,6 @@ public class Sensor {
                     s.setIsOn(true);
                else
                    s.setIsOn(false);
-               System.out.println("type = " +  s.getType());
                sensors.add(s);
            }
         }
