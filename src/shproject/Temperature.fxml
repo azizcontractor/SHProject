@@ -21,7 +21,7 @@
       </Button>
       <Circle fill="#fffdfd" layoutX="230.0" layoutY="154.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
       <Button fx:id="backbtn" layoutX="12.0" layoutY="355.0" mnemonicParsing="false" onAction="#goBack" prefHeight="16.0" prefWidth="66.0" text="Back" />
-      <TextField fx:id="temptext" alignment="CENTER" layoutX="71.0" layoutY="145.0" maxWidth="145.0" minHeight="100.0" minWidth="130.0" onAction="#setTemptext" prefHeight="111.0" prefWidth="140.0">
+      <TextField fx:id="temptext" alignment="CENTER" layoutX="71.0" layoutY="145.0" maxWidth="145.0" minHeight="100.0" minWidth="130.0" prefHeight="111.0" prefWidth="140.0">
          <font>
             <Font size="55.0" />
          </font>
