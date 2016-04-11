@@ -46,7 +46,7 @@ public class SystemStateController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         SafeHome sh = new SafeHome();
-        
+        lblcurrStateEmpty.setText(sh.getCurrentState());
     }    
 
     @FXML
@@ -61,11 +61,23 @@ public class SystemStateController implements Initializable {
     }
 
     @FXML
-    private void btnAwayClicked(ActionEvent event) {
+    private void btnAwayClicked(ActionEvent event) throws IOException {
+        Parent awayState = FXMLLoader.load(getClass().getResource("awayStatePage.fxml"));
+        Scene homeScene = new Scene(awayState);
+        Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        appStage.hide();
+        appStage.setScene(homeScene);
+        appStage.show();
     }
 
     @FXML
-    private void btnTravelClicked(ActionEvent event) {
+    private void btnTravelClicked(ActionEvent event) throws IOException {
+        Parent travelState = FXMLLoader.load(getClass().getResource("travelStatePage.fxml"));
+        Scene homeScene = new Scene(travelState);
+        Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        appStage.hide();
+        appStage.setScene(homeScene);
+        appStage.show();
     }
     
 }

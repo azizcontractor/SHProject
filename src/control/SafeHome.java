@@ -40,6 +40,20 @@ public class SafeHome {
             if(r.next()){
                 currentState = r.getString(1);
                 passcode = r.getString(2);
+                if(r.getString(3).equals("1"))
+                    adminMode = true;
+                else
+                    adminMode = false;
+                if(r.getString(4).equals("1"))
+                    panicState = true;
+                else
+                    panicState = false;
+                if(r.getString(6).equals("1"))
+                    autoDisengage = true;
+                else
+                    autoDisengage = false;
+                numTries = r.getInt(5);
+                emergencyNum = r.getString(7);
                 
             }
         }catch(SQLException e){
@@ -78,5 +92,63 @@ public class SafeHome {
         ac.setPassword(password);
         return ac.validate();
     }
+
+    public String getCurrentState() {
+        return currentState;
+    }
+
+    public void setCurrentState(String currentState) {
+        this.currentState = currentState;
+    }
+
+    public String getPasscode() {
+        return passcode;
+    }
+
+    public void setPasscode(String passcode) {
+        this.passcode = passcode;
+    }
+
+    public boolean isAdminMode() {
+        return adminMode;
+    }
+
+    public void setAdminMode(boolean adminMode) {
+        this.adminMode = adminMode;
+    }
+
+    public boolean isPanicState() {
+        return panicState;
+    }
+
+    public void setPanicState(boolean panicState) {
+        this.panicState = panicState;
+    }
+
+    public int getNumTries() {
+        return numTries;
+    }
+
+    public void setNumTries(int numTries) {
+        this.numTries = numTries;
+    }
+
+    public boolean isAutoDisengage() {
+        return autoDisengage;
+    }
+
+    public void setAutoDisengage(boolean autoDisengage) {
+        this.autoDisengage = autoDisengage;
+    }
+
+    public String getEmergencyNum() {
+        return emergencyNum;
+    }
+
+    public void setEmergencyNum(String emergencyNum) {
+        this.emergencyNum = emergencyNum;
+    }
+    
+    
     
 }
