@@ -55,9 +55,15 @@ public class TemperatureController implements Initializable {
     }
 
     @FXML
-    private void setTemp(ActionEvent event) {
+    private void setTemp(ActionEvent event) throws IOException{
         SafeHome sh = new SafeHome();
         sh.setTemp(Integer.parseInt(temptext.getText()));
+        Parent goBackParent = FXMLLoader.load(getClass().getResource("homeSettings.fxml"));
+        Scene goBackScene = new Scene(goBackParent);
+        Stage appStage2 = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        appStage2.hide();
+        appStage2.setScene(goBackScene);
+        appStage2.show();
     }
     
     
