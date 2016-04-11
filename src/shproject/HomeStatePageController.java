@@ -89,14 +89,24 @@ public class HomeStatePageController implements Initializable {
 
     @FXML
     private void handleSchedule(ActionEvent event) {
-        
+        dateMonthH.setDisable(false);
+        dateDayH.setDisable(false);
+        dateYearH.setDisable(false);
+        timeHourH.setDisable(false);
+        timeMinH.setDisable(false);
+        timeAM_PMH.setDisable(false);
         
         
     }
 
     @FXML
     private void handleActivate(ActionEvent event) {
-        
+        dateMonthH.setDisable(true);
+        dateDayH.setDisable(true);
+        dateYearH.setDisable(true);
+        timeHourH.setDisable(true);
+        timeMinH.setDisable(true);
+        timeAM_PMH.setDisable(true);
     }
 
     @FXML

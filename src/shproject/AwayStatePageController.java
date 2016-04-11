@@ -19,6 +19,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
 /**
@@ -53,6 +54,8 @@ public class AwayStatePageController implements Initializable {
     private TextField timeMinA;
     @FXML
     private TextField timeYearA;
+    @FXML
+    private ToggleGroup group2;
 
     /**
      * Initializes the controller class.
