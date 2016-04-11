@@ -32,5 +32,6 @@
             <Font name="Lucida Bright Regular" size="15.0" />
          </font>
       </Button>
+      <Button fx:id="outbtn" layoutX="208.0" layoutY="8.0" mnemonicParsing="false" onAction="#signOut" prefHeight="25.0" prefWidth="80.0" text="Sign Out" textFill="#0a0101" />
    </children>
 </AnchorPane>
