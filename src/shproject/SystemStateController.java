@@ -68,7 +68,13 @@ public class SystemStateController implements Initializable {
     }
 
     @FXML
-    private void btnTravelClicked(ActionEvent event) {
+    private void btnTravelClicked(ActionEvent event) throws IOException {
+        Parent travelState = FXMLLoader.load(getClass().getResource("travelStatePage.fxml"));
+        Scene awayScene = new Scene(travelState);
+        Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        appStage.hide();
+        appStage.setScene(awayScene);
+        appStage.show();
     }
     
 }
