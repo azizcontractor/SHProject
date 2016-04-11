@@ -30,6 +30,7 @@ public class SafeHome {
     private boolean autoDisengage;
     private String emergencyNum;
     private Connection conn;
+    private String newState;
     
     public SafeHome(){
         conn = OracleConnection.getConnection();
@@ -99,6 +100,20 @@ public class SafeHome {
 
     public void setCurrentState(String currentState) {
         this.currentState = currentState;
+    }
+    
+    public void setNewState(String newState) {
+        conn = OracleConnection.getConnection();
+        try{
+            String sql = "update safehome set currentState = ?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, newState);
+            ps.executeUpdate();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }finally{
+            OracleConnection.closeConnection();
+        }
     }
 
     public String getPasscode() {

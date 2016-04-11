@@ -5,6 +5,7 @@
  */
 package shproject;
 
+import control.SafeHome;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -63,11 +64,13 @@ public class HomeStatePageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        btnOk.setDisable(true);
     }    
 
     @FXML
     private void handleOK(ActionEvent event) throws IOException{
-        
+        SafeHome sh = new SafeHome();
+        sh.setNewState("Home");
         Parent backSysStageparent = FXMLLoader.load(getClass().getResource("systemState.fxml"));
         Scene date_page_scene = new Scene(backSysStageparent);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -89,6 +92,7 @@ public class HomeStatePageController implements Initializable {
 
     @FXML
     private void handleSchedule(ActionEvent event) {
+        btnOk.setDisable(true);
         dateMonthH.setDisable(false);
         dateDayH.setDisable(false);
         dateYearH.setDisable(false);
@@ -101,6 +105,7 @@ public class HomeStatePageController implements Initializable {
 
     @FXML
     private void handleActivate(ActionEvent event) {
+        btnOk.setDisable(false);
         dateMonthH.setDisable(true);
         dateDayH.setDisable(true);
         dateYearH.setDisable(true);

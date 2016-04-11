@@ -57,7 +57,6 @@ public class SystemStateController implements Initializable {
         appStage.hide();
         appStage.setScene(homeScene);
         appStage.show();
-        
     }
 
     @FXML

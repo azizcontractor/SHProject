@@ -5,6 +5,7 @@
  */
 package shproject;
 
+import control.SafeHome;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -62,11 +63,14 @@ public class AwayStatePageController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        btnOK.setDisable(true);
         // TODO
     }    
 
     @FXML
     private void handleOK(ActionEvent event) throws IOException  {
+        SafeHome sh = new SafeHome();
+        sh.setNewState("Away");
         Parent backSysStageparent = FXMLLoader.load(getClass().getResource("systemState.fxml"));
         Scene date_page_scene = new Scene(backSysStageparent);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -87,6 +91,7 @@ public class AwayStatePageController implements Initializable {
 
     @FXML
     private void handleAway_ActivateNow(ActionEvent event) {
+        btnOK.setDisable(false);
         dateMonthA.setDisable(true);
         dateDayA.setDisable(true);
         dateYearA.setDisable(true);
@@ -99,6 +104,7 @@ public class AwayStatePageController implements Initializable {
 
     @FXML
     private void handleAway_Schedule(ActionEvent event) {
+        btnOK.setDisable(true);
         dateMonthA.setDisable(false);
         dateDayA.setDisable(false);
         dateYearA.setDisable(false);
