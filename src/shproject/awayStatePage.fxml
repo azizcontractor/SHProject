@@ -54,6 +54,6 @@
       <TextField fx:id="dateYearA" alignment="CENTER" disable="true" layoutX="156.0" layoutY="100.0" maxHeight="27.0" maxWidth="60.0" prefHeight="27.0" prefWidth="60.0" promptText="YYYY" />
       <TextField fx:id="timeHrA" alignment="CENTER" disable="true" layoutX="66.0" layoutY="136.0" prefHeight="27.0" prefWidth="40.0" promptText="Hr" />
       <TextField fx:id="timeMinA" alignment="CENTER" disable="true" layoutX="110.0" layoutY="136.0" prefHeight="27.0" prefWidth="40.0" promptText="Min" />
-      <TextField fx:id="timeYearA" alignment="CENTER" disable="true" layoutX="156.0" layoutY="136.0" maxHeight="27.0" maxWidth="60.0" prefHeight="27.0" prefWidth="60.0" promptText="YYYY" />
+      <TextField fx:id="timeYearA" alignment="CENTER" disable="true" layoutX="156.0" layoutY="136.0" maxHeight="27.0" maxWidth="60.0" prefHeight="27.0" prefWidth="60.0" promptText="am/pm" />
    </children>
 </AnchorPane>

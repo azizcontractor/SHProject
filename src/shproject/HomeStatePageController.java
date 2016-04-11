@@ -109,8 +109,5 @@ public class HomeStatePageController implements Initializable {
         timeAM_PMH.setDisable(true);
     }
 
-    @FXML
-    private void setMonth(ActionEvent event) {
-    }
     
 }

@@ -87,6 +87,13 @@ public class AwayStatePageController implements Initializable {
 
     @FXML
     private void handleAway_ActivateNow(ActionEvent event) {
+        dateMonthA.setDisable(true);
+        dateDayA.setDisable(true);
+        dateYearA.setDisable(true);
+        timeHrA.setDisable(true);
+        timeMinA.setDisable(true);
+        //time
+        
     }
 
     @FXML
