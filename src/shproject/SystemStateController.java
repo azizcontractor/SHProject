@@ -46,7 +46,7 @@ public class SystemStateController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         SafeHome sh = new SafeHome();
-        
+        lblcurrStateEmpty.setText(sh.getCurrentState());
     }    
 
     @FXML
