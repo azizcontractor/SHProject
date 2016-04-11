@@ -28,7 +28,7 @@
             <Font name="Lucida Bright Regular" size="14.0" />
          </font>
       </RadioButton>
-      <TextField fx:id="dateMonthH" alignment="CENTER" disable="true" layoutX="66.0" layoutY="100.0" onAction="#setMonth" prefHeight="27.0" prefWidth="40.0" promptText="MM" />
+      <TextField fx:id="dateMonthH" alignment="CENTER" disable="true" layoutX="66.0" layoutY="100.0" prefHeight="27.0" prefWidth="40.0" promptText="MM" />
       <TextField fx:id="dateDayH" alignment="CENTER" disable="true" layoutX="110.0" layoutY="100.0" prefHeight="27.0" prefWidth="40.0" promptText="DD" />
       <TextField fx:id="dateYearH" alignment="CENTER" disable="true" layoutX="156.0" layoutY="100.0" prefHeight="27.0" prefWidth="60.0" promptText="YYYY" />
       <TextField fx:id="timeHourH" alignment="CENTER" disable="true" layoutX="66.0" layoutY="136.0" prefHeight="27.0" prefWidth="40.0" promptText="Hr" />
