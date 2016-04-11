@@ -53,9 +53,9 @@ public class AwayStatePageController implements Initializable {
     @FXML
     private TextField timeMinA;
     @FXML
-    private TextField timeYearA;
-    @FXML
     private ToggleGroup group2;
+    @FXML
+    private TextField timeAm_Pm;
 
     /**
      * Initializes the controller class.
