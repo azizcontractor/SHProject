@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,33 +8,52 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="250.0" prefWidth="250.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="shproject.HomeStatePageController">
+<AnchorPane id="AnchorPane" prefHeight="250.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shproject.HomeStatePageController">
    <children>
-      <Label layoutX="99.0" layoutY="14.0" text="Home">
+      <Label fx:id="lblHome" layoutX="99.0" layoutY="14.0" text="Home">
          <font>
-            <Font size="24.0" />
+            <Font name="Lucida Bright Regular" size="24.0" />
          </font>
       </Label>
-      <RadioButton layoutX="33.0" layoutY="49.0" mnemonicParsing="false" text="Activate Now" />
-      <RadioButton layoutX="34.0" layoutY="74.0" mnemonicParsing="false" text="Schedule " />
-      <TextField fx:id="dateMonth" layoutX="66.0" layoutY="100.0" prefHeight="27.0" prefWidth="39.0" promptText="MM" />
-      <TextField fx:id="dateDay" layoutX="110.0" layoutY="100.0" prefHeight="27.0" prefWidth="39.0" promptText="DD" />
-      <TextField fx:id="dateYear" layoutX="156.0" layoutY="100.0" prefHeight="27.0" prefWidth="61.0" promptText="YYYY" />
-      <TextField fx:id="timeHour" layoutX="66.0" layoutY="136.0" prefHeight="27.0" prefWidth="39.0" promptText="Hr" />
-      <TextField fx:id="timeMin" layoutX="110.0" layoutY="136.0" prefHeight="27.0" prefWidth="39.0" promptText="Min" />
-      <TextField fx:id="timeAM_PM" layoutX="156.0" layoutY="136.0" prefHeight="27.0" prefWidth="61.0" promptText="am/pm" />
-      <Label layoutX="23.0" layoutY="103.0" text="Date">
+      <RadioButton fx:id="rbHome_ActivateNow" layoutX="20.0" layoutY="50.0" mnemonicParsing="false" onAction="#handleActivate" text="Activate Now">
+         <toggleGroup>
+            <ToggleGroup fx:id="group1" />
+         </toggleGroup>
          <font>
-            <Font size="18.0" />
+            <Font name="Lucida Bright Regular" size="14.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="rbHome_Schedule" layoutX="20.0" layoutY="75.0" mnemonicParsing="false" onAction="#handleSchedule" text="Schedule " toggleGroup="$group1">
+         <font>
+            <Font name="Lucida Bright Regular" size="14.0" />
+         </font>
+      </RadioButton>
+      <TextField fx:id="dateMonthH" alignment="CENTER" disable="true" layoutX="66.0" layoutY="100.0" onAction="#setMonth" prefHeight="27.0" prefWidth="40.0" promptText="MM" />
+      <TextField fx:id="dateDayH" alignment="CENTER" disable="true" layoutX="110.0" layoutY="100.0" prefHeight="27.0" prefWidth="40.0" promptText="DD" />
+      <TextField fx:id="dateYearH" alignment="CENTER" disable="true" layoutX="156.0" layoutY="100.0" prefHeight="27.0" prefWidth="60.0" promptText="YYYY" />
+      <TextField fx:id="timeHourH" alignment="CENTER" disable="true" layoutX="66.0" layoutY="136.0" prefHeight="27.0" prefWidth="40.0" promptText="Hr" />
+      <TextField fx:id="timeMinH" alignment="CENTER" disable="true" layoutX="110.0" layoutY="136.0" prefHeight="27.0" prefWidth="40.0" promptText="Min" />
+      <TextField fx:id="timeAM_PMH" alignment="CENTER" disable="true" layoutX="156.0" layoutY="136.0" prefHeight="27.0" prefWidth="60.0" promptText="am/pm" />
+      <Label fx:id="lblDate" layoutX="20.0" layoutY="103.0" text="Date">
+         <font>
+            <Font name="Lucida Bright Regular" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="21.0" layoutY="138.0" text="Time">
+      <Label fx:id="lblTime" layoutX="20.0" layoutY="138.0" text="Time">
          <font>
-            <Font size="18.0" />
+            <Font name="Lucida Bright Regular" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="btnOk" layoutX="16.0" layoutY="194.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="OK" />
-      <Button fx:id="btnCancel" layoutX="127.0" layoutY="194.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="CANCEL" />
+      <Button fx:id="btnOk" layoutX="16.0" layoutY="194.0" mnemonicParsing="false" onAction="#handleOK" prefHeight="30.0" prefWidth="100.0" text="OK">
+         <font>
+            <Font name="Lucida Bright Regular" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnCancel" layoutX="127.0" layoutY="194.0" mnemonicParsing="false" onAction="#handleCancel" prefHeight="30.0" prefWidth="100.0" text="CANCEL">
+         <font>
+            <Font name="Lucida Bright Regular" size="15.0" />
+         </font>
+      </Button>
+      <Line endX="100.0" layoutX="125.0" layoutY="177.0" scaleX="1.2" startX="-100.0" strokeWidth="1.2" />
    </children>
 </AnchorPane>
