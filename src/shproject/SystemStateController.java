@@ -34,7 +34,9 @@ public class SystemStateController implements Initializable {
     @FXML
     private Button travelbtn;
     @FXML
-    private Button mainbtn;
+    private Label lblcurrStateEmpty;
+    @FXML
+    private Label lblstate;
 
     /**
      * Initializes the controller class.
@@ -45,14 +47,22 @@ public class SystemStateController implements Initializable {
     }    
 
     @FXML
-    private void goMainPage(ActionEvent event) throws IOException {
+    private void btnHomeClicked(ActionEvent event) throws IOException {
+        Parent homeState = FXMLLoader.load(getClass().getResource("homeStatePage.fxml"));
+        Scene homeScene = new Scene(homeState);
+        Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        appStage.hide();
+        appStage.setScene(homeScene);
+        appStage.show();
         
-        Parent goMainPage = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
-        Scene goMainScene = new Scene(goMainPage);
-        Stage appStage3 = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        appStage3.hide();
-        appStage3.setScene(goMainScene);
-        appStage3.show(); 
+    }
+
+    @FXML
+    private void btnAwayClicked(ActionEvent event) {
+    }
+
+    @FXML
+    private void btnTravelClicked(ActionEvent event) {
     }
     
 }

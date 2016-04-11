@@ -5,7 +5,10 @@
  */
 package control;
 
+import java.util.ArrayList;
 import objects.Account;
+import objects.Sensor;
+import objects.ThermostatSensor;
 
 /**
  *
@@ -13,8 +16,41 @@ import objects.Account;
  */
 public class SafeHome {
     
+    private String currentState;
+    private String passcode;
+    private boolean adminMode;
+    private boolean panicState;
+    private int numTries;
+    private boolean autoDisengage;
+    private String emergencyNum;
+    
     public SafeHome(){
         
+    }
+    
+    public String showCurrentTemp(){
+        ThermostatSensor s = new ThermostatSensor();
+        ArrayList<Sensor> sensors = s.getSensors();
+        for(Sensor t: sensors){
+            System.out.println("type ** " + t.getType());
+            if (t.getType().equals("Thermostat")){
+                s.setId(t.getId());
+            }
+        }
+        return "" + s.getTemp();
+    }
+    
+    public void setTemp(double temp){
+        ThermostatSensor s = new ThermostatSensor();
+        ArrayList<Sensor> sensors = s.getSensors();
+        for(Sensor t: sensors){
+            System.out.println("type ** " + t.getType());
+            if (t.getType().equals("Thermostat")){
+                s.setId(t.getId());
+            }
+        }
+        s.setNewTemp(temp);
+        s.setTemp();
     }
     
     public boolean login(String username,String password){
