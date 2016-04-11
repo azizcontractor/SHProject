@@ -18,6 +18,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 /**
@@ -38,6 +39,8 @@ public class SystemStateController implements Initializable {
     private Label lblcurrStateEmpty;
     @FXML
     private Label lblstate;
+    @FXML
+    private Button mainbtn;
 
     /**
      * Initializes the controller class.
@@ -79,5 +82,24 @@ public class SystemStateController implements Initializable {
         appStage.setScene(homeScene);
         appStage.show();
     }
+
+   
+    @FXML
+    private void goMainPage(ActionEvent event) throws IOException {
+         Parent goMainPage = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
+        Scene goMainScene = new Scene(goMainPage);
+        Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        appStage.hide();
+        appStage.setScene(goMainScene);
+        appStage.show(); 
+        
+        
+        
+    }
+    
+     
+      
+    
+    
     
 }

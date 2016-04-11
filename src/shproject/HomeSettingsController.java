@@ -36,8 +36,6 @@ public class HomeSettingsController implements Initializable {
     private Button devicesbtn;
     @FXML
     private Button mainbtn;
-    @FXML
-    private ImageView homebtn;
 
     /**
      * Initializes the controller class.
