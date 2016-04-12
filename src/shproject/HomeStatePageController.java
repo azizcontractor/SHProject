@@ -18,6 +18,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
@@ -34,29 +36,37 @@ public class HomeStatePageController implements Initializable {
     @FXML
     private Button btnCancel;
     @FXML
-    private Label lblDate;
-    @FXML
-    private Label lblTime;
-    @FXML
     private ToggleGroup group1;
     @FXML
     private Label lblHome;
     @FXML
-    private TextField dateMonthH;
-    @FXML
-    private TextField dateDayH;
-    @FXML
-    private TextField dateYearH;
-    @FXML
-    private TextField timeHourH;
-    @FXML
-    private TextField timeMinH;
-    @FXML
-    private TextField timeAM_PMH;
-    @FXML
     private RadioButton rbHome_ActivateNow;
     @FXML
     private RadioButton rbHome_Schedule;
+    @FXML
+    private TextField timeInHr;
+    @FXML
+    private TextField timeInMin;
+    @FXML
+    private TextField timeOutHr;
+    @FXML
+    private TextField timeOutMin;
+    @FXML
+    private Label lblTimeIn;
+    @FXML
+    private Label lblTimeOut;
+    @FXML
+    private MenuButton timeInAmPm;
+    @FXML
+    private MenuItem timeInAm;
+    @FXML
+    private MenuItem timeInPm;
+    @FXML
+    private MenuItem timeOutAm;
+    @FXML
+    private MenuItem timeOutPm;
+    @FXML
+    private MenuButton timeOutAmPm;
 
     /**
      * Initializes the controller class.
@@ -93,12 +103,12 @@ public class HomeStatePageController implements Initializable {
     @FXML
     private void handleSchedule(ActionEvent event) {
         btnOk.setDisable(true);
-        dateMonthH.setDisable(false);
-        dateDayH.setDisable(false);
-        dateYearH.setDisable(false);
-        timeHourH.setDisable(false);
-        timeMinH.setDisable(false);
-        timeAM_PMH.setDisable(false);
+        timeInHr.setDisable(false);
+        timeInMin.setDisable(false);
+        timeOutHr.setDisable(false);
+        timeOutMin.setDisable(false);
+        timeInAmPm.setDisable(false);
+        timeOutAmPm.setDisable(false);
         
         
     }
@@ -106,12 +116,12 @@ public class HomeStatePageController implements Initializable {
     @FXML
     private void handleActivate(ActionEvent event) {
         btnOk.setDisable(false);
-        dateMonthH.setDisable(true);
-        dateDayH.setDisable(true);
-        dateYearH.setDisable(true);
-        timeHourH.setDisable(true);
-        timeMinH.setDisable(true);
-        timeAM_PMH.setDisable(true);
+        timeInHr.setDisable(true);
+        timeInMin.setDisable(true);
+        timeOutHr.setDisable(true);
+        timeOutMin.setDisable(true);
+        timeInAmPm.setDisable(true);
+        timeOutAmPm.setDisable(true);
     }
 
     
