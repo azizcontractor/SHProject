@@ -8,8 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="250.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="shproject.TravelStatePageController">
+<AnchorPane id="AnchorPane" prefHeight="320.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shproject.TravelStatePageController">
    <children>
       <Label fx:id="lblTravel" layoutX="89.0" layoutY="14.0" text="Travel">
          <font>
@@ -69,5 +68,10 @@
       <TextField fx:id="STam_pm" alignment="CENTER" layoutX="159.0" layoutY="98.0" prefHeight="27.0" prefWidth="60.0" promptText="am/pm" />
       <TextField fx:id="AIam_pm" alignment="CENTER" layoutX="159.0" layoutY="196.0" prefHeight="27.0" prefWidth="60.0" promptText="am/pm" />
       <Line endX="100.0" layoutX="126.0" layoutY="235.0" scaleX="1.2" startX="-100.0" />
+      <Label fx:id="emptyLabel" layoutX="57.0" layoutY="289.0" prefHeight="20.0" prefWidth="150.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="260.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shproject.AwayStatePageController">
+<AnchorPane id="AnchorPane" prefHeight="260.0" prefWidth="260.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shproject.AwayStatePageController">
    <children>
       <Label fx:id="lblaway" layoutX="93.0" layoutY="14.0" text="Away">
          <font>
@@ -53,8 +53,8 @@
       <TextField fx:id="timeInMin" alignment="CENTER" disable="true" layoutX="137.0" layoutY="100.0" maxHeight="27.0" maxWidth="40.0" prefHeight="27.0" prefWidth="40.0" promptText="Min" />
       <TextField fx:id="timeOutHr" alignment="CENTER" disable="true" layoutX="93.0" layoutY="136.0" prefHeight="27.0" prefWidth="40.0" promptText="Hr" />
       <TextField fx:id="timeOutMin" alignment="CENTER" disable="true" layoutX="137.0" layoutY="136.0" prefHeight="27.0" prefWidth="40.0" promptText="Min" />
-      <ComboBox fx:id="timeInAmPm" disable="true" layoutX="183.0" layoutY="100.0" onAction="#handleTimeInAmPm" prefHeight="27.0" prefWidth="55.0" promptText="-" />
-      <ComboBox fx:id="timeOutAmPm" disable="true" layoutX="183.0" layoutY="136.0" onAction="#handleTimeOutAmPm" prefHeight="27.0" prefWidth="55.0" promptText="-" />
+      <ComboBox fx:id="timeInAmPm" disable="true" layoutX="183.0" layoutY="100.0" onAction="#handleTimeInAmPm" prefHeight="27.0" prefWidth="73.0" promptText="-" />
+      <ComboBox fx:id="timeOutAmPm" disable="true" layoutX="183.0" layoutY="136.0" onAction="#handleTimeOutAmPm" prefHeight="27.0" prefWidth="73.0" promptText="-" />
       <Label fx:id="emptyLabel" layoutX="57.0" layoutY="231.0" prefHeight="20.0" prefWidth="150.0" />
    </children>
 </AnchorPane>
