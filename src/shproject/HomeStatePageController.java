@@ -17,6 +17,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
@@ -56,17 +57,11 @@ public class HomeStatePageController implements Initializable {
     @FXML
     private Label lblTimeOut;
     @FXML
-    private MenuButton timeInAmPm;
+    private ComboBox<?> timeInAmPm;
     @FXML
-    private MenuItem timeInAm;
+    private ComboBox<?> timeOutAmPm;
     @FXML
-    private MenuItem timeInPm;
-    @FXML
-    private MenuItem timeOutAm;
-    @FXML
-    private MenuItem timeOutPm;
-    @FXML
-    private MenuButton timeOutAmPm;
+    private Label emptyLabel;
 
     /**
      * Initializes the controller class.
@@ -123,6 +118,15 @@ public class HomeStatePageController implements Initializable {
         timeInAmPm.setDisable(true);
         timeOutAmPm.setDisable(true);
     }
+
+    @FXML
+    private void handleTimeInAmPm(ActionEvent event) {
+    }
+
+    @FXML
+    private void handleTimeOutAmPm(ActionEvent event) {
+    }
+
 
     
 }

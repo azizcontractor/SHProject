@@ -17,6 +17,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
@@ -55,19 +56,13 @@ public class AwayStatePageController implements Initializable {
     @FXML
     private TextField timeOutMin;
     @FXML
-    private MenuButton timeInAmPm;
+    private ComboBox<?> timeInAmPm;
     @FXML
-    private MenuItem timeInPm;
-    @FXML
-    private MenuItem timeOutAM;
-    @FXML
-    private MenuItem timeOutPm;
-    @FXML
-    private MenuItem timeInAm;
-    @FXML
-    private MenuButton timeOutAmPm;
+    private ComboBox<?> timeOutAmPm;
     @FXML
     private Button btnOk;
+    @FXML
+    private Label emptyLabel;
 
     /**
      * Initializes the controller class.
@@ -122,6 +117,15 @@ public class AwayStatePageController implements Initializable {
         timeOutMin.setDisable(false);
         timeInAmPm.setDisable(false);
         timeOutAmPm.setDisable(false);
+    }
+
+    @FXML
+    private void handleTimeInAmPm(ActionEvent event) {
+        //timeInAmPm.
+    }
+
+    @FXML
+    private void handleTimeOutAmPm(ActionEvent event) {
     }
     
 }
