@@ -10,8 +10,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Time;
 import java.util.ArrayList;
 import objects.Account;
+import objects.Schedule;
 import objects.Sensor;
 import objects.ThermostatSensor;
 import utils.OracleConnection;
@@ -31,6 +33,8 @@ public class SafeHome {
     private String emergencyNum;
     private Connection conn;
     private String newState;
+    private Time startTime;
+    private Time endTime;
     
     public SafeHome(){
         conn = OracleConnection.getConnection();
@@ -54,8 +58,7 @@ public class SafeHome {
                 else
                     autoDisengage = false;
                 numTries = r.getInt(5);
-                emergencyNum = r.getString(7);
-                
+                emergencyNum = r.getString(7);                
             }
         }catch(SQLException e){
             e.printStackTrace();
@@ -115,6 +118,15 @@ public class SafeHome {
             OracleConnection.closeConnection();
         }
     }
+    
+    public void scheduleNewState(String timeIn, String timeOut){
+        Time start = Time.valueOf(timeIn);
+        Time end = Time.valueOf(timeOut);
+        Schedule sched = new Schedule();
+        sched.setStart(start);
+        sched.setEnd(end);
+        sched.scheduleState();
+    }
 
     public String getPasscode() {
         return passcode;
@@ -163,6 +175,8 @@ public class SafeHome {
     public void setEmergencyNum(String emergencyNum) {
         this.emergencyNum = emergencyNum;
     }
+    
+    
     
     
     
