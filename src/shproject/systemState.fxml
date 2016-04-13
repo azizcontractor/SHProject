@@ -31,7 +31,7 @@
             <Font name="Lucida Bright Regular" size="25.0" />
          </font>
       </Button>
-      <Label fx:id="lblcurrStateEmpty" alignment="CENTER" layoutX="163.0" layoutY="109.0" prefHeight="30.0" prefWidth="100.0" text="?">
+      <Label fx:id="lblcurrStateEmpty" alignment="CENTER" layoutX="163.0" layoutY="129.0" prefHeight="30.0" prefWidth="100.0" text="?">
          <font>
             <Font name="Lucida Bright Regular" size="18.0" />
          </font>
@@ -47,10 +47,5 @@
             <Image url="@../house.png" />
          </image>
       </ImageView>
-      <Label fx:id="systemStatelbl" alignment="CENTER" layoutX="50.0" layoutY="80.0" text="System State">
-         <font>
-            <Font name="Lucida Bright Regular" size="32.0" />
-         </font>
-      </Label>
    </children>
 </AnchorPane>
