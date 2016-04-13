@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -28,9 +29,9 @@
             <Font name="Lucida Bright Regular" size="14.0" />
          </font>
       </RadioButton>
-      <TextField fx:id="timeInHr" alignment="CENTER" disable="true" layoutX="93.0" layoutY="100.0" prefHeight="27.0" prefWidth="40.0" promptText="Hr" />
+      <TextField fx:id="timeInHr" alignment="CENTER" disable="true" layoutX="90.0" layoutY="100.0" prefHeight="27.0" prefWidth="40.0" promptText="Hr" />
       <TextField fx:id="timeInMin" alignment="CENTER" disable="true" layoutX="137.0" layoutY="100.0" prefHeight="27.0" prefWidth="40.0" promptText="Min" />
-      <TextField fx:id="timeOutHr" alignment="CENTER" disable="true" layoutX="93.0" layoutY="136.0" prefHeight="27.0" prefWidth="40.0" promptText="Hr" />
+      <TextField fx:id="timeOutHr" alignment="CENTER" disable="true" layoutX="90.0" layoutY="136.0" prefHeight="27.0" prefWidth="40.0" promptText="Hr" />
       <TextField fx:id="timeOutMin" alignment="CENTER" disable="true" layoutX="137.0" layoutY="136.0" prefHeight="27.0" prefWidth="40.0" promptText="Min" />
       <Label fx:id="lblTimeIn" layoutX="5.0" layoutY="103.0" text="Time In">
          <font>
@@ -58,6 +59,16 @@
       <Label fx:id="emptyLabel" alignment="CENTER" layoutX="57.0" layoutY="231.0" prefHeight="20.0" prefWidth="150.0">
          <font>
             <Font size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="colonLbl" layoutX="131.0" layoutY="102.0" text=":">
+         <font>
+            <Font name="Lucida Bright Regular" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="colonLbl1" layoutX="131.0" layoutY="137.0" text=":">
+         <font>
+            <Font name="Lucida Bright Regular" size="16.0" />
          </font>
       </Label>
    </children>

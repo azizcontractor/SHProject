@@ -65,6 +65,10 @@ public class HomeStatePageController implements Initializable {
     private ComboBox<String> timeOutAmPm;
     @FXML
     private Label emptyLabel;
+    @FXML
+    private Label colonLbl;
+    @FXML
+    private Label colonLbl1;
 
     /**
      * Initializes the controller class.

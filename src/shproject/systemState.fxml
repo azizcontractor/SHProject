@@ -11,11 +11,6 @@
 
 <AnchorPane id="AnchorPane" maxHeight="400.0" maxWidth="300.0" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shproject.SystemStateController">
    <children>
-      <Label fx:id="systemStatelbl" alignment="CENTER" layoutX="50.0" layoutY="80.0" text="System State">
-         <font>
-            <Font name="Lucida Bright Regular" size="32.0" />
-         </font>
-      </Label>
       <Button fx:id="homebtn" layoutX="77.0" layoutY="187.0" mnemonicParsing="false" onAction="#btnHomeClicked" prefHeight="50.0" prefWidth="150.0" text="HOME">
          <font>
             <Font name="Lucida Bright Regular" size="25.0" />
@@ -36,16 +31,21 @@
             <Font name="Lucida Bright Regular" size="18.0" />
          </font>
       </Label>
+      <Button fx:id="mainbtn" layoutX="240.0" layoutY="14.0" mnemonicParsing="false" onAction="#goMainPage" prefHeight="50.0" prefWidth="46.0" />
       <Label fx:id="lblstate" alignment="CENTER" layoutX="36.0" layoutY="130.0" prefHeight="30.0" prefWidth="126.0" text="Current State:">
          <font>
             <Font name="Lucida Bright Regular" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="mainbtn" layoutX="240.0" layoutY="14.0" mnemonicParsing="false" onAction="#goMainPage" prefHeight="50.0" prefWidth="46.0" />
       <ImageView fitHeight="50.0" fitWidth="46.0" layoutX="240.0" layoutY="14.0">
          <image>
             <Image url="@../house.png" />
          </image>
       </ImageView>
+      <Label fx:id="systemStatelbl" alignment="CENTER" layoutX="50.0" layoutY="80.0" text="System State">
+         <font>
+            <Font name="Lucida Bright Regular" size="32.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
