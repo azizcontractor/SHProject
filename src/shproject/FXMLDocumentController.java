@@ -5,6 +5,7 @@
  */
 package shproject;
 
+import control.Context;
 import control.SafeHome;
 import java.io.IOException;
 import java.net.URL;
@@ -37,6 +38,8 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private PasswordField password;
     
+    private SafeHome sh;
+    
     private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");
         label.setText("Hello World!");
@@ -45,12 +48,12 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        sh = Context.getInstance().getSafeHome();
     }    
 
 
     @FXML
     private void handleSubmit(ActionEvent event) throws IOException {
-        SafeHome sh = new SafeHome();
         if(sh.login(username.getText(),password.getText())){
             Parent welcomeScreenParent = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
             Scene welcomScreenScene = new Scene(welcomeScreenParent);
