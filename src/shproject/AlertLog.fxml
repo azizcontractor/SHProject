@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="300.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="shproject.AlertLogController">
+   <children>
+      <Label fx:id="alertLoglbl" layoutX="97.0" layoutY="79.0" prefHeight="35.0" prefWidth="112.0" text="Alert Log">
+         <font>
+            <Font name="Lucida Bright Regular" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="mainbtn" layoutX="232.0" layoutY="21.0" mnemonicParsing="false" onAction="#goMainPage" prefHeight="50.0" prefWidth="46.0" />
+      <ImageView fitHeight="44.0" fitWidth="46.0" layoutX="232.0" layoutY="24.0">
+         <image>
+            <Image url="@../house.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

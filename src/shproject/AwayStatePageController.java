@@ -9,6 +9,8 @@ import control.SafeHome;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +19,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
@@ -29,6 +32,9 @@ import javafx.stage.Stage;
  * @author farhinmomin
  */
 public class AwayStatePageController implements Initializable {
+    
+    ObservableList<String> amPmList = FXCollections.observableArrayList("am", "pm");
+    
     @FXML
     private Label lblaway;
     @FXML
@@ -36,35 +42,39 @@ public class AwayStatePageController implements Initializable {
     @FXML
     private RadioButton rbA_schedule;
     @FXML
-    private Label lblDate;
-    @FXML
-    private Label lbltime;
-    @FXML
-    private Button btnOK;
-    @FXML
     private Button btnCancel;
     @FXML
-    private TextField dateMonthA;
-    @FXML
-    private TextField dateDayA;
-    @FXML
-    private TextField dateYearA;
-    @FXML
-    private TextField timeHrA;
-    @FXML
-    private TextField timeMinA;
-    @FXML
     private ToggleGroup group2;
-    @FXML
     private TextField timeAm_Pm;
+    @FXML
+    private Label lblTimeIn;
+    @FXML
+    private Label lblTimeOut;
+    @FXML
+    private TextField timeInHr;
+    @FXML
+    private TextField timeInMin;
+    @FXML
+    private TextField timeOutHr;
+    @FXML
+    private TextField timeOutMin;
+    @FXML
+    private ComboBox<String> timeInAmPm;
+    @FXML
+    private ComboBox<String> timeOutAmPm;
+    @FXML
+    private Button btnOk;
+    @FXML
+    private Label emptyLabel;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        btnOK.setDisable(true);
-        // TODO
+        btnOk.setDisable(true);
+        timeInAmPm.setItems(amPmList);
+        timeOutAmPm.setItems(amPmList);
     }    
 
     @FXML
@@ -91,26 +101,35 @@ public class AwayStatePageController implements Initializable {
 
     @FXML
     private void handleAway_ActivateNow(ActionEvent event) {
-        btnOK.setDisable(false);
-        dateMonthA.setDisable(true);
-        dateDayA.setDisable(true);
-        dateYearA.setDisable(true);
-        timeHrA.setDisable(true);
-        timeMinA.setDisable(true);
-        timeAm_Pm.setDisable(true);
+        btnOk.setDisable(false);
+        timeInHr.setDisable(true);
+        timeInMin.setDisable(true);
+        timeOutHr.setDisable(true);
+        timeOutMin.setDisable(true);
+        timeInAmPm.setDisable(true);
+        timeOutAmPm.setDisable(true);
        
         
     }
 
     @FXML
     private void handleAway_Schedule(ActionEvent event) {
-        btnOK.setDisable(true);
-        dateMonthA.setDisable(false);
-        dateDayA.setDisable(false);
-        dateYearA.setDisable(false);
-        timeHrA.setDisable(false);
-        timeMinA.setDisable(false);
-        timeAm_Pm.setDisable(false);
+        btnOk.setDisable(true);
+        timeInHr.setDisable(false);
+        timeInMin.setDisable(false);
+        timeOutHr.setDisable(false);
+        timeOutMin.setDisable(false);
+        timeInAmPm.setDisable(false);
+        timeOutAmPm.setDisable(false);
+    }
+
+    @FXML
+    private void handleTimeInAmPm(ActionEvent event) {
+        
+    }
+
+    @FXML
+    private void handleTimeOutAmPm(ActionEvent event) {
     }
     
 }

@@ -69,6 +69,8 @@ public class TravelStatePageController implements Initializable {
     private TextField STam_pm;
     @FXML
     private TextField AIam_pm;
+    @FXML
+    private Label emptyLabel;
 
     /**
      * Initializes the controller class.
