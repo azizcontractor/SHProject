@@ -21,6 +21,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -36,7 +37,11 @@ import javafx.util.Duration;
 public class LightsController implements Initializable {
 
     @FXML
-    private Button back1btn;
+    private Label lightslbl;
+    @FXML
+    private Button mainbtn;
+    @FXML
+    private Button backbtn;
 
     /**
      * Initializes the controller class.
@@ -53,6 +58,16 @@ public class LightsController implements Initializable {
         appStage2.hide();
         appStage2.setScene(goBackScene);
         appStage2.show();
+    }
+
+    @FXML
+    private void goMainPage(ActionEvent event) throws IOException {
+        Parent goMainPage = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
+        Scene goMainScene = new Scene(goMainPage);
+        Stage appStage3 = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        appStage3.hide();
+        appStage3.setScene(goMainScene);
+        appStage3.show();    
     }
     
 }

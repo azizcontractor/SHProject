@@ -33,6 +33,8 @@ public class TemperatureController implements Initializable {
     private Button setbtn;
     @FXML
     private TextField temptext;
+    @FXML
+    private Button mainbtn;
 
     /**
      * Initializes the controller class.
@@ -65,7 +67,17 @@ public class TemperatureController implements Initializable {
         appStage2.setScene(goBackScene);
         appStage2.show();
     }
-    
+
+    @FXML
+    private void goMainPage(ActionEvent event) throws IOException {
+        
+        Parent goMainPage = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
+        Scene goMainScene = new Scene(goMainPage);
+        Stage appStage3 = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        appStage3.hide();
+        appStage3.setScene(goMainScene);
+        appStage3.show();
+        }
     
     
     

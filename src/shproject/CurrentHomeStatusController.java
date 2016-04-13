@@ -24,14 +24,22 @@ import javafx.stage.Stage;
  *
  * @author Meera
  */
-public class DoorsController implements Initializable {
+public class CurrentHomeStatusController implements Initializable {
 
     @FXML
-    private Label doorlbl;
+    private Label CurrentStatuslbl;
     @FXML
     private Button mainbtn;
     @FXML
-    private Button backbtn;
+    private Button CSystemState;
+    @FXML
+    private Button lightStatuslist;
+    @FXML
+    private Button doorStatuslist;
+    @FXML
+    private Button tempbtn1;
+    @FXML
+    private Button deviceStatuslist;
 
     /**
      * Initializes the controller class.
@@ -41,25 +49,24 @@ public class DoorsController implements Initializable {
         // TODO
     }    
 
-     @FXML
+    @FXML
     private void goMainPage(ActionEvent event) throws IOException {
         Parent goMainPage = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
         Scene goMainScene = new Scene(goMainPage);
         Stage appStage3 = (Stage) ((Node) event.getSource()).getScene().getWindow();
         appStage3.hide();
         appStage3.setScene(goMainScene);
-        appStage3.show();    
-    }
-     
-
-    @FXML
-    private void goBack(ActionEvent event) throws IOException {
-        Parent goBackParent = FXMLLoader.load(getClass().getResource("homeSettings.fxml"));
-        Scene goBackScene = new Scene(goBackParent);
-        Stage appStage2 = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        appStage2.hide();
-        appStage2.setScene(goBackScene);
-        appStage2.show();
+        appStage3.show(); 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
     
 }

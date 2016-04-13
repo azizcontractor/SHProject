@@ -15,31 +15,31 @@
             <Font name="Lucida Bright Regular" size="32.0" />
          </font>
       </Label>
-      <Button fx:id="tempbtn" layoutX="63.0" layoutY="130.0" mnemonicParsing="false" onAction="#manageTemp" prefHeight="56.0" prefWidth="175.0" text="Temperature">
-         <font>
-            <Font name="Lucida Bright Regular" size="22.0" />
-         </font>
-      </Button>
-      <Button fx:id="lightsbtn" layoutX="65.0" layoutY="193.0" mnemonicParsing="false" onAction="#manageLights" prefHeight="56.0" prefWidth="175.0" text="Lights">
-         <font>
-            <Font name="Lucida Bright Regular" size="22.0" />
-         </font>
-      </Button>
-      <Button fx:id="doorsbtn" layoutX="65.0" layoutY="256.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="175.0" text="Doors">
-         <font>
-            <Font name="Lucida Bright Regular" size="22.0" />
-         </font>
-      </Button>
-      <Button fx:id="devicesbtn" layoutX="66.0" layoutY="318.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="175.0" text="Devices">
-         <font>
-            <Font name="Lucida Bright Regular" size="22.0" />
-         </font>
-      </Button>
       <Button fx:id="mainbtn" layoutX="238.0" layoutY="14.0" mnemonicParsing="false" onAction="#goMainPage" prefHeight="50.0" prefWidth="46.0" />
       <ImageView fitHeight="44.0" fitWidth="46.0" layoutX="238.0" layoutY="18.0">
          <image>
             <Image url="@../house.png" />
          </image>
       </ImageView>
+      <Button fx:id="tempbtn" layoutX="56.0" layoutY="130.0" mnemonicParsing="false" onAction="#manageTemp" prefHeight="56.0" prefWidth="189.0" text="Temperature">
+         <font>
+            <Font name="Lucida Bright Regular" size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="lightsbtn" layoutX="56.0" layoutY="193.0" mnemonicParsing="false" onAction="#manageLights" prefHeight="56.0" prefWidth="189.0" text="Lights">
+         <font>
+            <Font name="Lucida Bright Regular" size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="doorsbtn" layoutX="56.0" layoutY="259.0" mnemonicParsing="false" onAction="#manageDoors" prefHeight="56.0" prefWidth="189.0" text="Doors">
+         <font>
+            <Font name="Lucida Bright Regular" size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="devicesbtn" layoutX="56.0" layoutY="323.0" mnemonicParsing="false" onAction="#manageDevices" prefHeight="56.0" prefWidth="189.0" text="Devices">
+         <font>
+            <Font name="Lucida Bright Regular" size="22.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

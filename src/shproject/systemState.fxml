@@ -11,6 +11,11 @@
 
 <AnchorPane id="AnchorPane" maxHeight="400.0" maxWidth="300.0" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shproject.SystemStateController">
    <children>
+      <Label fx:id="systemStatelbl" alignment="CENTER" layoutX="51.0" layoutY="64.0" text="System State">
+         <font>
+            <Font name="Lucida Bright Regular" size="32.0" />
+         </font>
+      </Label>
       <Button fx:id="homebtn" layoutX="77.0" layoutY="187.0" mnemonicParsing="false" onAction="#btnHomeClicked" prefHeight="50.0" prefWidth="150.0" text="HOME">
          <font>
             <Font name="Lucida Bright Regular" size="25.0" />
@@ -26,7 +31,7 @@
             <Font name="Lucida Bright Regular" size="25.0" />
          </font>
       </Button>
-      <Label fx:id="lblcurrStateEmpty" alignment="CENTER" layoutX="168.0" layoutY="130.0" prefHeight="30.0" prefWidth="100.0" text="?">
+      <Label fx:id="lblcurrStateEmpty" alignment="CENTER" layoutX="163.0" layoutY="109.0" prefHeight="30.0" prefWidth="100.0" text="?">
          <font>
             <Font name="Lucida Bright Regular" size="18.0" />
          </font>
