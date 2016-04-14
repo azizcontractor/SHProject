@@ -33,9 +33,6 @@ public class SafeHome {
     private boolean autoDisengage;
     private String emergencyNum;
     private Connection conn;
-    private String newState;
-    private Time startTime;
-    private Time endTime;
     
     public SafeHome(){
         conn = OracleConnection.getConnection();
