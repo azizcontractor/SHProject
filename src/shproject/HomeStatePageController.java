@@ -46,10 +46,6 @@ public class HomeStatePageController implements Initializable {
     @FXML
     private Label lblHome;
     @FXML
-    private RadioButton activateNow;
-    @FXML
-    private RadioButton schedule;
-    @FXML
     private TextFieldLimited timeInHr;
     @FXML
     private TextFieldLimited timeInMin;
@@ -74,8 +70,10 @@ public class HomeStatePageController implements Initializable {
     @FXML
     private Label lblcurrStateEmpty;
     private SafeHome sh;
-    TextField[] fieldsIn = {timeInHr,timeInMin};
-    TextField[] fieldsOut = {timeOutHr,timeOutMin};
+    @FXML
+    private RadioButton rbActivateNow;
+    @FXML
+    private RadioButton rbSchedule;
 
     /**
      * Initializes the controller class.
@@ -94,7 +92,31 @@ public class HomeStatePageController implements Initializable {
 
     @FXML
     private void handleOK(ActionEvent event) throws IOException{
-        sh.setNewState("Home");
+        StringBuilder timeInStr = new StringBuilder(),timeOutStr = new StringBuilder();
+        System.out.println(rbActivateNow.isSelected());
+        if(rbActivateNow.isSelected()){
+            sh.setNewState("Home");
+        }
+        else{
+            TextField[] fieldsIn = {timeInHr,timeInMin};
+            TextField[] fieldsOut = {timeOutHr,timeOutMin};
+            for(TextField t: fieldsIn){
+                if(t.getText().length() == 1)
+                    timeInStr.append("0");
+                timeInStr.append(t.getText());
+                timeInStr.append(":");
+            }
+            timeInStr.append("00");
+            for(TextField t: fieldsOut){
+                if(t.getText().length() == 1)
+                    timeOutStr.append("0");
+                timeOutStr.append(t.getText());
+                timeOutStr.append(":");
+            }
+            timeOutStr.append("00");
+            System.out.println("In = " + timeInStr + "\nOut = " + timeOutStr);
+            sh.scheduleNewState("Home",timeInStr.toString(), timeOutStr.toString());
+        }
         Parent backSysStageparent = FXMLLoader.load(getClass().getResource("systemState.fxml"));
         Scene date_page_scene = new Scene(backSysStageparent);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -116,7 +138,6 @@ public class HomeStatePageController implements Initializable {
 
     @FXML
     private void handleSchedule(ActionEvent event) {
-        String timeInStr = "",timeOutStr = "";
         btnOk.setDisable(true);
         timeInHr.setDisable(false);
         timeInMin.setDisable(false);
@@ -131,21 +152,6 @@ public class HomeStatePageController implements Initializable {
                                       .or(timeInAmPm.valueProperty().isNull())
                                       .or(timeOutAmPm.valueProperty().isNull()));
         btnOk.disableProperty().bind(booleanBind);
-        for(TextField t: fieldsIn){
-            if(t.getText().length() == 1)
-                timeInStr += "0" + t.getText();
-            else
-                timeInStr += t.getText();
-            timeInStr+=":";
-        }
-        for(TextField t: fieldsOut){
-            if(t.getText().length() == 1)
-                timeOutStr += "0" + t.getText();
-            else
-                timeOutStr += t.getText();
-            timeOutStr+=":";
-        }
-        System.out.println("In = " + timeInStr + "\nOut = " + timeOutStr);
     }
 
     @FXML

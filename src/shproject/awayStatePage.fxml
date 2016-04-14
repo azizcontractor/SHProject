@@ -4,7 +4,6 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -57,7 +56,7 @@
                   <Font name="Lucida Bright Regular" size="24.0" />
                </font>
             </Label>
-            <RadioButton fx:id="rbA_activateNow" layoutX="25.0" layoutY="50.0" mnemonicParsing="false" onAction="#handleAway_ActivateNow" text="Activate Now">
+            <RadioButton fx:id="rbActivateNow" layoutX="25.0" layoutY="50.0" mnemonicParsing="false" onAction="#handleAway_ActivateNow" text="Activate Now">
                <font>
                   <Font name="Lucida Bright Regular" size="14.0" />
                </font>
@@ -65,7 +64,7 @@
                   <ToggleGroup fx:id="group2" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton fx:id="rbA_schedule" layoutX="25.0" layoutY="77.0" mnemonicParsing="false" onAction="#handleAway_Schedule" text="Schedule" toggleGroup="$group2">
+            <RadioButton fx:id="rbSchedule" layoutX="25.0" layoutY="77.0" mnemonicParsing="false" onAction="#handleAway_Schedule" text="Schedule" toggleGroup="$group2">
                <font>
                   <Font name="Lucida Bright Regular" size="14.0" />
                </font>
@@ -91,10 +90,10 @@
                </font>
             </Button>
             <Line endX="100.0" layoutX="131.0" layoutY="177.0" scaleX="1.2" startX="-100.0" />
-            <TextField fx:id="timeInHr" alignment="CENTER" disable="true" layoutX="89.0" layoutY="100.0" prefHeight="27.0" prefWidth="40.0" promptText="Hr" />
-            <TextField fx:id="timeInMin" alignment="CENTER" disable="true" layoutX="136.0" layoutY="100.0" maxHeight="27.0" maxWidth="40.0" prefHeight="27.0" prefWidth="40.0" promptText="Min" />
-            <TextField fx:id="timeOutHr" alignment="CENTER" disable="true" layoutX="89.0" layoutY="136.0" prefHeight="27.0" prefWidth="40.0" promptText="Hr" />
-            <TextField fx:id="timeOutMin" alignment="CENTER" disable="true" layoutX="136.0" layoutY="136.0" prefHeight="27.0" prefWidth="40.0" promptText="Min" />
+            <TextFieldLimited fx:id="timeInHr" alignment="CENTER" disable="true" layoutX="89.0" layoutY="100.0" prefHeight="27.0" prefWidth="40.0" promptText="Hr" />
+            <TextFieldLimited fx:id="timeInMin" alignment="CENTER" disable="true" layoutX="136.0" layoutY="100.0" maxHeight="27.0" maxWidth="40.0" prefHeight="27.0" prefWidth="40.0" promptText="Min" />
+            <TextFieldLimited fx:id="timeOutHr" alignment="CENTER" disable="true" layoutX="89.0" layoutY="136.0" prefHeight="27.0" prefWidth="40.0" promptText="Hr" />
+            <TextFieldLimited fx:id="timeOutMin" alignment="CENTER" disable="true" layoutX="136.0" layoutY="136.0" prefHeight="27.0" prefWidth="40.0" promptText="Min" />
             <ComboBox fx:id="timeInAmPm" disable="true" layoutX="181.0" layoutY="100.0" onAction="#handleTimeInAmPm" prefHeight="27.0" prefWidth="73.0" promptText="-" />
             <ComboBox fx:id="timeOutAmPm" disable="true" layoutX="181.0" layoutY="136.0" onAction="#handleTimeOutAmPm" prefHeight="27.0" prefWidth="73.0" promptText="-" />
             <Label fx:id="emptyLabel" layoutX="57.0" layoutY="231.0" prefHeight="20.0" prefWidth="150.0" />

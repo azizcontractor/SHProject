@@ -40,9 +40,9 @@ public class AwayStatePageController implements Initializable {
     @FXML
     private Label lblaway;
     @FXML
-    private RadioButton activateNow;
+    private RadioButton rbActivateNow;
     @FXML
-    private RadioButton schedule;
+    private RadioButton rbSchedule;
     @FXML
     private Button btnCancel;
     @FXML

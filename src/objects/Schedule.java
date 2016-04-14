@@ -68,7 +68,7 @@ public class Schedule {
         conn = OracleConnection.getConnection();
         ArrayList<Schedule> schList = new ArrayList<Schedule>();
         try{
-            String sql = "sekect * from schedule";
+            String sql = "select * from schedule";
             Statement s = conn.createStatement();
             ResultSet r = s.executeQuery(sql);
             while(r.next()){
