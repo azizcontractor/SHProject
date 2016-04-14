@@ -104,14 +104,14 @@ public class HomeStatePageController implements Initializable {
             int x = -1;
             TextField[] fieldsIn = {timeInHr,timeInMin};
             TextField[] fieldsOut = {timeOutHr,timeOutMin};
-            for(TextField t: fieldsIn){
+            for(int i = 0; i < fieldsIn.length; i++){
                 try{
-                    x = Integer.parseInt(t.getText());
+                    x = Integer.parseInt(fieldsIn[i].getText());
                 }catch(Exception e){
                     emptyLabel.setText("Invalid time!! Please re-enter!");
                     valid = false;
                 }
-                if(timeInAmPm.getValue().equals("pm") && t.getText().equals(timeInHr.getText()))
+                if(timeInAmPm.getValue().equals("pm") && i == 0)
                     x += 12;
                 if(x < 10)
                     timeInStr.append("0");
@@ -119,14 +119,14 @@ public class HomeStatePageController implements Initializable {
                 timeInStr.append(":");
             }
             timeInStr.append("00");
-            for(TextField t: fieldsOut){
+            for(int i = 0; i < fieldsOut.length;i++){
                 try{
-                    x = Integer.parseInt(t.getText());
+                    x = Integer.parseInt(fieldsOut[i].getText());
                 }catch(Exception e){
                     emptyLabel.setText("Invalid time!! Please re-enter!");
                     valid = false;
                 }
-                if(timeOutAmPm.getValue().equals("pm") && t.getText().equals(timeOutHr.getText()))
+                if(timeOutAmPm.getValue().equals("pm") && i == 0)
                     x += 12;
                 if(x < 10)
                     timeOutStr.append("0");
@@ -135,14 +135,16 @@ public class HomeStatePageController implements Initializable {
             }
             timeOutStr.append("00");
             Timestamp t = new Timestamp(System.currentTimeMillis());
-            System.out.println(t);
             timeInStr.insert(0, t.toString().substring(0, 11));
             timeOutStr.insert(0, t.toString().substring(0, 11));
-            if(t.getTime() < System.currentTimeMillis()){
+            if(Timestamp.valueOf(timeInStr.toString()).getTime() < System.currentTimeMillis()){
                 valid = false;
                 emptyLabel.setText("Invalid time!! Please re-enter!");
             }
-            System.out.println("In = " + timeInStr + "\nOut = " + timeOutStr);
+            if(timeInAmPm.getValue().equals("pm") && timeOutAmPm.getValue().equals("am")){
+                t = Timestamp.valueOf(timeOutStr.toString() + 86400);
+                timeOutStr = new StringBuilder(t.toString());
+            }
             if(valid)
                 good = sh.scheduleNewState("Home",timeInStr.toString(), timeOutStr.toString());
         }
