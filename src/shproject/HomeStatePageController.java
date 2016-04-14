@@ -10,6 +10,7 @@ import control.SafeHome;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.binding.BooleanBinding;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -45,9 +46,9 @@ public class HomeStatePageController implements Initializable {
     @FXML
     private Label lblHome;
     @FXML
-    private RadioButton rbHome_ActivateNow;
+    private RadioButton activateNow;
     @FXML
-    private RadioButton rbHome_Schedule;
+    private RadioButton schedule;
     @FXML
     private TextField timeInHr;
     @FXML
@@ -80,6 +81,7 @@ public class HomeStatePageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        sh = Context.getInstance().getSafeHome();
         btnOk.setDisable(true);
 
         timeInAmPm.setItems(amPmList);
@@ -90,7 +92,6 @@ public class HomeStatePageController implements Initializable {
 
     @FXML
     private void handleOK(ActionEvent event) throws IOException{
-        sh = Context.getInstance().getSafeHome();
         sh.setNewState("Home");
         Parent backSysStageparent = FXMLLoader.load(getClass().getResource("systemState.fxml"));
         Scene date_page_scene = new Scene(backSysStageparent);
@@ -120,12 +121,18 @@ public class HomeStatePageController implements Initializable {
         timeOutMin.setDisable(false);
         timeInAmPm.setDisable(false);
         timeOutAmPm.setDisable(false);
-        
-        
+        BooleanBinding booleanBind = timeInHr.textProperty().isEmpty()
+                            .or(timeInMin.textProperty().isEmpty())
+                                      .or(timeOutHr.textProperty().isEmpty()
+                                      .or(timeOutMin.textProperty().isEmpty())
+                                      .or(timeInAmPm.valueProperty().isNull())
+                                      .or(timeOutAmPm.valueProperty().isNull()));
+        btnOk.disableProperty().bind(booleanBind);
     }
 
     @FXML
     private void handleActivate(ActionEvent event) {
+        btnOk.disableProperty().unbind();
         btnOk.setDisable(false);
         timeInHr.setDisable(true);
         timeInMin.setDisable(true);

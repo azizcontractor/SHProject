@@ -98,6 +98,19 @@ public class SafeHome {
     }
 
     public String getCurrentState() {
+        conn = OracleConnection.getConnection();
+        try{
+            String sql = "select * from safehome";
+            Statement s = conn.createStatement();
+            ResultSet r = s.executeQuery(sql);
+            if(r.next()){
+                currentState = r.getString(1);               
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }finally{
+            OracleConnection.closeConnection();
+        }
         return currentState;
     }
 

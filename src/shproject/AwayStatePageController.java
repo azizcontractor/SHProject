@@ -10,6 +10,7 @@ import control.SafeHome;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.binding.BooleanBinding;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -39,9 +40,9 @@ public class AwayStatePageController implements Initializable {
     @FXML
     private Label lblaway;
     @FXML
-    private RadioButton rbA_activateNow;
+    private RadioButton activateNow;
     @FXML
-    private RadioButton rbA_schedule;
+    private RadioButton schedule;
     @FXML
     private Button btnCancel;
     @FXML
@@ -68,6 +69,10 @@ public class AwayStatePageController implements Initializable {
     @FXML
     private Label emptyLabel;
     private SafeHome sh;
+    @FXML
+    private Label colonLbl;
+    @FXML
+    private Label colonLbl2;
 
     /**
      * Initializes the controller class.
@@ -77,11 +82,12 @@ public class AwayStatePageController implements Initializable {
         btnOk.setDisable(true);
         timeInAmPm.setItems(amPmList);
         timeOutAmPm.setItems(amPmList);
+        sh = Context.getInstance().getSafeHome();
+
     }    
 
     @FXML
     private void handleOK(ActionEvent event) throws IOException  {
-        sh = Context.getInstance().getSafeHome();
         sh.setNewState("Away");
         Parent backSysStageparent = FXMLLoader.load(getClass().getResource("systemState.fxml"));
         Scene date_page_scene = new Scene(backSysStageparent);
@@ -103,6 +109,7 @@ public class AwayStatePageController implements Initializable {
 
     @FXML
     private void handleAway_ActivateNow(ActionEvent event) {
+        btnOk.disableProperty().unbind();
         btnOk.setDisable(false);
         timeInHr.setDisable(true);
         timeInMin.setDisable(true);
@@ -111,7 +118,6 @@ public class AwayStatePageController implements Initializable {
         timeInAmPm.setDisable(true);
         timeOutAmPm.setDisable(true);
        
-        
     }
 
     @FXML
@@ -123,6 +129,14 @@ public class AwayStatePageController implements Initializable {
         timeOutMin.setDisable(false);
         timeInAmPm.setDisable(false);
         timeOutAmPm.setDisable(false);
+        
+        BooleanBinding booleanBind = timeInHr.textProperty().isEmpty()
+                            .or(timeInMin.textProperty().isEmpty())
+                                      .or(timeOutHr.textProperty().isEmpty()
+                                      .or(timeOutMin.textProperty().isEmpty())
+                                      .or(timeInAmPm.valueProperty().isNull())
+                                      .or(timeOutAmPm.valueProperty().isNull()));
+        btnOk.disableProperty().bind(booleanBind);
     }
 
     @FXML
