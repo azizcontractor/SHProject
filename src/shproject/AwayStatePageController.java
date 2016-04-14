@@ -53,13 +53,13 @@ public class AwayStatePageController implements Initializable {
     @FXML
     private Label lblTimeOut;
     @FXML
-    private TextField timeInHr;
+    private TextFieldLimited timeInHr;
     @FXML
-    private TextField timeInMin;
+    private TextFieldLimited timeInMin;
     @FXML
-    private TextField timeOutHr;
+    private TextFieldLimited timeOutHr;
     @FXML
-    private TextField timeOutMin;
+    private TextFieldLimited timeOutMin;
     @FXML
     private ComboBox<String> timeInAmPm;
     @FXML

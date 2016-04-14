@@ -50,13 +50,13 @@ public class HomeStatePageController implements Initializable {
     @FXML
     private RadioButton schedule;
     @FXML
-    private TextField timeInHr;
+    private TextFieldLimited timeInHr;
     @FXML
-    private TextField timeInMin;
+    private TextFieldLimited timeInMin;
     @FXML
-    private TextField timeOutHr;
+    private TextFieldLimited timeOutHr;
     @FXML
-    private TextField timeOutMin;
+    private TextFieldLimited timeOutMin;
     @FXML
     private Label lblTimeIn;
     @FXML
@@ -73,7 +73,9 @@ public class HomeStatePageController implements Initializable {
     private Label colonLbl1;
     @FXML
     private Label lblcurrStateEmpty;
-    SafeHome sh;
+    private SafeHome sh;
+    TextField[] fieldsIn = {timeInHr,timeInMin};
+    TextField[] fieldsOut = {timeOutHr,timeOutMin};
 
     /**
      * Initializes the controller class.
@@ -114,6 +116,7 @@ public class HomeStatePageController implements Initializable {
 
     @FXML
     private void handleSchedule(ActionEvent event) {
+        String timeInStr = "",timeOutStr = "";
         btnOk.setDisable(true);
         timeInHr.setDisable(false);
         timeInMin.setDisable(false);
@@ -128,6 +131,21 @@ public class HomeStatePageController implements Initializable {
                                       .or(timeInAmPm.valueProperty().isNull())
                                       .or(timeOutAmPm.valueProperty().isNull()));
         btnOk.disableProperty().bind(booleanBind);
+        for(TextField t: fieldsIn){
+            if(t.getText().length() == 1)
+                timeInStr += "0" + t.getText();
+            else
+                timeInStr += t.getText();
+            timeInStr+=":";
+        }
+        for(TextField t: fieldsOut){
+            if(t.getText().length() == 1)
+                timeOutStr += "0" + t.getText();
+            else
+                timeOutStr += t.getText();
+            timeOutStr+=":";
+        }
+        System.out.println("In = " + timeInStr + "\nOut = " + timeOutStr);
     }
 
     @FXML

@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import shproject.*?>
 
 <AnchorPane id="AnchorPane" maxHeight="400.0" maxWidth="300.0" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shproject.HomeStatePageController">
    <children>
@@ -70,10 +71,10 @@
                   <Font name="Lucida Bright Regular" size="14.0" />
                </font>
             </RadioButton>
-            <TextField fx:id="timeInHr" alignment="CENTER" disable="true" layoutX="90.0" layoutY="100.0" prefHeight="27.0" prefWidth="40.0" promptText="Hr" />
-            <TextField fx:id="timeInMin" alignment="CENTER" disable="true" layoutX="137.0" layoutY="100.0" prefHeight="27.0" prefWidth="40.0" promptText="Min" />
-            <TextField fx:id="timeOutHr" alignment="CENTER" disable="true" layoutX="90.0" layoutY="136.0" prefHeight="27.0" prefWidth="40.0" promptText="Hr" />
-            <TextField fx:id="timeOutMin" alignment="CENTER" disable="true" layoutX="137.0" layoutY="136.0" prefHeight="27.0" prefWidth="40.0" promptText="Min" />
+            <TextFieldLimited fx:id="timeInHr" alignment="CENTER" disable="true" layoutX="90.0" layoutY="100.0" prefHeight="27.0" prefWidth="40.0" promptText="Hr" />
+            <TextFieldLimited fx:id="timeInMin" alignment="CENTER" disable="true" layoutX="137.0" layoutY="100.0" prefHeight="27.0" prefWidth="40.0" promptText="Min" />
+            <TextFieldLimited fx:id="timeOutHr" alignment="CENTER" disable="true" layoutX="90.0" layoutY="136.0" prefHeight="27.0" prefWidth="40.0" promptText="Hr" />
+            <TextFieldLimited fx:id="timeOutMin" alignment="CENTER" disable="true" layoutX="137.0" layoutY="136.0" prefHeight="27.0" prefWidth="40.0" promptText="Min" />
             <Label fx:id="lblTimeIn" layoutX="16.0" layoutY="103.0" text="Time In">
                <font>
                   <Font name="Lucida Bright Regular" size="16.0" />
