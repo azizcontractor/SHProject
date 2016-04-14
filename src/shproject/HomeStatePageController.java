@@ -70,6 +70,8 @@ public class HomeStatePageController implements Initializable {
     private Label colonLbl;
     @FXML
     private Label colonLbl1;
+    @FXML
+    private Label lblcurrStateEmpty;
     SafeHome sh;
 
     /**
@@ -140,6 +142,7 @@ public class HomeStatePageController implements Initializable {
     @FXML
     private void handleTimeOutAmPm(ActionEvent event) {
     }
+
 
 
     

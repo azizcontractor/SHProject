@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -8,53 +9,103 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="260.0" prefWidth="260.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shproject.AwayStatePageController">
+<AnchorPane id="AnchorPane" maxHeight="400.0" maxWidth="300.0" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shproject.AwayStatePageController">
    <children>
-      <Label fx:id="lblaway" layoutX="93.0" layoutY="14.0" text="Away">
+      <Label alignment="CENTER" disable="true" layoutX="51.0" layoutY="64.0" text="System State">
          <font>
-            <Font name="Lucida Bright Regular" size="24.0" />
+            <Font name="Lucida Bright Regular" size="32.0" />
          </font>
       </Label>
-      <RadioButton fx:id="rbA_activateNow" layoutX="25.0" layoutY="50.0" mnemonicParsing="false" onAction="#handleAway_ActivateNow" text="Activate Now">
+      <Button disable="true" layoutX="77.0" layoutY="187.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="HOME">
          <font>
-            <Font name="Lucida Bright Regular" size="14.0" />
-         </font>
-         <toggleGroup>
-            <ToggleGroup fx:id="group2" />
-         </toggleGroup>
-      </RadioButton>
-      <RadioButton fx:id="rbA_schedule" layoutX="25.0" layoutY="77.0" mnemonicParsing="false" onAction="#handleAway_Schedule" text="Schedule" toggleGroup="$group2">
-         <font>
-            <Font name="Lucida Bright Regular" size="14.0" />
-         </font>
-      </RadioButton>
-      <Label fx:id="lblTimeIn" layoutX="5.0" layoutY="103.0" text="Time In">
-         <font>
-            <Font name="Lucida Bright Regular" size="16.0" />
-         </font>
-      </Label>
-      <Label fx:id="lblTimeOut" layoutX="5.0" layoutY="138.0" text="Time Out">
-         <font>
-            <Font name="Lucida Bright Regular" size="16.0" />
-         </font>
-      </Label>
-      <Button fx:id="btnOk" alignment="CENTER" layoutX="16.0" layoutY="194.0" maxHeight="30.0" maxWidth="100.0" mnemonicParsing="false" onAction="#handleOK" prefHeight="30.0" prefWidth="100.0" text="OK">
-         <font>
-            <Font name="Lucida Bright Regular" size="15.0" />
+            <Font name="Lucida Bright Regular" size="25.0" />
          </font>
       </Button>
-      <Button fx:id="btnCancel" alignment="CENTER" layoutX="127.0" layoutY="194.0" maxHeight="30.0" maxWidth="100.0" mnemonicParsing="false" onAction="#handleCancel" prefHeight="30.0" prefWidth="100.0" text="CANCEL">
+      <Button disable="true" layoutX="77.0" layoutY="257.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="AWAY">
          <font>
-            <Font name="Lucida Bright Regular" size="15.0" />
+            <Font name="Lucida Bright Regular" size="25.0" />
          </font>
       </Button>
-      <Line endX="100.0" layoutX="125.0" layoutY="177.0" scaleX="1.2" startX="-100.0" />
-      <TextField fx:id="timeInHr" alignment="CENTER" disable="true" layoutX="93.0" layoutY="100.0" prefHeight="27.0" prefWidth="40.0" promptText="Hr" />
-      <TextField fx:id="timeInMin" alignment="CENTER" disable="true" layoutX="137.0" layoutY="100.0" maxHeight="27.0" maxWidth="40.0" prefHeight="27.0" prefWidth="40.0" promptText="Min" />
-      <TextField fx:id="timeOutHr" alignment="CENTER" disable="true" layoutX="93.0" layoutY="136.0" prefHeight="27.0" prefWidth="40.0" promptText="Hr" />
-      <TextField fx:id="timeOutMin" alignment="CENTER" disable="true" layoutX="137.0" layoutY="136.0" prefHeight="27.0" prefWidth="40.0" promptText="Min" />
-      <ComboBox fx:id="timeInAmPm" disable="true" layoutX="183.0" layoutY="100.0" onAction="#handleTimeInAmPm" prefHeight="27.0" prefWidth="73.0" promptText="-" />
-      <ComboBox fx:id="timeOutAmPm" disable="true" layoutX="183.0" layoutY="136.0" onAction="#handleTimeOutAmPm" prefHeight="27.0" prefWidth="73.0" promptText="-" />
-      <Label fx:id="emptyLabel" layoutX="57.0" layoutY="231.0" prefHeight="20.0" prefWidth="150.0" />
+      <Button disable="true" layoutX="77.0" layoutY="327.0" maxHeight="50.0" maxWidth="200.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="TRAVEL">
+         <font>
+            <Font name="Lucida Bright Regular" size="25.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" disable="true" layoutX="163.0" layoutY="129.0" prefHeight="30.0" prefWidth="100.0" text="?">
+         <font>
+            <Font name="Lucida Bright Regular" size="18.0" />
+         </font>
+      </Label>
+      <Button disable="true" layoutX="240.0" layoutY="14.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="46.0" />
+      <Label alignment="CENTER" disable="true" layoutX="36.0" layoutY="130.0" prefHeight="30.0" prefWidth="126.0" text="Current State:">
+         <font>
+            <Font name="Lucida Bright Regular" size="18.0" />
+         </font>
+      </Label>
+      <ImageView disable="true" fitHeight="50.0" fitWidth="46.0" layoutX="240.0" layoutY="14.0" opacity="0.29">
+         <image>
+            <Image url="@../house.png" />
+         </image>
+      </ImageView>
+      <AnchorPane id="AnchorPane" layoutX="21.0" layoutY="70.0" prefHeight="260.0" prefWidth="260.0" style="-fx-background-color: #49C; -fx-border-color: #000; -fx-border-width: 4;">
+         <children>
+            <Label fx:id="lblaway" layoutX="93.0" layoutY="14.0" text="Away">
+               <font>
+                  <Font name="Lucida Bright Regular" size="24.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="rbA_activateNow" layoutX="25.0" layoutY="50.0" mnemonicParsing="false" onAction="#handleAway_ActivateNow" text="Activate Now">
+               <font>
+                  <Font name="Lucida Bright Regular" size="14.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="group2" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="rbA_schedule" layoutX="25.0" layoutY="77.0" mnemonicParsing="false" onAction="#handleAway_Schedule" text="Schedule" toggleGroup="$group2">
+               <font>
+                  <Font name="Lucida Bright Regular" size="14.0" />
+               </font>
+            </RadioButton>
+            <Label fx:id="lblTimeIn" layoutX="18.0" layoutY="103.0" text="Time In">
+               <font>
+                  <Font name="Lucida Bright Regular" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTimeOut" layoutX="10.0" layoutY="138.0" text="Time Out">
+               <font>
+                  <Font name="Lucida Bright Regular" size="16.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnOk" alignment="CENTER" layoutX="16.0" layoutY="194.0" maxHeight="30.0" maxWidth="100.0" mnemonicParsing="false" onAction="#handleOK" prefHeight="30.0" prefWidth="100.0" text="OK">
+               <font>
+                  <Font name="Lucida Bright Regular" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnCancel" alignment="CENTER" layoutX="127.0" layoutY="194.0" maxHeight="30.0" maxWidth="100.0" mnemonicParsing="false" onAction="#handleCancel" prefHeight="30.0" prefWidth="100.0" text="CANCEL">
+               <font>
+                  <Font name="Lucida Bright Regular" size="15.0" />
+               </font>
+            </Button>
+            <Line endX="100.0" layoutX="131.0" layoutY="177.0" scaleX="1.2" startX="-100.0" />
+            <TextField fx:id="timeInHr" alignment="CENTER" disable="true" layoutX="89.0" layoutY="100.0" prefHeight="27.0" prefWidth="40.0" promptText="Hr" />
+            <TextField fx:id="timeInMin" alignment="CENTER" disable="true" layoutX="136.0" layoutY="100.0" maxHeight="27.0" maxWidth="40.0" prefHeight="27.0" prefWidth="40.0" promptText="Min" />
+            <TextField fx:id="timeOutHr" alignment="CENTER" disable="true" layoutX="89.0" layoutY="136.0" prefHeight="27.0" prefWidth="40.0" promptText="Hr" />
+            <TextField fx:id="timeOutMin" alignment="CENTER" disable="true" layoutX="136.0" layoutY="136.0" prefHeight="27.0" prefWidth="40.0" promptText="Min" />
+            <ComboBox fx:id="timeInAmPm" disable="true" layoutX="181.0" layoutY="100.0" onAction="#handleTimeInAmPm" prefHeight="27.0" prefWidth="73.0" promptText="-" />
+            <ComboBox fx:id="timeOutAmPm" disable="true" layoutX="181.0" layoutY="136.0" onAction="#handleTimeOutAmPm" prefHeight="27.0" prefWidth="73.0" promptText="-" />
+            <Label fx:id="emptyLabel" layoutX="57.0" layoutY="231.0" prefHeight="20.0" prefWidth="150.0" />
+            <Label fx:id="colonLbl" layoutX="130.0" layoutY="103.0" text=":">
+               <font>
+                  <Font name="Lucida Bright Regular" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="colonLbl2" layoutX="130.0" layoutY="137.0" text=":">
+               <font>
+                  <Font name="Lucida Bright Regular" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
