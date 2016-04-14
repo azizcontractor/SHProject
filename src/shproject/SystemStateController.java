@@ -5,6 +5,7 @@
  */
 package shproject;
 
+import control.Context;
 import control.SafeHome;
 import java.io.IOException;
 import java.net.URL;
@@ -41,6 +42,8 @@ public class SystemStateController implements Initializable {
     private Label lblstate;
     @FXML
     private Button mainbtn;
+    
+    private SafeHome sh;
 
     /**
      * Initializes the controller class.
@@ -48,7 +51,7 @@ public class SystemStateController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        SafeHome sh = new SafeHome();
+        sh = Context.getInstance().getSafeHome();
         lblcurrStateEmpty.setText(sh.getCurrentState());
     }    
 

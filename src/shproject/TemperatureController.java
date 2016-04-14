@@ -5,10 +5,13 @@
  */
 package shproject;
 
+import control.Context;
 import control.SafeHome;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,9 +35,10 @@ public class TemperatureController implements Initializable {
     @FXML
     private Button setbtn;
     @FXML
-    private TextField temptext;
+    private TextFieldLimited temptext;
     @FXML
     private Button mainbtn;
+    private SafeHome sh;
 
     /**
      * Initializes the controller class.
@@ -42,7 +46,7 @@ public class TemperatureController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        SafeHome sh = new SafeHome();
+        sh = Context.getInstance().getSafeHome();
         temptext.setText(sh.showCurrentTemp());
     }    
     
@@ -78,7 +82,6 @@ public class TemperatureController implements Initializable {
         appStage3.setScene(goMainScene);
         appStage3.show();
         }
-    
     
     
 }

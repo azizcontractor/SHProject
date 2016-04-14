@@ -5,6 +5,7 @@
  */
 package shproject;
 
+import control.Context;
 import control.SafeHome;
 import java.io.IOException;
 import java.net.URL;
@@ -66,6 +67,7 @@ public class AwayStatePageController implements Initializable {
     private Button btnOk;
     @FXML
     private Label emptyLabel;
+    private SafeHome sh;
 
     /**
      * Initializes the controller class.
@@ -79,7 +81,7 @@ public class AwayStatePageController implements Initializable {
 
     @FXML
     private void handleOK(ActionEvent event) throws IOException  {
-        SafeHome sh = new SafeHome();
+        sh = Context.getInstance().getSafeHome();
         sh.setNewState("Away");
         Parent backSysStageparent = FXMLLoader.load(getClass().getResource("systemState.fxml"));
         Scene date_page_scene = new Scene(backSysStageparent);

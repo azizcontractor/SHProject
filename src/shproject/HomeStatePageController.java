@@ -5,6 +5,7 @@
  */
 package shproject;
 
+import control.Context;
 import control.SafeHome;
 import java.io.IOException;
 import java.net.URL;
@@ -69,6 +70,7 @@ public class HomeStatePageController implements Initializable {
     private Label colonLbl;
     @FXML
     private Label colonLbl1;
+    SafeHome sh;
 
     /**
      * Initializes the controller class.
@@ -86,7 +88,7 @@ public class HomeStatePageController implements Initializable {
 
     @FXML
     private void handleOK(ActionEvent event) throws IOException{
-        SafeHome sh = new SafeHome();
+        sh = Context.getInstance().getSafeHome();
         sh.setNewState("Home");
         Parent backSysStageparent = FXMLLoader.load(getClass().getResource("systemState.fxml"));
         Scene date_page_scene = new Scene(backSysStageparent);

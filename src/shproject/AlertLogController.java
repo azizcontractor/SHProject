@@ -5,6 +5,7 @@
  */
 package shproject;
 
+import control.SafeHome;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -30,6 +31,8 @@ public class AlertLogController implements Initializable {
     private Label alertLoglbl;
     @FXML
     private Button mainbtn;
+    
+    private SafeHome sh;
 
     /**
      * Initializes the controller class.

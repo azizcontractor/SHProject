@@ -5,6 +5,7 @@
  */
 package shproject;
 
+import control.Context;
 import control.SafeHome;
 import java.io.IOException;
 import java.net.URL;
@@ -71,6 +72,7 @@ public class TravelStatePageController implements Initializable {
     private TextField AIam_pm;
     @FXML
     private Label emptyLabel;
+    SafeHome sh;
 
     /**
      * Initializes the controller class.
@@ -79,6 +81,7 @@ public class TravelStatePageController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         btnOK.setDisable(true);
+        sh = Context.getInstance().getSafeHome();
     }    
 
     @FXML
