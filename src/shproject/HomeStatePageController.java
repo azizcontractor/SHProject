@@ -9,6 +9,8 @@ import control.Context;
 import control.SafeHome;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.util.ResourceBundle;
 import javafx.beans.binding.BooleanBinding;
 import javafx.collections.FXCollections;
@@ -93,36 +95,67 @@ public class HomeStatePageController implements Initializable {
     @FXML
     private void handleOK(ActionEvent event) throws IOException{
         StringBuilder timeInStr = new StringBuilder(),timeOutStr = new StringBuilder();
-        System.out.println(rbActivateNow.isSelected());
+        boolean valid = true;
+        boolean good = true;
         if(rbActivateNow.isSelected()){
             sh.setNewState("Home");
         }
         else{
+            int x = -1;
             TextField[] fieldsIn = {timeInHr,timeInMin};
             TextField[] fieldsOut = {timeOutHr,timeOutMin};
             for(TextField t: fieldsIn){
-                if(t.getText().length() == 1)
+                try{
+                    x = Integer.parseInt(t.getText());
+                }catch(Exception e){
+                    emptyLabel.setText("Invalid time!! Please re-enter!");
+                    valid = false;
+                }
+                if(timeInAmPm.getValue().equals("pm") && t.getText().equals(timeInHr.getText()))
+                    x += 12;
+                if(x < 10)
                     timeInStr.append("0");
-                timeInStr.append(t.getText());
+                timeInStr.append(x);
                 timeInStr.append(":");
             }
             timeInStr.append("00");
             for(TextField t: fieldsOut){
-                if(t.getText().length() == 1)
+                try{
+                    x = Integer.parseInt(t.getText());
+                }catch(Exception e){
+                    emptyLabel.setText("Invalid time!! Please re-enter!");
+                    valid = false;
+                }
+                if(timeOutAmPm.getValue().equals("pm") && t.getText().equals(timeOutHr.getText()))
+                    x += 12;
+                if(x < 10)
                     timeOutStr.append("0");
-                timeOutStr.append(t.getText());
+                timeOutStr.append(x);
                 timeOutStr.append(":");
             }
             timeOutStr.append("00");
+            Timestamp t = new Timestamp(System.currentTimeMillis());
+            System.out.println(t);
+            timeInStr.insert(0, t.toString().substring(0, 11));
+            timeOutStr.insert(0, t.toString().substring(0, 11));
+            if(t.getTime() < System.currentTimeMillis()){
+                valid = false;
+                emptyLabel.setText("Invalid time!! Please re-enter!");
+            }
             System.out.println("In = " + timeInStr + "\nOut = " + timeOutStr);
-            sh.scheduleNewState("Home",timeInStr.toString(), timeOutStr.toString());
+            if(valid)
+                good = sh.scheduleNewState("Home",timeInStr.toString(), timeOutStr.toString());
         }
-        Parent backSysStageparent = FXMLLoader.load(getClass().getResource("systemState.fxml"));
-        Scene date_page_scene = new Scene(backSysStageparent);
-        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        app_stage.hide(); //optional
-        app_stage.setScene(date_page_scene);
-        app_stage.show();
+        if(!good)
+            emptyLabel.setText("Another state scheduled!!");
+        if(valid && good){
+            Parent backSysStageparent = FXMLLoader.load(getClass().getResource("systemState.fxml"));
+            Scene date_page_scene = new Scene(backSysStageparent);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.hide(); //optional
+            app_stage.setScene(date_page_scene);
+            app_stage.show();
+        }
     }
 
     @FXML

@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import shproject.*?>
 
 <AnchorPane id="AnchorPane" maxHeight="400.0" maxWidth="300.0" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shproject.AwayStatePageController">
    <children>
@@ -96,7 +97,7 @@
             <TextFieldLimited fx:id="timeOutMin" alignment="CENTER" disable="true" layoutX="136.0" layoutY="136.0" prefHeight="27.0" prefWidth="40.0" promptText="Min" />
             <ComboBox fx:id="timeInAmPm" disable="true" layoutX="181.0" layoutY="100.0" onAction="#handleTimeInAmPm" prefHeight="27.0" prefWidth="73.0" promptText="-" />
             <ComboBox fx:id="timeOutAmPm" disable="true" layoutX="181.0" layoutY="136.0" onAction="#handleTimeOutAmPm" prefHeight="27.0" prefWidth="73.0" promptText="-" />
-            <Label fx:id="emptyLabel" layoutX="57.0" layoutY="231.0" prefHeight="20.0" prefWidth="150.0" />
+            <Label fx:id="emptyLabel" layoutX="16.0" layoutY="231.0" prefHeight="20.0" prefWidth="212.0" />
             <Label fx:id="colonLbl" layoutX="130.0" layoutY="103.0" text=":">
                <font>
                   <Font name="Lucida Bright Regular" size="16.0" />

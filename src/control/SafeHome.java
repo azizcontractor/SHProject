@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Time;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import objects.Account;
 import objects.Schedule;
@@ -132,14 +133,14 @@ public class SafeHome {
         }
     }
     
-    public void scheduleNewState(String state,String timeIn, String timeOut){
-        Time start = Time.valueOf(timeIn);
-        Time end = Time.valueOf(timeOut);
+    public boolean scheduleNewState(String state,String timeIn, String timeOut){
+        Timestamp start = Timestamp.valueOf(timeIn);
+        Timestamp end = Timestamp.valueOf(timeOut);
         Schedule sched = new Schedule();
         sched.setStart(start);
         sched.setEnd(end);
         sched.setState(state);
-        sched.scheduleState();
+        return sched.scheduleState();
     }
 
     public String getPasscode() {

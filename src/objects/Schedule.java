@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Time;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import utils.OracleConnection;
@@ -22,8 +23,8 @@ import utils.OracleConnection;
 public class Schedule {
     
     String state;
-    Time start;
-    Time end;
+    Timestamp start;
+    Timestamp end;
     Connection conn;
     
     public Schedule(){
@@ -37,8 +38,8 @@ public class Schedule {
             String sql = "insert into schedule values (?,?,?)";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, state);
-            ps.setTime(2, start);
-            ps.setTime(3, end);
+            ps.setTimestamp(2, start);
+            ps.setTimestamp(3, end);
             List<Schedule> schList = getSchedule();
             if(schList.isEmpty()){
                 ps.executeUpdate();
@@ -74,8 +75,8 @@ public class Schedule {
             while(r.next()){
                 Schedule sch = new Schedule();
                 sch.setState(r.getString(1));
-                sch.setStart(r.getTime(2));
-                sch.setEnd(r.getTime(3));
+                sch.setStart(r.getTimestamp(2));
+                sch.setEnd(r.getTimestamp(3));
                 schList.add(sch);
             }
         }catch(SQLException e){
@@ -94,19 +95,19 @@ public class Schedule {
         this.state = state;
     }
 
-    public Time getStart() {
+    public Timestamp getStart() {
         return start;
     }
 
-    public void setStart(Time start) {
+    public void setStart(Timestamp start) {
         this.start = start;
     }
 
-    public Time getEnd() {
+    public Timestamp getEnd() {
         return end;
     }
 
-    public void setEnd(Time end) {
+    public void setEnd(Timestamp end) {
         this.end = end;
     }
 
