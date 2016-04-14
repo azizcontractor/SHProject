@@ -20,6 +20,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 /**
@@ -64,6 +65,23 @@ public class FXMLDocumentController implements Initializable {
         }
         else{
             hiddenlabel.setText("Invalid Username or Password");
+        }
+    }
+
+    @FXML
+    private void handleSubmit(KeyEvent event) throws IOException {
+        if(event.getCode().toString().equals("ENTER")) {
+            if(sh.login(username.getText(),password.getText())){
+            Parent welcomeScreenParent = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
+            Scene welcomScreenScene = new Scene(welcomeScreenParent);
+            Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            appStage.hide();
+            appStage.setScene(welcomScreenScene);
+            appStage.show();
+        }
+        else{
+            hiddenlabel.setText("Invalid Username or Password");
+        }
         }
     }
     
