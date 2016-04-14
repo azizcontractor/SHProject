@@ -5,6 +5,8 @@
  */
 package shproject;
 
+import control.Context;
+import control.SafeHome;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -32,13 +34,15 @@ public class DevicesController implements Initializable {
     private Button backbtn;
     @FXML
     private Label devicelbl;
+    
+    SafeHome sh;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+         sh = Context.getInstance().getSafeHome();
     }    
 
     @FXML

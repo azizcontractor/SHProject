@@ -5,6 +5,8 @@
  */
 package shproject;
 
+import control.Context;
+import control.SafeHome;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -25,6 +27,8 @@ import javafx.stage.Stage;
  * @author Meera
  */
 public class CurrentHomeStatusController implements Initializable {
+    
+    SafeHome sh;
 
     @FXML
     private Label CurrentStatuslbl;
@@ -40,13 +44,14 @@ public class CurrentHomeStatusController implements Initializable {
     private Button tempbtn1;
     @FXML
     private Button deviceStatuslist;
+    
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+         sh = Context.getInstance().getSafeHome();
     }    
 
     @FXML

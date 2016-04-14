@@ -5,6 +5,7 @@
  */
 package shproject;
 
+import control.Context;
 import control.SafeHome;
 import java.io.IOException;
 import java.net.URL;
@@ -32,14 +33,14 @@ public class AlertLogController implements Initializable {
     @FXML
     private Button mainbtn;
     
-    private SafeHome sh;
+    SafeHome sh;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+         sh = Context.getInstance().getSafeHome();
     }    
 
     @FXML
