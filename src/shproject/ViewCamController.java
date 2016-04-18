@@ -66,12 +66,12 @@ public class ViewCamController implements Initializable {
 
     @FXML
     private void handleViewCam(ActionEvent event) throws IOException {
-        Parent goMainPage = FXMLLoader.load(getClass().getResource("camera.fxml"));
+        /*Parent goMainPage = FXMLLoader.load(getClass().getResource("camera.fxml"));
         Scene goMainScene = new Scene(goMainPage);
         Stage appStage3 = (Stage) ((Node) event.getSource()).getScene().getWindow();
         appStage3.hide();
         appStage3.setScene(goMainScene);
-        appStage3.show(); 
+        appStage3.show(); */
     }
     
     
