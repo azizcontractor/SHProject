@@ -14,6 +14,7 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import objects.Account;
+import objects.Camera;
 import objects.Schedule;
 import objects.Sensor;
 import objects.ThermostatSensor;
@@ -112,6 +113,16 @@ public class SafeHome {
         return currentState;
     }
 
+    public ArrayList<String> getCameras(){
+        Camera c = new Camera();
+        ArrayList<String> cName = new ArrayList<String>();
+        ArrayList<Camera> cm = c.getCameras();
+        for (Camera k: cm){
+            cName.add(k.getLocName());
+        }
+        return cName;
+    }
+    
     public void setCurrentState(String currentState) {
         this.currentState = currentState;
     }
