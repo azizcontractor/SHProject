@@ -14,7 +14,7 @@
    <children>
       <Button fx:id="backbtn" layoutX="14.0" layoutY="365.0" mnemonicParsing="false" onAction="#goBack" prefHeight="25.0" prefWidth="59.0" text="Back" />
       <Label fx:id="lbl1" layoutX="82.0" layoutY="83.0" prefHeight="51.0" prefWidth="85.0" />
-      <ImageView fx:id="imgView" fitHeight="240.0" fitWidth="256.0" layoutX="22.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgView" fitHeight="240.0" fitWidth="256.0" layoutX="22.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="emptyLbl" alignment="CENTER" layoutX="27.0" layoutY="308.0" prefHeight="38.0" prefWidth="247.0">
          <font>
             <Font name="Lucida Bright Regular" size="24.0" />
