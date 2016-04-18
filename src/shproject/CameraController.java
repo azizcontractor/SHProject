@@ -45,6 +45,8 @@ public class CameraController implements Initializable {
     private ImageView imgView;
     private SafeHome sh;
  private static final int MIN_PIXELS = 10;
+    @FXML
+    private Label emptyLbl;
     /**
      * Initializes the controller class.
      */
