@@ -5,6 +5,7 @@
  */
 package shproject;
 
+import control.Context;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,6 +17,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
@@ -26,13 +28,17 @@ import javafx.stage.Stage;
 public class CameraController implements Initializable {
     @FXML
     private Button backbtn;
+    @FXML
+    private Label lbl1;
+    private String id;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        id = Context.getInstance().getID();
+        
     }    
 
     @FXML
@@ -43,6 +49,10 @@ public class CameraController implements Initializable {
         appStage2.hide();
         appStage2.setScene(goBackScene);
         appStage2.show();
+    }
+    
+    public void setCameraID(String id){
+        this.id = id;
     }
     
 }

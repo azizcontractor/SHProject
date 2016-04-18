@@ -95,8 +95,6 @@ public class SystemStateController implements Initializable {
         appStage3.setScene(goMainScene);
         appStage3.show(); 
         
-        
-        
     }
 
     

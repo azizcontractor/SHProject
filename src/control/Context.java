@@ -15,12 +15,22 @@ public class Context {
     
     private final static Context instance = new Context();
     
+    private String id;
+    
     public static Context getInstance() {
         return instance;
     }
     
     public SafeHome getSafeHome(){
         return sh;
+    }
+    
+    public void setID(String id){
+        this.id = id;
+    }
+    
+    public String getID(){
+        return id;
     }
 
     

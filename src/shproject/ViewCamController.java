@@ -9,6 +9,7 @@ import control.Context;
 import control.SafeHome;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.beans.binding.BooleanBinding;
 import javafx.beans.value.ChangeListener;
@@ -32,6 +33,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import objects.Camera;
 
 /**
  * FXML Controller class
@@ -43,11 +45,12 @@ public class ViewCamController implements Initializable {
     private Label camlbl;
     private SafeHome sh;
     @FXML
-    private ListView<String> list;
+    private ListView<Camera> list;
     @FXML
     private Button mainbtn;
     @FXML
     private Button viewCamBtn;
+    private ObservableList<Camera> data;
 
     /**
      * Initializes the controller class.
@@ -56,12 +59,12 @@ public class ViewCamController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         sh = Context.getInstance().getSafeHome();
-        ObservableList<String> data = FXCollections.observableArrayList(sh.getCameras());
+        data = FXCollections.observableArrayList(sh.getCameras());
         list.setItems(data);
         viewCamBtn.setDisable(true);
-        list.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+        list.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Camera>() {
     @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+            public void changed(ObservableValue<? extends Camera> observable, Camera oldValue, Camera newValue) {
                 viewCamBtn.setDisable(false);
             }
             });
@@ -80,6 +83,8 @@ public class ViewCamController implements Initializable {
 
     @FXML
     private void handleViewCam(ActionEvent event) throws IOException {
+        Camera c = data.get(list.getSelectionModel().getSelectedIndex());
+        Context.getInstance().setID(c.getId());
         Parent goMainPage = FXMLLoader.load(getClass().getResource("camera.fxml"));
         Scene goMainScene = new Scene(goMainPage);
         Stage appStage3 = (Stage) ((Node) event.getSource()).getScene().getWindow();

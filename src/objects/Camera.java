@@ -97,6 +97,10 @@ public class Camera {
         this.zoom = zoom;
     }
     
+    public String toString(){
+        return locName;
+    }
+    
     
     
 }

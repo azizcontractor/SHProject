@@ -113,15 +113,9 @@ public class SafeHome {
         return currentState;
     }
 
-    public ArrayList<String> getCameras(){
+    public ArrayList<Camera> getCameras(){
         Camera c = new Camera();
-        ArrayList<String> cName = new ArrayList<String>();
-        ArrayList<Camera> cm = c.getCameras();
-        for (Camera k: cm){
-            cName.add(k.getLocName());
-        }
-        cName.add("Test");
-        return cName;
+        return c.getCameras();
     }
     
     public void setCurrentState(String currentState) {
