@@ -143,6 +143,12 @@ public class SafeHome {
         return c.getImg();
     }
     
+    public String getCameraNameByID(String id){
+        Camera c = new Camera();
+        c.getByID(id);
+        return c.getLocName();
+    }
+    
     public boolean scheduleNewState(String state,String timeIn, String timeOut){
         Timestamp start = Timestamp.valueOf(timeIn);
         Timestamp end = Timestamp.valueOf(timeOut);

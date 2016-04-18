@@ -55,6 +55,7 @@ public class CameraController implements Initializable {
         id = Context.getInstance().getID();
         sh = Context.getInstance().getSafeHome();
         Image img = sh.getCameraViewByID(id);
+        emptyLbl.setText(sh.getCameraNameByID(id));
         double width = img.getWidth();
         double height = img.getHeight();
         imgView.setImage(img);
