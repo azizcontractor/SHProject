@@ -97,7 +97,7 @@
             <TextFieldLimited fx:id="timeOutMin" alignment="CENTER" disable="true" layoutX="136.0" layoutY="136.0" prefHeight="27.0" prefWidth="40.0" promptText="Min" />
             <ComboBox fx:id="timeInAmPm" disable="true" layoutX="181.0" layoutY="100.0" onAction="#handleTimeInAmPm" prefHeight="27.0" prefWidth="73.0" promptText="-" />
             <ComboBox fx:id="timeOutAmPm" disable="true" layoutX="181.0" layoutY="136.0" onAction="#handleTimeOutAmPm" prefHeight="27.0" prefWidth="73.0" promptText="-" />
-            <Label fx:id="emptyLabel" layoutX="16.0" layoutY="231.0" prefHeight="20.0" prefWidth="212.0" />
+            <Label fx:id="emptyLabel" layoutX="16.0" layoutY="231.0" prefHeight="20.0" prefWidth="212.0" alignment = "CENTER"/>
             <Label fx:id="colonLbl" layoutX="130.0" layoutY="103.0" text=":">
                <font>
                   <Font name="Lucida Bright Regular" size="16.0" />

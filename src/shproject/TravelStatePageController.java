@@ -73,6 +73,20 @@ public class TravelStatePageController implements Initializable {
     @FXML
     private Label emptyLabel;
     SafeHome sh;
+    @FXML
+    private Label systemStatelbl;
+    @FXML
+    private Button homebtn;
+    @FXML
+    private Button awaybtn;
+    @FXML
+    private Button travelbtn;
+    @FXML
+    private Label lblcurrStateEmpty;
+    @FXML
+    private Button mainbtn;
+    @FXML
+    private Label lblstate;
 
     /**
      * Initializes the controller class.
@@ -104,6 +118,22 @@ public class TravelStatePageController implements Initializable {
         app_stage.hide(); //optional
         app_stage.setScene(date_page_scene);
         app_stage.show();
+    }
+
+    @FXML
+    private void btnHomeClicked(ActionEvent event) {
+    }
+
+    @FXML
+    private void btnAwayClicked(ActionEvent event) {
+    }
+
+    @FXML
+    private void btnTravelClicked(ActionEvent event) {
+    }
+
+    @FXML
+    private void goMainPage(ActionEvent event) {
     }
     
 }
