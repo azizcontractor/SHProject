@@ -5,9 +5,13 @@
  */
 package shproject;
 
+import control.Context;
+import control.SafeHome;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +21,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -31,10 +37,9 @@ public class ViewCamController implements Initializable {
     private Label camlbl;
     @FXML
     private Button backbtn;
+    private SafeHome sh;
     @FXML
-    private AnchorPane camSP;
-    @FXML
-    private VBox vbox;
+    private ListView<String> list;
 
     /**
      * Initializes the controller class.
@@ -42,6 +47,9 @@ public class ViewCamController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        sh = Context.getInstance().getSafeHome();
+        ObservableList<String> data = FXCollections.observableArrayList(sh.getCameras());
+        list.setItems(data);
     }    
 
     @FXML
@@ -53,5 +61,6 @@ public class ViewCamController implements Initializable {
         appStage2.setScene(goBackScene);
         appStage2.show();
     }
+    
     
 }

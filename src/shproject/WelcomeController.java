@@ -65,7 +65,13 @@ public class WelcomeController implements Initializable {
     }
 
     @FXML
-    private void handleViewCam(ActionEvent event) {
+    private void handleViewCam(ActionEvent event) throws IOException {
+       Parent signOutParent = FXMLLoader.load(getClass().getResource("viewCam.fxml"));
+       Scene signOutScene = new Scene(signOutParent);
+       Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+       appStage.hide();
+       appStage.setScene(signOutScene);
+       appStage.show();
     }
 
     @FXML
