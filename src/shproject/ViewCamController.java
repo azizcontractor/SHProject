@@ -10,9 +10,13 @@ import control.SafeHome;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.binding.BooleanBinding;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -21,11 +25,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 /**
  * FXML Controller class
@@ -52,7 +58,15 @@ public class ViewCamController implements Initializable {
         sh = Context.getInstance().getSafeHome();
         ObservableList<String> data = FXCollections.observableArrayList(sh.getCameras());
         list.setItems(data);
-    }    
+        viewCamBtn.setDisable(true);
+        list.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+    @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                viewCamBtn.setDisable(false);
+            }
+            });
+    }
+    
 
     @FXML
     private void goMainPage(ActionEvent event) throws IOException {

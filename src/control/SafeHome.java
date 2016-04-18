@@ -120,6 +120,7 @@ public class SafeHome {
         for (Camera k: cm){
             cName.add(k.getLocName());
         }
+        cName.add("Test");
         return cName;
     }
     
