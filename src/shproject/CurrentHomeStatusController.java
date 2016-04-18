@@ -19,6 +19,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.SplitPane;
 import javafx.stage.Stage;
 
 /**
@@ -44,6 +45,8 @@ public class CurrentHomeStatusController implements Initializable {
     private Button tempbtn1;
     @FXML
     private Button deviceStatuslist;
+    @FXML
+    private SplitPane btnSet;
     
 
     /**
@@ -52,6 +55,7 @@ public class CurrentHomeStatusController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
          sh = Context.getInstance().getSafeHome();
+         
     }    
 
     @FXML
@@ -62,8 +66,7 @@ public class CurrentHomeStatusController implements Initializable {
         appStage3.hide();
         appStage3.setScene(goMainScene);
         appStage3.show(); 
-        
-        
+
         
         
         
