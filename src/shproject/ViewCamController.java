@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.beans.binding.BooleanBinding;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -56,9 +58,15 @@ public class ViewCamController implements Initializable {
         sh = Context.getInstance().getSafeHome();
         ObservableList<String> data = FXCollections.observableArrayList(sh.getCameras());
         list.setItems(data);
-        BooleanBinding bind = list.selectionModelProperty().isNull();
-        viewCamBtn.disableProperty().bind(bind);
-    }    
+        viewCamBtn.setDisable(true);
+        list.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+    @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                viewCamBtn.setDisable(false);
+            }
+            });
+    }
+    
 
     @FXML
     private void goMainPage(ActionEvent event) throws IOException {
