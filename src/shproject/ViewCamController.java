@@ -35,11 +35,13 @@ import javafx.stage.Stage;
 public class ViewCamController implements Initializable {
     @FXML
     private Label camlbl;
-    @FXML
-    private Button backbtn;
     private SafeHome sh;
     @FXML
     private ListView<String> list;
+    @FXML
+    private Button mainbtn;
+    @FXML
+    private Button viewCamBtn;
 
     /**
      * Initializes the controller class.
@@ -60,6 +62,10 @@ public class ViewCamController implements Initializable {
         appStage3.hide();
         appStage3.setScene(goMainScene);
         appStage3.show();  
+    }
+
+    @FXML
+    private void handleViewCam(ActionEvent event) {
     }
     
     
