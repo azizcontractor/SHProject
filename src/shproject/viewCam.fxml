@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" maxHeight="400.0" maxWidth="300.0" prefHeight="400.0" prefWidth="300.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="shproject.ViewCamController">
+   <children>
+      <Label fx:id="camlbl" layoutX="82.0" layoutY="79.0" text="Cameras">
+         <font>
+            <Font name="Lucida Bright Regular" size="36.0" />
+         </font>
+      </Label>
+      <Button fx:id="backbtn" layoutX="14.0" layoutY="371.0" mnemonicParsing="false" onAction="#goBack" prefHeight="25.0" prefWidth="59.0" text="Back" />
+      <ScrollPane layoutX="64.0" layoutY="121.0" pannable="true" prefHeight="200.0" prefWidth="201.0">
+         <content>
+            <ScrollBar nodeOrientation="RIGHT_TO_LEFT" orientation="VERTICAL" prefHeight="195.0" prefWidth="20.0" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
