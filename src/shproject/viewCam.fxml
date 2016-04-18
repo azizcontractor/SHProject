@@ -18,12 +18,13 @@
             <Font name="Lucida Bright Regular" size="36.0" />
          </font>
       </Label>
-      <ListView fx:id="list" layoutX="57.0" layoutY="110.0" prefHeight="200.0" prefWidth="200.0" />
+      <ListView fx:id="list" layoutX="45.0" layoutY="110.0" prefHeight="200.0" prefWidth="212.0" />
       <Button fx:id="mainbtn" layoutX="240.0" layoutY="14.0" mnemonicParsing="false" onAction="#goMainPage" prefHeight="50.0" prefWidth="46.0" />
       <ImageView fitHeight="50.0" fitWidth="46.0" layoutX="240.0" layoutY="14.0">
          <image>
             <Image url="@../house.png" />
          </image>
       </ImageView>
+      <Button fx:id="viewCamBtn" layoutX="117.0" layoutY="322.0" mnemonicParsing="false" onAction="#handleViewCam" text="View Cam" />
    </children>
 </AnchorPane>
