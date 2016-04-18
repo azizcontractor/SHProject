@@ -17,6 +17,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
@@ -29,6 +31,10 @@ public class ViewCamController implements Initializable {
     private Label camlbl;
     @FXML
     private Button backbtn;
+    @FXML
+    private AnchorPane camSP;
+    @FXML
+    private VBox vbox;
 
     /**
      * Initializes the controller class.
