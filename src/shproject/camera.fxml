@@ -14,11 +14,17 @@
    <children>
       <Button fx:id="backbtn" layoutX="14.0" layoutY="365.0" mnemonicParsing="false" onAction="#goBack" prefHeight="25.0" prefWidth="59.0" text="Back" />
       <Label fx:id="lbl1" layoutX="82.0" layoutY="83.0" prefHeight="51.0" prefWidth="85.0" />
-      <ImageView fx:id="imgView" fitHeight="240.0" fitWidth="256.0" layoutX="22.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="emptyLbl" alignment="CENTER" layoutX="27.0" layoutY="301.0" prefHeight="38.0" prefWidth="247.0">
+      <ImageView fx:id="imgView" fitHeight="240.0" fitWidth="256.0" layoutX="22.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="emptyLbl" alignment="CENTER" layoutX="27.0" layoutY="308.0" prefHeight="38.0" prefWidth="247.0">
          <font>
             <Font name="Lucida Bright Regular" size="24.0" />
          </font>
       </Label>
+      <Button fx:id="mainbtn" layoutX="240.0" layoutY="14.0" mnemonicParsing="false" onAction="#goMainPage" prefHeight="50.0" prefWidth="46.0" />
+      <ImageView fitHeight="50.0" fitWidth="46.0" layoutX="240.0" layoutY="14.0">
+         <image>
+            <Image url="@../house.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
