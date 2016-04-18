@@ -6,6 +6,7 @@
 package objects;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -30,9 +31,6 @@ public class Camera {
     public Camera() {
         
     }
-    public void doSomething(){
-        return;
-    }
     
     public ArrayList<Camera> getCameras(){
         conn = OracleConnection.getConnection();
@@ -55,6 +53,29 @@ public class Camera {
             OracleConnection.closeConnection();
         }
         return cameras;
+    }
+    
+    public Image getByID(String id) {
+        conn = OracleConnection.getConnection();
+        try{
+            String sql = "select * from camera where cid = ? ";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, id);
+            ResultSet r = ps.executeQuery();
+            if(r.next()){
+                this.setId(r.getString(1));
+                this.setLocName(r.getString(2));
+                this.setPanAngle(r.getDouble(6));
+                this.setZoom(r.getDouble(7));
+                this.setImg(new Image(r.getString(8)));
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }finally{
+            OracleConnection.closeConnection();
+        }
+        return img;
+        
     }
 
     public Image getImg() {

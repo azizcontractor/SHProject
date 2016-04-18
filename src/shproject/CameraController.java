@@ -6,6 +6,7 @@
 package shproject;
 
 import control.Context;
+import control.SafeHome;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -18,7 +19,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import objects.Camera;
 
 /**
  * FXML Controller class
@@ -31,6 +34,9 @@ public class CameraController implements Initializable {
     @FXML
     private Label lbl1;
     private String id;
+    @FXML
+    private ImageView imgView;
+    private SafeHome sh;
 
     /**
      * Initializes the controller class.
@@ -38,7 +44,8 @@ public class CameraController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         id = Context.getInstance().getID();
-        
+        sh = Context.getInstance().getSafeHome();
+        imgView.setImage(sh.getCameraViewByID(id));
     }    
 
     @FXML

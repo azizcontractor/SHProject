@@ -13,6 +13,7 @@ import java.sql.Statement;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import javafx.scene.image.Image;
 import objects.Account;
 import objects.Camera;
 import objects.Schedule;
@@ -134,6 +135,12 @@ public class SafeHome {
         }finally{
             OracleConnection.closeConnection();
         }
+    }
+    
+    public Image getCameraViewByID(String id){
+        Camera c = new Camera();
+        c.getByID(id);
+        return c.getImg();
     }
     
     public boolean scheduleNewState(String state,String timeIn, String timeOut){
