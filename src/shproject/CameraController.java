@@ -19,6 +19,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import objects.Camera;
@@ -45,7 +46,7 @@ public class CameraController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         id = Context.getInstance().getID();
         sh = Context.getInstance().getSafeHome();
-        imgView.setImage(sh.getCameraViewByID(id));
+        Image img = sh.getCameraViewByID(id);
     }    
 
     @FXML
