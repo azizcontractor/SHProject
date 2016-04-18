@@ -17,6 +17,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -32,9 +33,11 @@ public class ViewCamController implements Initializable {
     @FXML
     private Button backbtn;
     @FXML
-    private AnchorPane camSP;
+    private ScrollPane camSP;
     @FXML
     private VBox vbox;
+    @FXML
+    private Button mainbtn;
 
     /**
      * Initializes the controller class.
@@ -52,6 +55,10 @@ public class ViewCamController implements Initializable {
         appStage2.hide();
         appStage2.setScene(goBackScene);
         appStage2.show();
+    }
+
+    @FXML
+    private void goMainPage(ActionEvent event) {
     }
     
 }

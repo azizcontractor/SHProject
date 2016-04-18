@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -16,14 +17,15 @@
          </font>
       </Label>
       <Button fx:id="backbtn" layoutX="14.0" layoutY="371.0" mnemonicParsing="false" onAction="#goBack" prefHeight="25.0" prefWidth="59.0" text="Back" />
-      <ScrollPane hbarPolicy="NEVER" layoutX="50.0" layoutY="108.0" prefHeight="200.0" prefWidth="200.0">
+      <ScrollPane fx:id="camSP" hbarPolicy="NEVER" layoutX="50.0" layoutY="108.0" prefHeight="200.0" prefWidth="200.0">
         <content>
-          <AnchorPane fx:id="camSP" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
                <children>
                   <VBox fx:id="vbox" prefHeight="200.0" prefWidth="185.0" />
                </children>
             </AnchorPane>
         </content>
       </ScrollPane>
+      <Button fx:id="mainbtn" layoutX="234.0" layoutY="14.0" mnemonicParsing="false" onAction="#goMainPage" prefHeight="50.0" prefWidth="46.0" />
    </children>
 </AnchorPane>
