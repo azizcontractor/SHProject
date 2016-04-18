@@ -18,6 +18,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 /**
@@ -26,11 +28,16 @@ import javafx.stage.Stage;
  * @author farhinmomin
  */
 public class CameraController implements Initializable {
+    
+    
     @FXML
     private Button backbtn;
     @FXML
     private Label lbl1;
     private String id;
+    
+    @FXML
+    private ImageView imageView;
 
     /**
      * Initializes the controller class.
