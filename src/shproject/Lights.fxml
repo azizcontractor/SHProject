@@ -25,6 +25,7 @@
       </ImageView>
     <AnchorPane layoutX="-37.0" layoutY="76.0" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
       <Button fx:id="btn" layoutX="118.0" layoutY="334.0" mnemonicParsing="false" prefWidth="70.0" />
-      <ListView fx:id="list" layoutX="50.0" layoutY="120.0" prefHeight="200.0" prefWidth="200.0" />
+      <ListView fx:id="list" layoutX="50.0" layoutY="120.0" prefHeight="200.0" prefWidth="99.0" />
+      <ListView fx:id="list2" layoutX="159.0" layoutY="120.0" prefHeight="200.0" prefWidth="99.0" />
    </children>
 </AnchorPane>
