@@ -115,6 +115,4 @@ public class Sensor {
         this.id = id;
     }
     
-    
-    
 }

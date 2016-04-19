@@ -9,12 +9,15 @@ import control.Context;
 import control.SafeHome;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.animation.FillTransition;
 import javafx.animation.ParallelTransition;
 import javafx.animation.TranslateTransition;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -33,6 +36,7 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import objects.Sensor;
 
 /**
  * FXML Controller class
@@ -50,18 +54,22 @@ public class LightsController implements Initializable {
     
     SafeHome sh;
     @FXML
-    private TableView<?> table;
+    private TableView<Sensor> table;
     @FXML
-    private TableColumn<?, ?> roomName;
+    private TableColumn<Sensor, String> roomName;
     @FXML
-    private TableColumn<?, ?> status;
-
+    private TableColumn<Sensor, String> status;
+    private ObservableList<Sensor> data;
+ 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
          sh = Context.getInstance().getSafeHome();
+         data = FXCollections.observableArrayList(sh.getSensors("Light"));
+         table.setItems(data);
+         
     }    
     @FXML
     private void goBack(ActionEvent event) throws IOException {
