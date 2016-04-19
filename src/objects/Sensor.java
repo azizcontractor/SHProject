@@ -25,7 +25,7 @@ public class Sensor {
     private boolean isOn;
     private String name;
     private static int sensorNum = 10111;
-    private Connection conn;
+    protected Connection conn;
     
     public void Sensor(){
         

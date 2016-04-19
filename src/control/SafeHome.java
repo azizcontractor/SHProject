@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import javafx.scene.image.Image;
 import objects.Account;
 import objects.Camera;
+import objects.LightSensor;
 import objects.Schedule;
 import objects.Sensor;
 import objects.ThermostatSensor;
@@ -135,6 +136,20 @@ public class SafeHome {
         }finally{
             OracleConnection.closeConnection();
         }
+    }
+    
+    public ArrayList<Sensor> getSensors(String type){
+        Sensor s;
+        ArrayList<Sensor> sensors;
+        switch(type){
+            case "Light":
+                s = new LightSensor();
+                sensors = s.getSensors();
+                break;
+            default:
+                sensors = new ArrayList<Sensor>();
+        }
+        return sensors;
     }
     
     public Image getCameraViewByID(String id){
