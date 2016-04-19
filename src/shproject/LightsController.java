@@ -53,6 +53,8 @@ public class LightsController implements Initializable {
     private Button btn;
     @FXML
     private ListView<?> list;
+    @FXML
+    private ListView<?> list2;
 
     /**
      * Initializes the controller class.
