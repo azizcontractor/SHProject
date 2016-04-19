@@ -11,12 +11,12 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shproject.LightsController">
    <children>
-      <Label fx:id="lightslbl" layoutX="97.0" layoutY="85.0" text="Lights">
+      <Label fx:id="lightslbl" layoutX="99.0" layoutY="76.0" text="Lights">
          <font>
             <Font name="Lucida Bright Regular" size="36.0" />
          </font>
       </Label>
-      <Button fx:id="backbtn" layoutX="14.0" layoutY="371.0" mnemonicParsing="false" onAction="#goBack" prefHeight="25.0" prefWidth="59.0" text="Back" />
+      <Button fx:id="backbtn" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#goBack" prefHeight="25.0" prefWidth="59.0" text="Back" />
       <Button fx:id="mainbtn" layoutX="244.0" layoutY="14.0" mnemonicParsing="false" onAction="#goMainPage" prefHeight="50.0" prefWidth="46.0" />
       <ImageView fitHeight="50.0" fitWidth="46.0" layoutX="244.0" layoutY="14.0">
          <image>
@@ -24,45 +24,14 @@
          </image>
       </ImageView>
     <AnchorPane layoutX="-37.0" layoutY="76.0" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
-      <SplitPane dividerPositions="0.2422907488986784, 0.5154185022026432, 0.762114537444934" layoutX="45.0" layoutY="133.0" orientation="VERTICAL" prefHeight="229.0" prefWidth="212.0">
-         <items>
-            <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="0.0" minWidth="0.0" prefHeight="63.0" prefWidth="240.0">
-               <children>
-                  <Label fx:id="guestroomlbl" layoutX="14.0" layoutY="14.0" text="Guest Room">
-                     <font>
-                        <Font name="Lucida Bright Regular" size="18.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="153.0" prefWidth="158.0">
-               <children>
-                  <Label fx:id="livingroomlbl" layoutX="14.0" layoutY="2.0" prefHeight="42.0" prefWidth="123.0" text="Living Room">
-                     <font>
-                        <Font name="Lucida Bright Regular" size="18.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="0.0" minWidth="0.0" prefHeight="37.0" prefWidth="273.0">
-               <children>
-                  <Label fx:id="bedroomlbl" layoutX="14.0" layoutY="20.0" text="Bedroom">
-                     <font>
-                        <Font name="Lucida Bright Regular" size="18.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="0.0" minWidth="0.0" prefHeight="49.0" prefWidth="207.0">
-               <children>
-                  <Label fx:id="kitchenlbl" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="69.0" text="Kitchen">
-                     <font>
-                        <Font name="Lucida Bright Regular" size="18.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
-         </items>
-      </SplitPane>
+      <TableView fx:id="table" layoutX="53.0" layoutY="126.0" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="roomName" prefWidth="75.0" text="Room Name" />
+          <TableColumn fx:id="status" prefWidth="75.0" text="Status" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
    </children>
 </AnchorPane>
