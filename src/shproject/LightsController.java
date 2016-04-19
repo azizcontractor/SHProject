@@ -50,13 +50,9 @@ public class LightsController implements Initializable {
     
     SafeHome sh;
     @FXML
-    private TableView<?> table;
-    @FXML
-    private TableColumn<?, ?> roomName;
-    @FXML
-    private TableColumn<?, ?> status;
-    @FXML
     private Button btn;
+    @FXML
+    private ListView<?> list;
 
     /**
      * Initializes the controller class.

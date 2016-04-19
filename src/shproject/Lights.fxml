@@ -24,15 +24,7 @@
          </image>
       </ImageView>
     <AnchorPane layoutX="-37.0" layoutY="76.0" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
-      <TableView fx:id="table" layoutX="53.0" layoutY="126.0" prefHeight="200.0" prefWidth="200.0">
-        <columns>
-          <TableColumn fx:id="roomName" prefWidth="75.0" text="Room Name" />
-          <TableColumn fx:id="status" prefWidth="75.0" text="Status" />
-        </columns>
-         <columnResizePolicy>
-            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-         </columnResizePolicy>
-      </TableView>
       <Button fx:id="btn" layoutX="118.0" layoutY="334.0" mnemonicParsing="false" prefWidth="70.0" />
+      <ListView fx:id="list" layoutX="50.0" layoutY="120.0" prefHeight="200.0" prefWidth="200.0" />
    </children>
 </AnchorPane>
