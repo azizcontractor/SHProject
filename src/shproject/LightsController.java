@@ -56,7 +56,8 @@ public class LightsController implements Initializable {
     @FXML
     private Button btn;
     @FXML
-    private ListView<?> list;
+    private ListView<Sensor> list;
+    private ObservableList<Sensor> data;
 
     /**
      * Initializes the controller class.
@@ -65,7 +66,7 @@ public class LightsController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
          sh = Context.getInstance().getSafeHome();
          data = FXCollections.observableArrayList(sh.getSensors("Light"));
-         table.setItems(data);
+         list.setItems(data);
          
     }    
     @FXML
