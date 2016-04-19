@@ -55,6 +55,8 @@ public class LightsController implements Initializable {
     private TableColumn<?, ?> roomName;
     @FXML
     private TableColumn<?, ?> status;
+    @FXML
+    private Button btn;
 
     /**
      * Initializes the controller class.
