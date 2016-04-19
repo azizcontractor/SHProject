@@ -19,6 +19,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 /**
@@ -36,6 +37,8 @@ public class DoorsController implements Initializable {
     private Button backbtn;
 
     SafeHome sh; 
+    @FXML
+    private ListView<?> list;
     /**
      * Initializes the controller class.
      */

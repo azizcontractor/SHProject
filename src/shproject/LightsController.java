@@ -24,6 +24,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -46,6 +47,8 @@ public class LightsController implements Initializable {
     private Button backbtn;
     
     SafeHome sh;
+    @FXML
+    private ListView<?> list;
 
     /**
      * Initializes the controller class.
