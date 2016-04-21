@@ -30,15 +30,13 @@ public class HomeSettingsController implements Initializable {
     @FXML
     private Button mainbtn;
     @FXML
-    private Label alertlbl;
+    private Button tempbtn;
     @FXML
-    private Label nameE;
+    private Button lightsbtn;
     @FXML
-    private Label timeE;
+    private Button doorsbtn;
     @FXML
-    private Button dismissBtn;
-    @FXML
-    private TextArea descTA;
+    private Button devicesbtn;
 
     /**
      * Initializes the controller class.
@@ -48,6 +46,7 @@ public class HomeSettingsController implements Initializable {
         // TODO
     }    
     
+    @FXML
     private void manageTemp(ActionEvent event) throws IOException {
         Parent manageTempParent = FXMLLoader.load(getClass().getResource("Temperature.fxml"));
         Scene tempScene = new Scene(manageTempParent);
@@ -57,6 +56,7 @@ public class HomeSettingsController implements Initializable {
         appStage1.show();
     }
     
+    @FXML
      private void manageLights(ActionEvent event) throws IOException {
         Parent manageLightsParent = FXMLLoader.load(getClass().getResource("Lights.fxml"));
         Scene LightScene = new Scene(manageLightsParent);
@@ -66,6 +66,7 @@ public class HomeSettingsController implements Initializable {
         appStage1.show();
     }
     
+    @FXML
     private void manageDoors(ActionEvent event )throws IOException {
         Parent manageDoorsParent = FXMLLoader.load(getClass().getResource("Doors.fxml"));
         Scene DoorScene = new Scene(manageDoorsParent);
@@ -76,6 +77,7 @@ public class HomeSettingsController implements Initializable {
                
     }    
    
+    @FXML
     private void manageDevices(ActionEvent event) throws IOException {
         Parent manageDevicesParent = FXMLLoader.load(getClass().getResource("Devices.fxml"));
         Scene DeviceScene = new Scene(manageDevicesParent);
@@ -96,9 +98,6 @@ public class HomeSettingsController implements Initializable {
         appStage3.show();
         }
 
-    @FXML
-    private void handleDismiss(ActionEvent event) {
-    }
 
      
 }
