@@ -5,6 +5,8 @@
  */
 package control;
 
+import java.util.Random;
+
 /**
  *
  * @author Aziz
@@ -31,6 +33,18 @@ public class Context {
     
     public String getID(){
         return id;
+    }
+    
+    public boolean alertGen(){
+        boolean gen = false;
+        int i;
+        Random r = new Random(System.currentTimeMillis());
+        if(sh.getCurrentState().equals("Away")){
+            i = r.nextInt(3);
+            if (i == 0)
+                gen = true;
+        }
+        return gen;
     }
 
     
