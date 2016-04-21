@@ -10,6 +10,10 @@ import control.SafeHome;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,6 +25,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
+import objects.Sensor;
 
 /**
  * FXML Controller class
@@ -36,21 +41,43 @@ public class DoorsController implements Initializable {
     @FXML
     private Button backbtn;
 
-    SafeHome sh; 
+    private SafeHome sh; 
     @FXML
-    private ListView<?> list;
+    private ListView<Sensor> list;
     @FXML
-    private ListView<?> list2;
+    private ListView<String> list2;
     @FXML
     private Label statusLbl;
     @FXML
     private Button btn;
+    private ObservableList<Sensor> data;
+    private ObservableList<String> status;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+         btn.setDisable(true);
          sh = Context.getInstance().getSafeHome();
+         data = FXCollections.observableArrayList(sh.getSensors("Access"));
+         status = FXCollections.observableArrayList();
+         list.setItems(data);
+         for (Sensor s: data){
+             status.add(s.getStatus());
+         }
+         list2.setItems(status);
+         list2.setMouseTransparent(true);
+         list2.setFocusTraversable(false);
+         list.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Sensor>() {
+    @Override
+            public void changed(ObservableValue<? extends Sensor> observable, Sensor oldValue, Sensor newValue) {
+                btn.setDisable(false);
+                if(status.get(list.getSelectionModel().getSelectedIndex()).equals("LOCKED"))
+                    btn.setText("UNLOCK");
+                else
+                    btn.setText("LOCK");
+            }
+            });
     }    
 
      @FXML
@@ -76,6 +103,12 @@ public class DoorsController implements Initializable {
 
     @FXML
     private void handleTurn(ActionEvent event) {
+        sh.updateSensor(data.get(list.getSelectionModel().getSelectedIndex()));
+        status.set(list.getSelectionModel().getSelectedIndex(), data.get(list.getSelectionModel().getSelectedIndex()).getStatus());
+        if(status.get(list.getSelectionModel().getSelectedIndex()).equals("LOCKED"))
+            btn.setText("UNLOCK");
+        else
+            btn.setText("LOCK");
     }
     
 }

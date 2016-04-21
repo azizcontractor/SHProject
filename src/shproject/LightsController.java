@@ -81,7 +81,6 @@ public class LightsController implements Initializable {
          list.setItems(data);
          for (Sensor s: data){
              status.add(s.getStatus());
-             System.out.println("Status = " + s.getStatus());
          }
          list2.setItems(status);
          list2.setMouseTransparent(true);

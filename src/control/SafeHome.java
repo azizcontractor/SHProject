@@ -150,6 +150,7 @@ public class SafeHome {
             case "Access":
                 s = new AccessSensor();
                 sensors = s.getSensors();
+                break;
             default:
                 sensors = new ArrayList<Sensor>();
         }
@@ -161,6 +162,13 @@ public class SafeHome {
             case "Light":
                 LightSensor ls = (LightSensor) s;
                 ls.switchOnOff();
+                break;
+            case "Access":
+                AccessSensor as = (AccessSensor) s;
+                System.out.println(as.isOpen());
+                as.switchOpenClose();
+                System.out.println(as.isOpen());
+                break;
         }
     }
     

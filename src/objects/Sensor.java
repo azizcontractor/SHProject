@@ -119,4 +119,8 @@ public class Sensor {
         return "";
     }
     
+    public String toString(){
+        return this.getName();
+    }
+    
 }

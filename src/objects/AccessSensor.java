@@ -66,9 +66,9 @@ public class AccessSensor extends Sensor {
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(2, this.getId());
             if(this.isOpen())
-                ps.setString(1, "1");
-            else
                 ps.setString(1, "0");
+            else
+                ps.setString(1, "1");
             ps.executeUpdate();
             this.setOpen(!this.isOpen());
         }catch(SQLException e){
@@ -77,6 +77,13 @@ public class AccessSensor extends Sensor {
         finally{
             OracleConnection.closeConnection();
         }
+    }
+    
+    public String getStatus(){
+        if(open)
+            return "UNLOCKED";
+        else
+            return "LOCKED";
     }
 
     public boolean isOpen() {
