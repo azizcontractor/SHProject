@@ -41,7 +41,7 @@
                </font>
             </Button>
             <Line endX="100.0" layoutX="130.0" layoutY="259.0" scaleX="1.2" startX="-100.0" strokeMiterLimit="14.0" />
-            <TextArea fx:id="descTA" layoutX="38.0" layoutY="120.0" prefHeight="130.0" prefWidth="200.0" />
+            <TextArea fx:id="descTA" layoutX="29.0" layoutY="120.0" prefHeight="130.0" prefWidth="200.0" />
          </children>
       </AnchorPane>
    </children>
