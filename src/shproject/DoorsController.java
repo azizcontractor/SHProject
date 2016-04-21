@@ -39,6 +39,12 @@ public class DoorsController implements Initializable {
     SafeHome sh; 
     @FXML
     private ListView<?> list;
+    @FXML
+    private ListView<?> list2;
+    @FXML
+    private Label statusLbl;
+    @FXML
+    private Button btn;
     /**
      * Initializes the controller class.
      */
@@ -66,6 +72,10 @@ public class DoorsController implements Initializable {
         appStage2.hide();
         appStage2.setScene(goBackScene);
         appStage2.show();
+    }
+
+    @FXML
+    private void handleTurn(ActionEvent event) {
     }
     
 }
