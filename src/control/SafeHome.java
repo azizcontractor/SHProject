@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import javafx.scene.image.Image;
 import objects.Account;
 import objects.Camera;
+import objects.AccessSensor;
 import objects.LightSensor;
 import objects.Schedule;
 import objects.Sensor;
@@ -146,10 +147,21 @@ public class SafeHome {
                 s = new LightSensor();
                 sensors = s.getSensors();
                 break;
+            case "Access":
+                s = new AccessSensor();
+                sensors = s.getSensors();
             default:
                 sensors = new ArrayList<Sensor>();
         }
         return sensors;
+    }
+    
+    public void updateSensor(Sensor s){
+        switch(s.getType()){
+            case "Light":
+                LightSensor ls = (LightSensor) s;
+                ls.switchOnOff();
+        }
     }
     
     public Image getCameraViewByID(String id){
