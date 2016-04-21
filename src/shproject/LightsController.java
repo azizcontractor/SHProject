@@ -84,6 +84,8 @@ public class LightsController implements Initializable {
              System.out.println("Status = " + s.getStatus());
          }
          list2.setItems(status);
+         list2.setMouseTransparent(true);
+         list2.setFocusTraversable(false);
          list.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Sensor>() {
     @Override
             public void changed(ObservableValue<? extends Sensor> observable, Sensor oldValue, Sensor newValue) {
