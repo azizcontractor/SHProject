@@ -117,7 +117,6 @@ public class LightsController implements Initializable {
     private void handleTurn(ActionEvent event) {
         sh.updateSensor(data.get(list.getSelectionModel().getSelectedIndex()));
         status.set(list.getSelectionModel().getSelectedIndex(), data.get(list.getSelectionModel().getSelectedIndex()).getStatus());
-        list2.setItems(status);
         if(status.get(list.getSelectionModel().getSelectedIndex()).equals("ON"))
             btn.setText("Turn OFF");
         else

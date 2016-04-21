@@ -25,7 +25,7 @@ public class AccessSensor extends Sensor {
         
     }
     
-    /*public ArrayList<Sensor> getSensors(){
+    public ArrayList<Sensor> getSensors(){
         ArrayList<Sensor> sensors = super.getSensors();
         ArrayList<Sensor> ls = new ArrayList<Sensor>();
         for (Sensor s: sensors){
@@ -43,9 +43,9 @@ public class AccessSensor extends Sensor {
                     ResultSet r = ps.executeQuery();
                     if(r.next()){
                         if(r.getString(2).equals("1"))
-                            a.setLightOn(true);
+                            a.setOpen(true);
                         else
-                            a.setLightOn(false);
+                            a.setOpen(false);
                     }
                 }catch(SQLException e){
                     e.printStackTrace();
@@ -53,11 +53,47 @@ public class AccessSensor extends Sensor {
                 finally{
                     OracleConnection.closeConnection();
                 }
-                ls.add(l);
+                ls.add(a);
             }
         }
         return ls;
-    } */
+    } 
+    
+    public void switchOpenClose(){
+        conn = OracleConnection.getConnection();
+        try{
+            String sql = "update accesssensor set isopen = ? where sid = ?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(2, this.getId());
+            if(this.isOpen())
+                ps.setString(1, "1");
+            else
+                ps.setString(1, "0");
+            ps.executeUpdate();
+            this.setOpen(!this.isOpen());
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        finally{
+            OracleConnection.closeConnection();
+        }
+    }
+
+    public boolean isOpen() {
+        return open;
+    }
+
+    public void setOpen(boolean open) {
+        this.open = open;
+    }
+
+    public boolean isAlarm() {
+        return alarm;
+    }
+
+    public void setAlarm(boolean alarm) {
+        this.alarm = alarm;
+    }
     
     
     
