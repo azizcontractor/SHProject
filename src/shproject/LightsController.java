@@ -64,6 +64,10 @@ public class LightsController implements Initializable {
     private ListView<String> list2;
     private ObservableList<Sensor> data;
     private ObservableList<String> status;
+    @FXML
+    private Label roomNamelbl;
+    @FXML
+    private Label statusLbl;
 
     /**
      * Initializes the controller class.
