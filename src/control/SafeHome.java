@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import javafx.scene.image.Image;
 import objects.Account;
 import objects.Camera;
-import objects.DoorSensor;
+import objects.AccessSensor;
 import objects.LightSensor;
 import objects.Schedule;
 import objects.Sensor;
@@ -147,8 +147,8 @@ public class SafeHome {
                 s = new LightSensor();
                 sensors = s.getSensors();
                 break;
-            case "Door":
-                s = new DoorSensor();
+            case "Access":
+                s = new AccessSensor();
                 sensors = s.getSensors();
             default:
                 sensors = new ArrayList<Sensor>();

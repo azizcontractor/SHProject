@@ -9,10 +9,18 @@ package objects;
  *
  * @author Aziz
  */
-public class DoorSensor extends Sensor {
+public class AccessSensor extends Sensor {
     
-    public DoorSensor(){
+    private boolean open;
+    private boolean alarm;
+    
+    
+    public AccessSensor(){
         
     }
+    
+    
+    
+    
     
 }
