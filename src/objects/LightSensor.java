@@ -69,5 +69,12 @@ public class LightSensor extends Sensor {
     public String toString(){
         return super.getName();
     }
+    
+    public String getStatus(){
+        if(lightOn)
+            return "ON";
+        else
+            return "OFF";
+    }
    
 }

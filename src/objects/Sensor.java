@@ -115,4 +115,8 @@ public class Sensor {
         this.id = id;
     }
     
+    public String getStatus(){
+        return "";
+    }
+    
 }

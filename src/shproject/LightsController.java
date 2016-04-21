@@ -56,9 +56,11 @@ public class LightsController implements Initializable {
     @FXML
     private Button btn;
     @FXML
-    private ListView<?> list;
+    private ListView<Sensor> list;
     @FXML
-    private ListView<?> list2;
+    private ListView<String> list2;
+    private ObservableList<Sensor> data;
+    private ObservableList<String> status;
 
     /**
      * Initializes the controller class.
@@ -67,8 +69,13 @@ public class LightsController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
          sh = Context.getInstance().getSafeHome();
          data = FXCollections.observableArrayList(sh.getSensors("Light"));
+         status = FXCollections.observableArrayList();
          list.setItems(data);
-         
+         for (Sensor s: data){
+             status.add(s.getStatus());
+             System.out.println("Status = " + s.getStatus());
+         }
+         list2.setItems(status);
     }    
     @FXML
     private void goBack(ActionEvent event) throws IOException {
