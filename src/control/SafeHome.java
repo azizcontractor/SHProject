@@ -17,6 +17,7 @@ import javafx.scene.image.Image;
 import objects.Account;
 import objects.Camera;
 import objects.AccessSensor;
+import objects.Alert;
 import objects.LightSensor;
 import objects.Schedule;
 import objects.Sensor;
@@ -127,11 +128,16 @@ public class SafeHome {
     
     public void setNewState(String newState) {
         conn = OracleConnection.getConnection();
+        AccessSensor as = new AccessSensor();
         try{
             String sql = "update safehome set currentState = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, newState);
             ps.executeUpdate();
+            if(newState.equals("Home"))
+                   as.alarmSetting("0");
+            else
+                as.alarmSetting("1");
         }catch(SQLException e){
             e.printStackTrace();
         }finally{
@@ -192,6 +198,11 @@ public class SafeHome {
         sched.setEnd(end);
         sched.setState(state);
         return sched.scheduleState();
+    }
+    
+    public Alert genAlarm(Sensor s){
+        AccessSensor as = (AccessSensor) s;
+        return as.genAlert();
     }
 
     public String getPasscode() {

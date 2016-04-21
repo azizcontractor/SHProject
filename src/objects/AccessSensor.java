@@ -102,6 +102,30 @@ public class AccessSensor extends Sensor {
         this.alarm = alarm;
     }
     
+    public void alarmSetting(String c){
+        conn = OracleConnection.getConnection();
+        try{
+            String sql = "update accesssensor set alarmifopen = ?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, c);
+            ps.executeUpdate();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        finally{
+            OracleConnection.closeConnection();
+        }
+    }
+    
+    public Alert genAlert(){
+        Alert a = new Alert();
+        a.setAlertTime(System.currentTimeMillis());
+        a.setSensorName(super.getName());
+        a.setEventDescription("Unauthorized access detected at the " + super.getName() + ".\nPlease respond immediately!!!!");
+        a.addAlert();
+        return a;
+    }
+    
     
     
 }
