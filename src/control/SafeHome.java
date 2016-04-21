@@ -152,6 +152,14 @@ public class SafeHome {
         return sensors;
     }
     
+    public void updateSensor(Sensor s){
+        switch(s.getType()){
+            case "Light":
+                LightSensor ls = (LightSensor) s;
+                ls.switchOnOff();
+        }
+    }
+    
     public Image getCameraViewByID(String id){
         Camera c = new Camera();
         c.getByID(id);

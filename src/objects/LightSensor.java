@@ -57,6 +57,26 @@ public class LightSensor extends Sensor {
         }
         return ls;
     } 
+    
+    public void switchOnOff(){
+        conn = OracleConnection.getConnection();
+        try{
+            String sql = "update lightsensor set lighton = ? where sid = ?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(2, this.getId());
+            if(this.isLightOn())
+                ps.setString(1, "0");
+            else
+                ps.setString(1, "1");
+            ps.executeUpdate();
+            this.setLightOn(!this.isLightOn());
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        finally{
+            OracleConnection.closeConnection();
+        }
+    }
 
     public boolean isLightOn() {
         return lightOn;

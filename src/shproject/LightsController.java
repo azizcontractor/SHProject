@@ -16,6 +16,8 @@ import javafx.animation.ParallelTransition;
 import javafx.animation.TranslateTransition;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -36,6 +38,7 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import objects.Camera;
 import objects.Sensor;
 
 /**
@@ -67,6 +70,7 @@ public class LightsController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+         btn.setDisable(true);
          sh = Context.getInstance().getSafeHome();
          data = FXCollections.observableArrayList(sh.getSensors("Light"));
          status = FXCollections.observableArrayList();
@@ -76,6 +80,16 @@ public class LightsController implements Initializable {
              System.out.println("Status = " + s.getStatus());
          }
          list2.setItems(status);
+         list.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Sensor>() {
+    @Override
+            public void changed(ObservableValue<? extends Sensor> observable, Sensor oldValue, Sensor newValue) {
+                btn.setDisable(false);
+                if(status.get(list.getSelectionModel().getSelectedIndex()).equals("ON"))
+                    btn.setText("Turn OFF");
+                else
+                    btn.setText("Turn ON");
+            }
+            });
     }    
     @FXML
     private void goBack(ActionEvent event) throws IOException {
@@ -95,6 +109,17 @@ public class LightsController implements Initializable {
         appStage3.hide();
         appStage3.setScene(goMainScene);
         appStage3.show();    
+    }
+
+    @FXML
+    private void handleTurn(ActionEvent event) {
+        sh.updateSensor(data.get(list.getSelectionModel().getSelectedIndex()));
+        status.set(list.getSelectionModel().getSelectedIndex(), data.get(list.getSelectionModel().getSelectedIndex()).getStatus());
+        list2.setItems(status);
+        if(status.get(list.getSelectionModel().getSelectedIndex()).equals("ON"))
+            btn.setText("Turn OFF");
+        else
+            btn.setText("Turn ON");
     }
     
 }
