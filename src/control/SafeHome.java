@@ -13,6 +13,7 @@ import java.sql.Statement;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Random;
 import javafx.scene.image.Image;
 import objects.Account;
 import objects.Camera;
@@ -200,8 +201,12 @@ public class SafeHome {
         return sched.scheduleState();
     }
     
-    public Alert genAlarm(Sensor s){
-        AccessSensor as = (AccessSensor) s;
+    public Alert genAlarm(){
+        AccessSensor as = new AccessSensor();
+        ArrayList<Sensor> sensors= as.getSensors();
+        Random r = new Random(System.currentTimeMillis());
+        int i = r.nextInt(sensors.size());
+        as = (AccessSensor) sensors.get(i);
         return as.genAlert();
     }
 

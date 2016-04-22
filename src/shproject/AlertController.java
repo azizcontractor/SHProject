@@ -6,6 +6,7 @@ package shproject;
  * and open the template in the editor.
  */
 
+import control.SafeHome;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -14,6 +15,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import jdk.nashorn.internal.runtime.Context;
+import objects.Alert;
+
 
 /**
  * FXML Controller class
@@ -33,6 +37,7 @@ public class AlertController implements Initializable {
     private Button dismissBtn;
     @FXML
     private TextArea descTA;
+    private SafeHome sh;
 
     /**
      * Initializes the controller class.
@@ -40,6 +45,13 @@ public class AlertController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        sh = control.Context.getInstance().getSafeHome();
+        descTA.setFocusTraversable(false);
+        descTA.setMouseTransparent(true);
+        Alert al = sh.genAlarm();
+        nameE.setText(al.getSensorName());
+        timeE.setText(al.getTimeString());
+        descTA.setText(al.getEventDescription());
     }    
 
     @FXML
