@@ -35,6 +35,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
@@ -71,6 +72,8 @@ public class LightsController implements Initializable {
     private Label roomNamelbl;
     @FXML
     private Label statusLbl;
+    @FXML
+    private AnchorPane Region;
 
     /**
      * Initializes the controller class.
