@@ -31,7 +31,7 @@ import objects.Sensor;
 
 /**
  * FXML Controller class
- *
+ * Controls locking and unlocking doors.
  * @author Meera
  */
 public class DoorsController implements Initializable {
@@ -91,7 +91,12 @@ public class DoorsController implements Initializable {
             }
             });
     }    
-
+    
+    /**
+     * Method that handles the home button.
+     * @param event ActionEvent
+     * @throws IOException 
+     */
      @FXML
     private void goMainPage(ActionEvent event) throws IOException {
         Parent goMainPage = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
