@@ -43,9 +43,9 @@
          </font></Button>
       <MenuButton fx:id="menu" contentDisplay="RIGHT" graphicTextGap="10.0" layoutX="7.0" layoutY="12.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="34.0" text="">
         <graphic>
-            <ImageView fitHeight="30.0" fitWidth="20.0" mouseTransparent="true" preserveRatio="true">
+            <ImageView fitHeight="25.0" fitWidth="30.0" mouseTransparent="true" preserveRatio="false">
               <image>
-                <Image preserveRatio="true" smooth="false" url="@../images/lines2312.png" />
+                <Image preserveRatio="false" smooth="false" url="@../images/lines2312.png" />
               </image>
             </ImageView>
         </graphic>
