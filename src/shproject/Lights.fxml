@@ -24,7 +24,7 @@
       <Button fx:id="mainbtn" layoutX="244.0" layoutY="14.0" mnemonicParsing="false" onAction="#goMainPage" prefHeight="50.0" prefWidth="46.0" />
       <ImageView fitHeight="44.0" fitWidth="46.0" layoutX="244.0" layoutY="17.0">
          <image>
-            <Image url="@../house.png" />
+            <Image url="@../images/house.png" />
          </image>
       </ImageView>
     <AnchorPane layoutX="-37.0" layoutY="76.0" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />

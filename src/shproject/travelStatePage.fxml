@@ -44,7 +44,7 @@
       </Label>
       <ImageView disable="true" fitHeight="41.0" fitWidth="46.0" layoutX="240.0" layoutY="19.0" opacity="0.37">
          <image>
-            <Image url="@../house.png" />
+            <Image url="@../images/house.png" />
          </image>
       </ImageView>
       <AnchorPane id="AnchorPane" layoutX="25.0" layoutY="41.0" prefHeight="320.0" prefWidth="250.0" style="-fx-background-color: whitesmoke; -fx-border-color: lightgrey; -fx-border-width: 2;">
