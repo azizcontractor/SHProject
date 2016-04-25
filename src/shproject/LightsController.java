@@ -27,6 +27,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -38,6 +40,7 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import objects.AlertEvent;
 import objects.Camera;
 import objects.Sensor;
 
@@ -55,7 +58,7 @@ public class LightsController implements Initializable {
     @FXML
     private Button backbtn;
     
-    SafeHome sh;
+    private SafeHome sh;
     @FXML
     private Button btn;
     @FXML
@@ -74,27 +77,36 @@ public class LightsController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-         btn.setDisable(true);
-         sh = Context.getInstance().getSafeHome();
-         data = FXCollections.observableArrayList(sh.getSensors("Light"));
-         status = FXCollections.observableArrayList();
-         list.setItems(data);
-         for (Sensor s: data){
-             status.add(s.getStatus());
-         }
-         list2.setItems(status);
-         list2.setMouseTransparent(true);
-         list2.setFocusTraversable(false);
-         list.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Sensor>() {
-    @Override
-            public void changed(ObservableValue<? extends Sensor> observable, Sensor oldValue, Sensor newValue) {
-                btn.setDisable(false);
-                if(status.get(list.getSelectionModel().getSelectedIndex()).equals("ON"))
-                    btn.setText("Turn OFF");
-                else
-                    btn.setText("Turn ON");
-            }
-            });
+        btn.setDisable(true);
+        sh = Context.getInstance().getSafeHome();
+        if(Context.getInstance().alertGen()){
+           sh = Context.getInstance().getSafeHome();
+           AlertEvent al = sh.genAlarm();
+           Alert alert = new Alert(AlertType.WARNING);
+           alert.setTitle("Unauthorized Access Alert");
+           alert.setHeaderText("Location: " + al.getSensorName() + "\nTime: " + al.getTimeString());
+           alert.setContentText(al.getEventDescription());
+           alert.showAndWait();  
+        }  
+        data = FXCollections.observableArrayList(sh.getSensors("Light"));
+        status = FXCollections.observableArrayList();
+        list.setItems(data);
+        for (Sensor s: data){
+            status.add(s.getStatus());
+        }
+        list2.setItems(status);
+        list2.setMouseTransparent(true);
+        list2.setFocusTraversable(false);
+        list.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Sensor>() {
+   @Override
+           public void changed(ObservableValue<? extends Sensor> observable, Sensor oldValue, Sensor newValue) {
+               btn.setDisable(false);
+               if(status.get(list.getSelectionModel().getSelectedIndex()).equals("ON"))
+                   btn.setText("Turn OFF");
+               else
+                   btn.setText("Turn ON");
+           }
+           });
     }    
     @FXML
     private void goBack(ActionEvent event) throws IOException {
@@ -125,5 +137,5 @@ public class LightsController implements Initializable {
         else
             btn.setText("Turn ON");
     }
-    
+
 }

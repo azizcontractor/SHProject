@@ -117,8 +117,8 @@ public class AccessSensor extends Sensor {
         }
     }
     
-    public Alert genAlert(){
-        Alert a = new Alert();
+    public AlertEvent genAlert(){
+        AlertEvent a = new AlertEvent();
         a.setAlertTime(System.currentTimeMillis());
         a.setSensorName(super.getName());
         a.setEventDescription("Unauthorized access detected at the " + super.getName() + ".\nPlease respond immediately!!!!");

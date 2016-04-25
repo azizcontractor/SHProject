@@ -5,7 +5,12 @@
  */
 package control;
 
+import java.util.ArrayList;
 import java.util.Random;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import objects.AccessSensor;
+import objects.Sensor;
 
 /**
  *
@@ -46,6 +51,7 @@ public class Context {
         }
         return gen;
     }
+    
 
     
 }

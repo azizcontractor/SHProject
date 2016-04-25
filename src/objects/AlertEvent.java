@@ -7,7 +7,9 @@ package objects;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.sql.Time;
 import java.sql.Timestamp;
 import utils.OracleConnection;
@@ -16,16 +18,16 @@ import utils.OracleConnection;
  *
  * @author Aziz
  */
-public class Alert {
+public class AlertEvent {
     
     private String sensorName;
     private String alertID;
-    private static int id = 10230;
+    private static int id;
     private String eventDescription;
     private Timestamp alertTime;
     private Connection conn;
     
-    public Alert(){
+    public AlertEvent(){
         this.setAlertID(this.newAlert());
     }
 
@@ -58,7 +60,7 @@ public class Alert {
     }
     
     public String getTimeString(){
-        return alertTime.toString().substring(0, 18);
+        return alertTime.toString().substring(0,19);
     }
 
     public void setAlertTime(long alertTime) {
@@ -66,6 +68,22 @@ public class Alert {
     }
     
     public static String newAlert(){
+        Connection conn1 = OracleConnection.getConnection();
+        try{
+            String sql = "select aid from alert";
+            Statement s = conn1.createStatement();
+            ResultSet r = s.executeQuery(sql);
+            while(r.next())
+                id = Integer.parseInt(r.getString(1));
+            if (id == 0)
+                id = 12310;
+            return "" +(++id);
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        finally{
+            OracleConnection.closeConnection();
+        }
         return ""+id++;
     }
     

@@ -18,7 +18,7 @@ import javafx.scene.image.Image;
 import objects.Account;
 import objects.Camera;
 import objects.AccessSensor;
-import objects.Alert;
+import objects.AlertEvent;
 import objects.LightSensor;
 import objects.Schedule;
 import objects.Sensor;
@@ -201,7 +201,7 @@ public class SafeHome {
         return sched.scheduleState();
     }
     
-    public Alert genAlarm(){
+    public AlertEvent genAlarm(){
         AccessSensor as = new AccessSensor();
         ArrayList<Sensor> sensors= as.getSensors();
         Random r = new Random(System.currentTimeMillis());

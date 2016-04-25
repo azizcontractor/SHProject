@@ -16,7 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import jdk.nashorn.internal.runtime.Context;
-import objects.Alert;
+import objects.AlertEvent;
 
 
 /**
@@ -48,7 +48,7 @@ public class AlertController implements Initializable {
         sh = control.Context.getInstance().getSafeHome();
         descTA.setFocusTraversable(false);
         descTA.setMouseTransparent(true);
-        Alert al = sh.genAlarm();
+        AlertEvent al = sh.genAlarm();
         nameE.setText(al.getSensorName());
         timeE.setText(al.getTimeString());
         descTA.setText(al.getEventDescription());
