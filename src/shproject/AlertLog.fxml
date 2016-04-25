@@ -18,7 +18,7 @@
       <Button fx:id="mainbtn" layoutX="232.0" layoutY="21.0" mnemonicParsing="false" onAction="#goMainPage" prefHeight="50.0" prefWidth="46.0" />
       <ImageView fitHeight="44.0" fitWidth="46.0" layoutX="232.0" layoutY="24.0">
          <image>
-            <Image url="@../house.png" />
+            <Image url="@../images/house.png" />
          </image>
       </ImageView>
       <ListView fx:id="list" focusTraversable="false" layoutX="20.0" layoutY="124.0" mouseTransparent="true" prefHeight="221.0" prefWidth="260.0" />

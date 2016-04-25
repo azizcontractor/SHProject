@@ -22,7 +22,7 @@
       <Button fx:id="mainbtn" layoutX="240.0" layoutY="14.0" mnemonicParsing="false" onAction="#goMainPage" prefHeight="50.0" prefWidth="46.0" />
       <ImageView fitHeight="44.0" fitWidth="46.0" layoutX="240.0" layoutY="17.0">
          <image>
-            <Image url="@../house.png" />
+            <Image url="@../images/house.png" />
          </image>
       </ImageView>
       <Button fx:id="viewCamBtn" layoutX="117.0" layoutY="322.0" mnemonicParsing="false" onAction="#handleViewCam" text="View Cam" />

@@ -14,7 +14,7 @@
       <Button fx:id="backbtn" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#goBack" prefHeight="25.0" prefWidth="59.0" text="Back" />
       <ImageView fitHeight="44.0" fitWidth="46.0" layoutX="240.0" layoutY="17.0">
          <image>
-            <Image url="@../house.png" />
+            <Image url="@../images/house.png" />
          </image>
       </ImageView>
       <Label fx:id="devicelbl" layoutX="99.0" layoutY="76.0" text="Devices">
