@@ -54,6 +54,8 @@ public class DoorsController implements Initializable {
     private Button btn;
     private ObservableList<Sensor> data;
     private ObservableList<String> status;
+    @FXML
+    private Label hiddenlabel;
     /**
      * Initializes the controller class.
      */
@@ -113,7 +115,10 @@ public class DoorsController implements Initializable {
 
     @FXML
     private void handleTurn(ActionEvent event) {
-        sh.updateSensor(data.get(list.getSelectionModel().getSelectedIndex()));
+        boolean stateC = sh.updateSensor(data.get(list.getSelectionModel().getSelectedIndex()));
+        hiddenlabel.setText(null);
+        if(stateC)
+            hiddenlabel.setText("System state switched to Home");
         status.set(list.getSelectionModel().getSelectedIndex(), data.get(list.getSelectionModel().getSelectedIndex()).getStatus());
         if(status.get(list.getSelectionModel().getSelectedIndex()).equals("LOCKED"))
             btn.setText("UNLOCK");

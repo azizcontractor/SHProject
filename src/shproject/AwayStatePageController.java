@@ -90,9 +90,9 @@ public class AwayStatePageController implements Initializable {
     @FXML
     private void handleOK(ActionEvent event) throws IOException  {
         StringBuilder timeInStr = new StringBuilder(),timeOutStr = new StringBuilder();
-        boolean valid = true,good = true;
+        boolean valid = true,good = true, done = true;
         if(rbActivateNow.isSelected()){
-            sh.setNewState("Away");
+            done = sh.setNewState("Away");
         }
         else{
             int x = -1;
@@ -144,7 +144,9 @@ public class AwayStatePageController implements Initializable {
         }
         if(!good)
             emptyLabel.setText("Another state scheduled!!");
-        if(valid && good){
+        if(!done)
+            emptyLabel.setText("Door(s) are unlocked!!");
+        if(valid && good && done){
             Parent backSysStageparent = FXMLLoader.load(getClass().getResource("systemState.fxml"));
             Scene date_page_scene = new Scene(backSysStageparent);
             Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

@@ -126,6 +126,20 @@ public class AccessSensor extends Sensor {
         return a;
     }
     
+    public boolean checkLocked(){
+        ArrayList<Sensor> asl = this.getSensors();
+        AccessSensor as;
+        boolean valid = true;
+        for (int i = 0; i < asl.size(); i++){
+            as = (AccessSensor) asl.get(i);
+            if(as.isOpen()){
+                valid = false;
+                break;
+            }
+        }
+        return valid;
+    }
+    
     
     
 }

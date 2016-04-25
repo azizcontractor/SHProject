@@ -127,9 +127,12 @@ public class SafeHome {
         this.currentState = currentState;
     }
     
-    public void setNewState(String newState) {
+    public boolean setNewState(String newState) {
         conn = OracleConnection.getConnection();
         AccessSensor as = new AccessSensor();
+        if(newState.equals("Away") && !as.checkLocked()){
+            return false;
+        }
         try{
             String sql = "update safehome set currentState = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -144,6 +147,7 @@ public class SafeHome {
         }finally{
             OracleConnection.closeConnection();
         }
+        return true;
     }
     
     public ArrayList<Sensor> getSensors(String type){
@@ -164,7 +168,8 @@ public class SafeHome {
         return sensors;
     }
     
-    public void updateSensor(Sensor s){
+    public boolean updateSensor(Sensor s){
+        boolean stateC = false;
         switch(s.getType()){
             case "Light":
                 LightSensor ls = (LightSensor) s;
@@ -172,11 +177,14 @@ public class SafeHome {
                 break;
             case "Access":
                 AccessSensor as = (AccessSensor) s;
-                System.out.println(as.isOpen());
                 as.switchOpenClose();
-                System.out.println(as.isOpen());
+                if(as.isOpen()){
+                    this.setNewState("Home");
+                    stateC = true;
+                }
                 break;
         }
+        return stateC;
     }
     
     public Image getCameraViewByID(String id){
