@@ -39,7 +39,7 @@
          </font>
       </Label>
       <Button fx:id="mainbtn" layoutX="242.0" layoutY="14.0" mnemonicParsing="false" onAction="#goMainPage" prefHeight="50.0" prefWidth="46.0" />
-      <ImageView fitHeight="50.0" fitWidth="46.0" layoutX="242.0" layoutY="14.0">
+      <ImageView fitHeight="44.0" fitWidth="46.0" layoutX="242.0" layoutY="17.0">
          <image>
             <Image url="@../house.png" />
          </image>
