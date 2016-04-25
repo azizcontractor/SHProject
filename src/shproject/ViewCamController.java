@@ -24,6 +24,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
@@ -33,6 +34,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import objects.AlertEvent;
 import objects.Camera;
 
 /**
@@ -59,6 +61,14 @@ public class ViewCamController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         sh = Context.getInstance().getSafeHome();
+        if(Context.getInstance().alertGen()){
+           AlertEvent al = sh.genAlarm();
+           Alert alert = new Alert(Alert.AlertType.WARNING);
+           alert.setTitle("Unauthorized Access Alert");
+           alert.setHeaderText("Location: " + al.getSensorName() + "\nTime: " + al.getTimeString());
+           alert.setContentText(al.getEventDescription());
+           alert.showAndWait();  
+        } 
         data = FXCollections.observableArrayList(sh.getCameras());
         list.setItems(data);
         viewCamBtn.setDisable(true);

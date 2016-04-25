@@ -45,7 +45,7 @@ public class Context {
         int i;
         Random r = new Random(System.currentTimeMillis());
         if(sh.getCurrentState().equals("Away")){
-            i = r.nextInt(3);
+            i = r.nextInt(10);
             if (i == 0)
                 gen = true;
         }

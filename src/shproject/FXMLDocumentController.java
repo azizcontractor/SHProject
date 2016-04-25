@@ -17,6 +17,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.*;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -24,6 +25,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
+import objects.AlertEvent;
 
 /**
  *
@@ -52,7 +54,6 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void handleSubmit(ActionEvent event) throws IOException {
-        
         if(sh.login(username.getText(),password.getText())){
             Parent welcomeScreenParent = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
             Scene welcomScreenScene = new Scene(welcomeScreenParent);

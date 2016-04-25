@@ -80,7 +80,6 @@ public class LightsController implements Initializable {
         btn.setDisable(true);
         sh = Context.getInstance().getSafeHome();
         if(Context.getInstance().alertGen()){
-           sh = Context.getInstance().getSafeHome();
            AlertEvent al = sh.genAlarm();
            Alert alert = new Alert(AlertType.WARNING);
            alert.setTitle("Unauthorized Access Alert");

@@ -5,6 +5,8 @@
  */
 package shproject;
 
+import control.Context;
+import control.SafeHome;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,9 +17,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import objects.AlertEvent;
 
 /**
  * FXML Controller class
@@ -35,6 +39,7 @@ public class WelcomeController implements Initializable {
     private Button viewCambtn;
     @FXML
     private Button outbtn;
+    private SafeHome sh;
 
     /**
      * Initializes the controller class.
@@ -42,6 +47,15 @@ public class WelcomeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        sh = Context.getInstance().getSafeHome();
+        if(Context.getInstance().alertGen()){
+           AlertEvent al = sh.genAlarm();
+           Alert alert = new Alert(Alert.AlertType.WARNING);
+           alert.setTitle("Unauthorized Access Alert");
+           alert.setHeaderText("Location: " + al.getSensorName() + "\nTime: " + al.getTimeString());
+           alert.setContentText(al.getEventDescription());
+           alert.showAndWait();  
+        } 
     }    
 
     @FXML

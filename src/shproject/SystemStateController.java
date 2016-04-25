@@ -17,10 +17,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import objects.AlertEvent;
 
 /**
  * FXML Controller class
@@ -53,6 +55,14 @@ public class SystemStateController implements Initializable {
         // TODO
         sh = Context.getInstance().getSafeHome();
         lblcurrStateEmpty.setText(sh.getCurrentState());
+        if(Context.getInstance().alertGen()){
+           AlertEvent al = sh.genAlarm();
+           Alert alert = new Alert(Alert.AlertType.WARNING);
+           alert.setTitle("Unauthorized Access Alert");
+           alert.setHeaderText("Location: " + al.getSensorName() + "\nTime: " + al.getTimeString());
+           alert.setContentText(al.getEventDescription());
+           alert.showAndWait();  
+        } 
     }    
 
     @FXML
