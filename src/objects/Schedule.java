@@ -134,7 +134,7 @@ public class Schedule {
     }
     
     public String toString(){
-        return this.state + " from " + this.start + " to " + this.end;
+        return this.state + " from " + this.start.toString().substring(0, 19) + " to " + this.end.toString().substring(0, 19);
     }
     
     
