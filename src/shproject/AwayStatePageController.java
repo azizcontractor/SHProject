@@ -30,7 +30,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
+ * FXML Controller class for setting the system state to away.
  *
  * @author farhinmomin
  */
@@ -87,6 +87,11 @@ public class AwayStatePageController implements Initializable {
 
     }    
 
+    /**
+     * Method that handles setting the away state using the SafeHome Controller class.
+     * @param event ActionEvent
+     * @throws IOException 
+     */
     @FXML
     private void handleOK(ActionEvent event) throws IOException  {
         StringBuilder timeInStr = new StringBuilder(),timeOutStr = new StringBuilder();
@@ -156,6 +161,11 @@ public class AwayStatePageController implements Initializable {
         }
     }
 
+    /**
+     * Method that handles the cancel button and goes back to the previous screen.
+     * @param event ActionEvent
+     * @throws IOException 
+     */
     @FXML
     private void handleCancel(ActionEvent event)throws IOException {
         Parent backSysStageparent = FXMLLoader.load(getClass().getResource("systemState.fxml"));
@@ -166,6 +176,10 @@ public class AwayStatePageController implements Initializable {
         app_stage.show();
     }
 
+    /**
+     * Method that allows the user to activate the system into away state now.
+     * @param event ActionEvent
+     */
     @FXML
     private void handleAway_ActivateNow(ActionEvent event) {
         btnOk.disableProperty().unbind();
@@ -179,6 +193,10 @@ public class AwayStatePageController implements Initializable {
        
     }
 
+    /**
+     * Method that allows user to schedule the system state to away for a later time.
+     * @param event ActionEvent
+     */
     @FXML
     private void handleAway_Schedule(ActionEvent event) {
         btnOk.setDisable(true);
@@ -198,13 +216,6 @@ public class AwayStatePageController implements Initializable {
         btnOk.disableProperty().bind(booleanBind);
     }
 
-    @FXML
-    private void handleTimeInAmPm(ActionEvent event) {
-        
-    }
-
-    @FXML
-    private void handleTimeOutAmPm(ActionEvent event) {
-    }
+  
     
 }

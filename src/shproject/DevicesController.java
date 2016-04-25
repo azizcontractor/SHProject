@@ -23,7 +23,7 @@ import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
+ * FXML Controller class for viewing devices which are connected to the SafeHome.
  *
  * @author Meera
  */

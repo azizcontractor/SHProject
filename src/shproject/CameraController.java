@@ -31,7 +31,7 @@ import objects.AlertEvent;
 import objects.Camera;
 
 /**
- * FXML Controller class
+ * FXML Controller class which allows user to view specific cameras in the house.
  *
  * @author farhinmomin
  */

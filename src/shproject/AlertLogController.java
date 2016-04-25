@@ -23,7 +23,8 @@ import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
+ * 
+ * FXML Controller class for viewing alerts that are logged in the database.
  *
  * @author Meera
  */
@@ -46,6 +47,11 @@ public class AlertLogController implements Initializable {
          sh = Context.getInstance().getSafeHome();
     }    
 
+    /**
+     * Method that handles the home button.
+     * @param event ActionEvent
+     * @throws IOException 
+     */
     @FXML
     private void goMainPage(ActionEvent event) throws IOException {
         Parent goMainPage = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
