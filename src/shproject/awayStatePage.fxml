@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
@@ -12,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 <?import shproject.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="400.0" maxWidth="300.0" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shproject.AwayStatePageController">
+<AnchorPane id="AnchorPane" maxHeight="400.0" maxWidth="300.0" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shproject.AwayStatePageController">
    <children>
       <Label alignment="CENTER" disable="true" layoutX="51.0" layoutY="64.0" text="System State">
          <font>
@@ -45,7 +51,7 @@
             <Font name="Lucida Bright Regular" size="18.0" />
          </font>
       </Label>
-      <ImageView disable="true" fitHeight="50.0" fitWidth="46.0" layoutX="240.0" layoutY="14.0" opacity="0.29">
+      <ImageView disable="true" fitHeight="44.0" fitWidth="46.0" layoutX="240.0" layoutY="17.0" opacity="0.29">
          <image>
             <Image url="@../house.png" />
          </image>
@@ -97,7 +103,7 @@
             <TextFieldLimited fx:id="timeOutMin" alignment="CENTER" disable="true" layoutX="136.0" layoutY="136.0" prefHeight="27.0" prefWidth="40.0" promptText="Min" />
             <ComboBox fx:id="timeInAmPm" disable="true" layoutX="181.0" layoutY="100.0" onAction="#handleTimeInAmPm" prefHeight="27.0" prefWidth="73.0" promptText="-" />
             <ComboBox fx:id="timeOutAmPm" disable="true" layoutX="181.0" layoutY="136.0" onAction="#handleTimeOutAmPm" prefHeight="27.0" prefWidth="73.0" promptText="-" />
-            <Label fx:id="emptyLabel" layoutX="16.0" layoutY="231.0" prefHeight="20.0" prefWidth="212.0" alignment = "CENTER"/>
+            <Label fx:id="emptyLabel" alignment="CENTER" layoutX="16.0" layoutY="231.0" prefHeight="20.0" prefWidth="212.0" />
             <Label fx:id="colonLbl" layoutX="130.0" layoutY="103.0" text=":">
                <font>
                   <Font name="Lucida Bright Regular" size="16.0" />
