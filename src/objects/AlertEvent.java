@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import utils.OracleConnection;
 
 /**
@@ -103,6 +104,33 @@ public class AlertEvent {
         finally{
             OracleConnection.closeConnection();
         }
+    }
+    
+    public ArrayList<AlertEvent> getAlerts(){
+        conn = OracleConnection.getConnection();
+        ArrayList<AlertEvent> alList = new ArrayList<AlertEvent>();
+        try{
+            String sql = "select * from alert";
+            Statement s = conn.createStatement();
+            ResultSet r = s.executeQuery(sql);
+            while(r.next()){
+                AlertEvent al = new AlertEvent();
+                al.setAlertID(r.getString(1));
+                al.alertTime = r.getTimestamp(2);
+                al.setSensorName(r.getString(3));
+                al.setEventDescription(r.getString(4));
+                alList.add(al);
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }finally{
+            OracleConnection.closeConnection();
+        }
+        return alList;
+    }
+    
+    public String toString(){
+        return this.getSensorName() + " @ " + this.getTimeString();
     }
     
 }

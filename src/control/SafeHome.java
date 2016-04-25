@@ -209,6 +209,25 @@ public class SafeHome {
         as = (AccessSensor) sensors.get(i);
         return as.genAlert();
     }
+    
+    public ArrayList<String> getAlerts(){
+        AlertEvent al = new AlertEvent();
+        ArrayList<AlertEvent> alList =  al.getAlerts();
+        ArrayList<String> strs = new ArrayList<String>();
+        for(AlertEvent a: alList)
+            strs.add(a.toString());
+        return strs;
+    }
+    
+    public ArrayList<String> getSchedule(){
+        Schedule sc = new Schedule();
+        sc.removeSchedule();
+        ArrayList<String> strs = new ArrayList<String>();
+        ArrayList<Schedule> scL = (ArrayList<Schedule>) sc.getSchedule();
+        for(Schedule s: scL)
+            strs.add(s.toString());
+        return strs;
+    }
 
     public String getPasscode() {
         return passcode;

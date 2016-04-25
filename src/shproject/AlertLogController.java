@@ -19,6 +19,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 /**
@@ -34,6 +35,8 @@ public class AlertLogController implements Initializable {
     private Button mainbtn;
     
     SafeHome sh;
+    @FXML
+    private ListView<?> list;
 
     /**
      * Initializes the controller class.
@@ -50,12 +53,7 @@ public class AlertLogController implements Initializable {
         Stage appStage3 = (Stage) ((Node) event.getSource()).getScene().getWindow();
         appStage3.hide();
         appStage3.setScene(goMainScene);
-        appStage3.show(); 
-        
-        
-        
-        
-        
+        appStage3.show();        
     }
     
 }

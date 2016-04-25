@@ -119,5 +119,23 @@ public class Schedule {
         this.conn = conn;
     }
     
+    public void removeSchedule(){
+        conn = OracleConnection.getConnection();
+        try{
+            String sql = "delete from schedule where endtime < ?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setTimestamp(1, new Timestamp(System.currentTimeMillis()));
+            ps.executeUpdate();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }finally{
+            OracleConnection.closeConnection();
+        }
+    }
+    
+    public String toString(){
+        return this.state + " from " + this.start + " to " + this.end;
+    }
+    
     
 }

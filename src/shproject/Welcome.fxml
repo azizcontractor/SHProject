@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" maxHeight="400.0" maxWidth="300.0" prefHeight="400.0" prefWidth="300.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shproject.WelcomeController">
+<AnchorPane id="AnchorPane" fx:id="pane1" maxHeight="400.0" maxWidth="300.0" prefHeight="400.0" prefWidth="300.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shproject.WelcomeController">
    <children>
       <Label fx:id="SHlbl" layoutX="38.0" layoutY="66.0" prefHeight="69.0" prefWidth="237.0" text="SafeHome">
          <font>
@@ -33,5 +32,22 @@
          </font>
       </Button>
       <Button fx:id="outbtn" layoutX="214.0" layoutY="361.0" mnemonicParsing="false" onAction="#signOut" prefHeight="25.0" prefWidth="79.0" text="Sign Out" textFill="#0a0101" />
+      <MenuButton fx:id="menu" layoutX="11.0" layoutY="25.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="55.0">
+        <items>
+          <MenuItem fx:id="viewAlertLog" mnemonicParsing="false" onAction="#viewAlertLog" text="View Logs" />
+            <MenuItem fx:id="viewSchedule" mnemonicParsing="false" onAction="#viewSchedule" text="View Schedule" />
+        </items>
+      </MenuButton>
+      <Pane fx:id="hiddenPane" layoutX="25.0" layoutY="57.0" prefHeight="315.0" prefWidth="250.0" style="-fx-background-color: WHITESMOKE; -fx-border-width: 2; -fx-border-color: BLACK;" visible="false">
+         <children>
+            <ListView fx:id="list" layoutX="-1.0" layoutY="58.0" prefHeight="200.0" prefWidth="250.0" />
+            <Button fx:id="dismiss" layoutX="106.0" layoutY="274.0" mnemonicParsing="false" onAction="#handleDismiss" text="OK" />
+            <Label fx:id="hidPaneTitle" layoutX="7.0" layoutY="14.0" prefHeight="33.0" prefWidth="237.0">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

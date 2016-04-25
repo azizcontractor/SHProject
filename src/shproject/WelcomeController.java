@@ -10,6 +10,8 @@ import control.SafeHome;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +22,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TitledPane;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import objects.AlertEvent;
 
@@ -37,9 +45,25 @@ public class WelcomeController implements Initializable {
     private Button homeSetbtn;
     @FXML
     private Button viewCambtn;
+    private SafeHome sh;
+    @FXML
+    private MenuButton menu;
+    @FXML
+    private MenuItem viewAlertLog;
+    @FXML
+    private MenuItem viewSchedule;
+    @FXML
+    private AnchorPane pane1;
+    @FXML
+    private Pane hiddenPane;
+    @FXML
+    private Button dismiss;
+    @FXML
+    private ListView<String> list;
+    @FXML
+    private Label hidPaneTitle;
     @FXML
     private Button outbtn;
-    private SafeHome sh;
 
     /**
      * Initializes the controller class.
@@ -98,5 +122,47 @@ public class WelcomeController implements Initializable {
        appStage.setScene(signOutScene);
        appStage.show();
       }
+
+    @FXML
+    private void viewAlertLog(ActionEvent event) throws IOException {
+        hidPaneTitle.setText("Alert Log");
+        sh = Context.getInstance().getSafeHome();
+        ObservableList<String> data = FXCollections.observableArrayList(sh.getAlerts());
+        list.setItems(data);
+        menu.setDisable(true);
+        SHlbl.setDisable(true);
+        sysStatebtn.setDisable(true);
+        homeSetbtn.setDisable(true);
+        viewCambtn.setDisable(true);
+        outbtn.setDisable(true);
+        hiddenPane.setVisible(true);
+    }
+
+    @FXML
+    private void viewSchedule(ActionEvent event) {
+        hidPaneTitle.setText("Schedule");
+        sh = Context.getInstance().getSafeHome();
+        ObservableList<String> data = FXCollections.observableArrayList(sh.getSchedule());
+        list.setItems(data);
+        menu.setDisable(true);
+        SHlbl.setDisable(true);
+        sysStatebtn.setDisable(true);
+        homeSetbtn.setDisable(true);
+        viewCambtn.setDisable(true);
+        outbtn.setDisable(true);
+        hiddenPane.setVisible(true);
+    }
+
+    @FXML
+    private void handleDismiss(ActionEvent event) {
+        hiddenPane.setVisible(false);
+        menu.setDisable(false);
+        SHlbl.setDisable(false);
+        sysStatebtn.setDisable(false);
+        homeSetbtn.setDisable(false);
+        viewCambtn.setDisable(false);
+        outbtn.setDisable(false);
+    }
+
     
 }
