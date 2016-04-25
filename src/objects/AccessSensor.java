@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import utils.OracleConnection;
 
 /**
- *
+ * AccessSensor class for access point monitoring.
  * @author Aziz
  */
 public class AccessSensor extends Sensor {
@@ -25,6 +25,10 @@ public class AccessSensor extends Sensor {
         
     }
     
+    /**
+     * Generates a list of access point sensors from the database
+     * @return ArrayList of Sensors
+     */
     public ArrayList<Sensor> getSensors(){
         ArrayList<Sensor> sensors = super.getSensors();
         ArrayList<Sensor> ls = new ArrayList<Sensor>();
@@ -59,6 +63,10 @@ public class AccessSensor extends Sensor {
         return ls;
     } 
     
+    
+    /**
+     * Method that handles locking and unlocking the doors
+     */
     public void switchOpenClose(){
         conn = OracleConnection.getConnection();
         try{
@@ -79,6 +87,10 @@ public class AccessSensor extends Sensor {
         }
     }
     
+    /**
+     * Method to check if the selected door is locked or unlocked
+     * @return String with current door status
+     */
     public String getStatus(){
         if(open)
             return "UNLOCKED";

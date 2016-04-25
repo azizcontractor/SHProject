@@ -13,7 +13,7 @@ import objects.AccessSensor;
 import objects.Sensor;
 
 /**
- *
+ * This is a static class that allows communication between multiple scenes.
  * @author Aziz
  */
 public class Context {
@@ -24,6 +24,11 @@ public class Context {
     
     private String id;
     
+    
+    /**
+     * Getter for context instance
+     * @return Context
+     */
     public static Context getInstance() {
         return instance;
     }
@@ -40,6 +45,10 @@ public class Context {
         return id;
     }
     
+    /**
+     * Decide whether to randomly generate Alert
+     * @return true if alert should be generated
+     */
     public boolean alertGen(){
         boolean gen = false;
         int i;
